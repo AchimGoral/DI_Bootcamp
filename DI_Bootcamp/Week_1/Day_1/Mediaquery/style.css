@@ -1,0 +1,50 @@
+div {
+    height: 100px;
+}
+
+#div1 {
+    background-color: red;
+}
+
+#div2 {
+    background-color: blue;
+}
+
+#div3 {
+    background-color: green;
+}
+
+#div4 {
+    background-color: purple;
+}
+
+/*The logical keywords "not" or "only" can be used optionally to include or exclude specific media types or screen sizes*/
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+    div {
+        height: 100px;
+        width: 400px;
+        display: inline-block;
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) { 
+    div {
+        height: 100px;
+        width: 200px;
+        display: inline-block;
+    }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) { 
+    div {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@media all and (max-width: 480px) { 
+    div {
+        height: 100px;
+        width: 50px;
+    }
+}

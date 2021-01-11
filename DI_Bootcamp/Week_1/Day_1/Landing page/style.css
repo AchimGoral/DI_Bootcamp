@@ -1,0 +1,65 @@
+html, body {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+}
+
+.head {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(206, 203, 203, 0.824);
+}
+
+.head .signin {
+    text-decoration: none;
+    color: black;
+    background-color: rgba(67, 67, 252, 0.74);
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.head .signin:hover {
+    opacity: 0.8;
+}
+
+.section-1 {
+    background-image: url("drip-921067_1920.jpg");
+    height: auto;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position:center;
+}
+
+.section-1 .paragraph-1 {
+    font-size: 30px;
+    color: white;
+    font-weight: Bolder;
+}
+
+.section-1 .text {
+    margin: 150px 200px;
+    text-align: center;
+}
+
+input[type=text],
+input[type=submit] {
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+}
+
+input[type=submit] {
+    background-color: rgba(67, 67, 252, 0.74);
+    border: none;
+    padding: 11px 25px;
+}
+
+input[type=submit]:hover {
+    opacity: 0.8;
+}

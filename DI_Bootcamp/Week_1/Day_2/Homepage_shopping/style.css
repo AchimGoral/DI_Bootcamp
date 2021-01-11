@@ -1,0 +1,109 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    list-style-type: none;
+    background-size: cover;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    background-color: black;
+    z-index: 1;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+  
+li {
+    float: right;
+}
+  
+li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+}
+  
+li a:hover {
+    background-color: #111;
+}
+
+.logo {
+    height: 50px;
+    cursor: pointer;
+    float: left;
+    margin: 5px 5px;
+}
+
+li i{
+    text-align: center;
+    margin: 20px;
+    color: white;
+}
+
+li i:hover {
+    cursor: pointer;
+}
+
+.container div {
+    display: inline-block;
+    max-width:16em;
+    padding:30px;
+    border: 5px;
+    margin:0 auto;
+    position: relative;
+}
+
+.container div img {
+    width: 100%;
+}
+
+.text{
+    text-align: center;
+    font-size: 18px;
+}
+
+.price {
+    text-align: center;
+    font-size: 18px;
+    color: rgb(175, 13, 13);
+}
+
+.add {
+    text-align: center;
+    background-color: burlywood;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.add:hover {
+    background-color: chocolate;
+}
+
+.container .fa-percent {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    color: coral;
+    font-size: 40px;
+    transition: 0.1s ease-in-out;
+}
+
+.container .fa-percent:hover {
+    transform: scale(1.3);
+}
