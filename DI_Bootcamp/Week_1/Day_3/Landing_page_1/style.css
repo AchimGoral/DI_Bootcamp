@@ -92,8 +92,8 @@ body {
 .container {
     position: relative;
     align-items: center;
-    height: 80vh;
     color: rgb(0, 0, 0);
+    height: 80vh;
     display: grid;
     grid-template-areas: 
     "left-up    middle-up   right-up"
@@ -164,4 +164,74 @@ body {
 .text-normal-down {
     font-size: 16px;
     color: rgb(231, 231, 231);
+}
+
+/* Mediaquery */
+
+@media all and (min-width: 754px) { 
+    .headline {
+        grid-template-areas: 
+        "headline    headline   headline";
+    }
+
+    .text {
+        grid-template-areas: 
+        "text-left  text-middle text-right";
+    }
+
+    .container {
+        grid-template-areas: 
+        "left-up    middle-up   right-up"
+        "left-down  middle-down right-down";
+    }
+}
+
+@media all and (min-width: 598px) and (max-width: 754px) {
+    body {
+        background-repeat: repeat;
+    }
+    .text {
+        margin-top: 50px;
+        grid-template-areas: 
+        "text-left"
+        "text-middle"
+        "text-right";
+    }
+
+    .container {
+        grid-template-areas:
+        "middle-up"
+        "middle-down"
+        "right-up"
+        "right-down";
+        width: 50vw;
+        margin-top: 400px;
+        margin-left: 20vw;
+        
+    }
+}
+
+@media all and (max-width: 598px) {
+    body {
+        background-repeat: repeat;
+    }
+    .text {
+        margin-top: 110px;
+        grid-template-areas: 
+        "text-left"
+        "text-middle"
+        "text-right";
+    }
+
+    .container {
+        grid-template-areas:
+        "middle-up"
+        "middle-down"
+        "right-up"
+        "right-down";
+        width: 50vw;
+        margin-top: 400px;
+        margin-left: 20vw;
+        
+    }
 }
