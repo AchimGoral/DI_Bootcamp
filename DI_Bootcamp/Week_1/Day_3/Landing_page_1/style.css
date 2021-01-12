@@ -1,0 +1,118 @@
+.headline {
+    position: relative;
+    width: 100vw;
+    height: 15vh;
+    background-color: rgb(153, 153, 153);
+    color: rgb(0, 0, 0);
+    font-size: larger;
+    display: grid;
+    grid-template-areas: 
+    "headline    headline   headline";
+    gap: 0 50px;
+    padding: 20px;
+    text-align: center;
+}
+
+.headline-all {
+    height: 1fr;
+    grid-area: headline;
+    background-color: rgb(129, 84, 180);
+    padding: 20px;
+}
+
+.text {
+    position: relative;
+    width: 100vw;
+    height: 20vh;
+    background-color: rgb(212, 212, 212);
+    color: rgb(0, 0, 0);
+    font-size: larger;
+    display: grid;
+    grid-template-areas: 
+    "text-left    text-middle   text-right";
+    gap: 0 50px;
+    padding: 20px;
+    text-align: center;
+}
+
+.text-left {
+    height: 1fr;
+    grid-area: text-left;
+    background-color: rgb(180, 84, 84);
+    padding: 20px;
+}
+
+.text-middle {
+    height: 1fr;
+    grid-area: text-middle;
+    background-color: rgb(101, 161, 82);
+    padding: 20px;
+}
+
+.text-right {
+    height: 1fr;
+    grid-area: text-right;
+    background-color: rgb(86, 185, 177);
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 65vh;
+    background-color: rgb(155, 155, 155);
+    color: rgb(0, 0, 0);
+    font-size: larger;
+    display: grid;
+    grid-template-areas: 
+    "left-up    middle-up   right-up"
+    "left-down  middle-down right-down";
+    gap: 0 50px;
+    padding: 20px;
+    text-align: center;
+}
+
+.container1 .item1 {
+    margin-top: 15vh;
+    height: 120px;
+    grid-area: left-up;
+    background-color: rgb(212, 212, 212);
+    padding: 20px;
+}
+
+.container1 .item2 {
+    height: 80px;
+    grid-area: left-down;
+    background-color: yellow;
+    padding: 20px;
+}
+
+.container2 .item1 {
+    margin-top: 25vh;
+    height: 120px;
+    grid-area: middle-up;
+    background-color: rgb(212, 212, 212);
+    padding: 20px;
+}
+
+.container2 .item2 {
+    height: 80px;
+    grid-area: middle-down;
+    background-color: green;
+    padding: 20px;
+}
+
+.container3 .item1 {
+    margin-top: 20vh;
+    height: 120px;
+    grid-area: left-up;
+    background-color: rgb(212, 212, 212);
+    padding: 20px;
+}
+
+.container3 .item2 {
+    height: 80px;
+    grid-area: left-down;
+    background-color: tomato;
+    padding: 20px;
+}

@@ -1,0 +1,39 @@
+.container {
+    width: 90%;
+    height: 90vh;
+    background-color: rgb(196, 196, 196);
+    color: rgb(41, 41, 41);
+    font-size: larger;
+    display: grid;
+    grid-template-areas: 
+    "left header header"
+    "left header header"
+    "left header header"
+    "footer footer footer";
+    grid-gap: 20px;
+    padding: 20px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+
+.item1 {
+    grid-area: header;
+    background-color: yellow;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+.item2 {
+    grid-area: left;
+    background-color: yellowgreen;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+.item3 {
+    grid-area: footer;
+    background-color: tomato;
+    padding: 20px;
+    border: 2px solid black;
+}

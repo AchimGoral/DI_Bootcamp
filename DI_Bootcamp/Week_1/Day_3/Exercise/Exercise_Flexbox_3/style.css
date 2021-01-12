@@ -1,0 +1,44 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+.parent{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    color: white;
+}
+  
+.box{
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    margin: 0;
+    text-align: center;
+    align-self: center;
+    /* flex: 1; */
+}
+  
+.child1 {
+    background-color: blue;
+    width: 10%;
+    flex-grow: 1;
+
+}
+
+.child2 {
+    background-color: rgb(32, 135, 219);
+    width: 30%;
+    flex-grow: 3;
+}
+
+.child3 {
+    background-color: rgb(235, 85, 85);
+    flex-grow: 7;
+    width: 60%;
+}
