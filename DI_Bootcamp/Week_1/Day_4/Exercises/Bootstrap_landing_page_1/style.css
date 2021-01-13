@@ -79,7 +79,7 @@ i {
 
 @media only screen and (min-width: 576px) and (max-width: 1040px) {
     .navbtn {
-        margin: 0 5px;
+        margin-top: 5px;
     }
 }
 
@@ -88,13 +88,13 @@ i {
         width: 180px;
     }
 
-    .featbtn {
-        color: rgba(238, 238, 238, 0.815);
-        border: 1px solid rgba(238, 238, 238, 0.815);
+    .navbtn {
         margin-top: 5px;
     }
 
-    .navbtn {
-        margin: 3px 0;
+    .featbtn {
+        color: rgba(53, 53, 53, 0.815);
+        border: 1px solid rgba(53, 53, 53, 0.815);
+        margin-top: 5px;
     }
 }
