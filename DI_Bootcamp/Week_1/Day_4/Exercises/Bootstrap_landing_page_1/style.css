@@ -65,11 +65,11 @@ i {
 }
 
 .card {
-    width: 170px;
-    margin: 10px 20px;
-    padding: 5px 0;
-    border-radius: 5px;
-    border: none;
+    width: 220px;
+    margin: 30px;
+    padding: 20px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(65, 7, 7, 0.555);
     background-color: rgba(238, 238, 238, 0.815);
 }
 
