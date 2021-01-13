@@ -1,0 +1,14 @@
+.cont {
+    border: 1px solid blue;
+    background-color: rgba(135, 207, 235, 0.699);
+}
+
+.rows {
+    border: 1px solid red;
+    background-color: rgba(255, 99, 71, 0.699);
+}
+
+.column {
+    border: 1px solid green;
+    background-color: rgba(153, 205, 50, 0.699);
+}

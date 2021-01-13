@@ -1,16 +1,33 @@
 .container {
     display: grid;
-    justify-content: space-between;
-    grid-template-columns: 100px 100px 100px;
-    grid-gap: 10px;
-    background-color: #37e083;
-    padding: 10px;
+    grid-template-areas: "left middle right";
 }
-  
-.container .column {
-    background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-    line-height: 75px;
+
+.container1 {
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.container2 {
+    grid-area: middle;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container3 {
+    grid-area: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+    background-color: darkgoldenrod;
+    margin: 10px;
 }
