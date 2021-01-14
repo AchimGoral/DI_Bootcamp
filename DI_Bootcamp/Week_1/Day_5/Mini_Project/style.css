@@ -8,6 +8,20 @@ body {
     padding-left: 100px;
 }
 
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: black;
+    border-radius: 2px;
+}
+
+.nav-pills .nav-link {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: black;
+}
+
 .container-middle {
     background-color: rgb(209, 209, 209);
     padding: 20px 100px 50px 100px;
