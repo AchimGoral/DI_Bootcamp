@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+:root {
+    --main-color: rgb(255, 102, 0); 
+}
+
+html,h1,h2,h3,h4,h5,h6 {
+    font-family: "Raleway";
+    color: var(--main-color);
+}
+
+/* Navbar items */
+
+.link-top {
+    color: white;
+    transition: 0.2s ease-in-out all;
+}
+
+.link-top:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+.navbar, .btn {
+    background-color: var(--main-color);
+}
+
+/* Container with background */
+
+.container-top {
+    display: block;
+    position: relative;
+}
+  
+.container-top::after {
+    content: "";
+    background: url('/portfolio_setup/images/headerback.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+
+.headline {
+    margin-top: 200px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.text-top {
+    font-size: 20px;
+    font-weight: 450;
+    color: slategray;
+    padding-right: 20vw;
+}
+
+.btn-top {
+    color: white;
+    font-weight: 400;
+    margin-bottom: 300px;
+}
+
+.btn-top:hover {
+    opacity: 0.8;
+    color: white;
+}
+/* About Me part */
+
+.col-about-me-top {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.underline-name {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.about-me-name {
+    color: rgb(60, 170, 243);
+    margin-top: 10%;
+}
+
+.col-about-me-bottom2 {
+    border-left: 5px solid rgb(60, 170, 243);
+}
