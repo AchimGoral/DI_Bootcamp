@@ -10,7 +10,7 @@ body {
 
 .container-middle {
     background-color: rgb(209, 209, 209);
-    padding: 20px 100px 60px;
+    padding: 20px 100px 50px 100px;
 }
 
 .bg-secondary {
@@ -18,10 +18,10 @@ body {
     background-color: aqua;
 }
 
-.container-bottom {
-    padding: 20px 85px 60px;
-}
-
 .btn-outline-secondary {
     border: 1px solid rgb(209, 209, 209);
+}
+
+.container-bottom {
+    padding: 20px 85px 50px 85px;
 }
