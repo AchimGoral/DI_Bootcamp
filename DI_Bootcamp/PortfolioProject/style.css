@@ -107,7 +107,7 @@ html,h1,h2,h3,h4,h5,h6 {
 }
 
 .col-about-me-top {
-    margin: 100px 0;
+    margin: 5em 0;
     text-align: center;
     text-transform: capitalize;
 }
@@ -123,6 +123,7 @@ html,h1,h2,h3,h4,h5,h6 {
 
 .rounded-circle {
     width: 350px;
+    height: auto;
 }
 
 .underline-name {
@@ -147,4 +148,34 @@ html,h1,h2,h3,h4,h5,h6 {
 
 .container-portfolio {
     text-align: center;
+}
+
+.col-portfolio {
+    margin-bottom: 5em;
+}
+
+.container-portfolio img {
+    height: 15rem;
+    width: 100%;
+}
+
+.row-portfolio-img {
+    margin: 0 15%;
+}
+
+img {
+    display: flex;
+    margin: 16px;
+    justify-content: center;
+    border-style: none;
+}
+
+/* Blog */
+
+.container-blog {
+    text-align: center;
+}
+
+.col-blog-headline {
+    margin: 5em 0;
 }
