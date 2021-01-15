@@ -4,6 +4,10 @@
     --main-color: rgb(249, 115, 0); 
 }
 
+body {
+    line-height: 1.5;
+}
+
 html,h1,h2,h3,h4,h5,h6 {
     font-family: "Raleway";
     color: var(--main-color);
@@ -21,6 +25,9 @@ html,h1,h2,h3,h4,h5,h6 {
 }
 
 .link-top {
+    font-size: 18px;
+    margin-right: 16px;
+    padding: 8px;
     color: white;
     transition: 0.1s ease-in-out all;
 }
@@ -68,6 +75,7 @@ html,h1,h2,h3,h4,h5,h6 {
     font-weight: 450;
     color: slategray;
     padding-right: 20vw;
+    text-align: justify;
 }
 
 .btn-top {
@@ -83,6 +91,13 @@ html,h1,h2,h3,h4,h5,h6 {
     background-color: rgb(73, 73, 73);
     color: white;
 }
+
+/* Section Background-color after Background-picture top */
+
+.start-about-me {
+    background-color: ivory;
+}
+
 /* About Me part */
 
 .container-about-me {
@@ -92,12 +107,13 @@ html,h1,h2,h3,h4,h5,h6 {
 }
 
 .col-about-me-top {
-    margin: 50px 0;
+    margin: 100px 0;
     text-align: center;
+    text-transform: capitalize;
 }
 
 .about-me-name {
-    color: rgb(60, 170, 243);
+    color: teal;
     margin: 0 0 8px;
 }
 
@@ -125,4 +141,10 @@ html,h1,h2,h3,h4,h5,h6 {
 
 .col-about-me-bottom2 > p {
  margin: 0 0 16px;
+}
+
+/* Portfolio */
+
+.container-portfolio {
+    text-align: center;
 }
