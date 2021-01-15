@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 :root {
-    --main-color: rgb(255, 102, 0); 
+    --main-color: rgb(249, 115, 0); 
 }
 
 html,h1,h2,h3,h4,h5,h6 {
@@ -11,14 +11,23 @@ html,h1,h2,h3,h4,h5,h6 {
 
 /* Navbar items */
 
+.navbar-home {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    font-size: 22px;
+}
+
 .link-top {
     color: white;
-    transition: 0.2s ease-in-out all;
+    transition: 0.1s ease-in-out all;
 }
 
 .link-top:hover {
-    transform: scale(1.1);
-    color: white;
+    color: var(--main-color);
+    background-color: rgb(235, 235, 235);
 }
 
 .navbar, .btn {
@@ -30,23 +39,25 @@ html,h1,h2,h3,h4,h5,h6 {
 .container-top {
     display: block;
     position: relative;
+    height: 100vh;
 }
   
 .container-top::after {
     content: "";
-    background: url('/portfolio_setup/images/headerback.jpg');
+    background: url('images/headerback.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.4;
+    opacity: 0.28;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    position: absolute;
-    z-index: -1;   
+    position: fixed;
+    z-index: -2;   
 }
 
 .headline {
+    align-content: center;
     margin-top: 200px;
     text-transform: capitalize;
     font-weight: 500;
@@ -62,30 +73,56 @@ html,h1,h2,h3,h4,h5,h6 {
 .btn-top {
     color: white;
     font-weight: 400;
-    margin-bottom: 300px;
+    font-size: 22px;
+    width: 120px;
+    height: 50px;
 }
 
 .btn-top:hover {
-    opacity: 0.8;
+    opacity: 0.9;
+    background-color: rgb(73, 73, 73);
     color: white;
 }
 /* About Me part */
+
+.container-about-me {
+    margin: 80px 0;
+    background-color: white;
+    display: block;
+}
 
 .col-about-me-top {
     margin: 50px 0;
     text-align: center;
 }
 
-.underline-name {
-    text-align: center;
-    margin-top: 10px;
-}
-
 .about-me-name {
     color: rgb(60, 170, 243);
-    margin-top: 10%;
+    margin: 0 0 8px;
+}
+
+.profile {
+    margin: 0 0 8px;
+}
+
+.rounded-circle {
+    width: 350px;
+}
+
+.underline-name {
+    text-align: center;
+    font-size: 18px;
 }
 
 .col-about-me-bottom2 {
-    border-left: 5px solid rgb(60, 170, 243);
+    line-height: 2;
+    padding: 32px;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-left: solid 4px teal;
+    text-align: justify;
+}
+
+.col-about-me-bottom2 > p {
+ margin: 0 0 16px;
 }
