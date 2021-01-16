@@ -168,9 +168,9 @@ p {
 }
 
 .portfolio-img {
+    align-self: center;
     display: flex;
-    margin: 16px;
-    justify-content: center;
+    margin: 1rem;
     border-style: none;
     box-shadow: 0 0 20px #ccc;
 }
@@ -185,6 +185,11 @@ p {
     justify-content: center;
 }
 
+.col-blog {
+    width: auto;
+    margin: 0 1rem;
+}
+
 .card {
     box-shadow: 0 0 20px #ccc;
 }
@@ -196,4 +201,14 @@ p {
 
 .card-footer {
     color: rgb(190, 190, 190);
+}
+
+/* Team */
+
+.row-team {
+    justify-content: center;
+}
+
+.col-team {
+    max-width: 18rem;
 }
