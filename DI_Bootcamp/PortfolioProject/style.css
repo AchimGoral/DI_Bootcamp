@@ -91,7 +91,7 @@ p {
 
 .btn-top {
     color: ivory;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 22px;
     width: 120px;
     height: 50px;
@@ -115,7 +115,7 @@ p {
     padding-top: 5rem;
 }
 
-.row-about-me-bottom {
+.container-about-me {
     justify-content: center;
 }
 
@@ -129,15 +129,17 @@ p {
 }
 
 .img-about-me {
-    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 2rem;
 }
 
 .rounded-circle {
-    width: 350px;
+    width: max-content;
     height: auto;
 }
 
-.underline-name {
+.figure-caption {
     text-align: center;
     font-size: 18px;
 }
@@ -158,6 +160,7 @@ p {
 /* Portfolio */
 
 .container-portfolio img {
+    justify-content: center;
     height: 15rem;
     width: 100%;
 }
@@ -192,6 +195,7 @@ p {
 
 .card {
     box-shadow: 0 0 20px #ccc;
+    margin: 1rem 0;
 }
 
 .card-img-top {
@@ -205,10 +209,71 @@ p {
 
 /* Team */
 
+.container-team {
+    margin-bottom: 8rem;
+}
+
 .row-team {
     justify-content: center;
 }
 
 .col-team {
     max-width: 18rem;
+}
+
+.name {
+    background-color: var(--main-color);
+    color: ivory;
+    text-align: center;
+    border-bottom-left-radius: 50%;
+}
+
+/* Footer */
+
+hr {
+    width: 70vw;
+    margin-left: 15vw;
+}
+
+.container-footer {
+    justify-content: center;
+}
+
+.row-footer {
+    justify-content: center;
+    width: 70vw;
+    margin-left: 15vw;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    margin-top: -4rem;
+    margin-bottom: 1rem;
+}
+
+.fa-logo {
+    margin: 0 0.4rem;
+    font-size: 32px;
+    color: var(--main-color);
+}
+
+.footer-element {
+    margin-bottom: 1rem;
+}
+
+.input-placeholder {
+    font-size: 16px;
+}
+
+.btn-footer {
+    color: ivory;
+    border: none;
+    margin-bottom: 5rem;
+}
+
+.btn-footer:hover {
+    color: ivory;
+    opacity: 0.9;
+    background-color: rgb(73, 73, 73);
 }

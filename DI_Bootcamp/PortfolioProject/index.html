@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Portfolio</title>
   </head>
@@ -14,22 +15,22 @@
       
     <nav class="navbar navbar-dark sticky-top">
         <div class="container-fluid">
-          <a class="navbar-home" href="#">Home</a>
+          <a class="navbar-home" href="#home">Home</a>
           <ul class="nav justify-content-end">
             <li class="nav-item">
-              <a class="nav-link link-top" href="#">About</a>
+              <a class="nav-link link-top" href="#about-me">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link link-top" href="#">Portfolio</a>
+              <a class="nav-link link-top" href="#portfolio">Portfolio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link link-top" href="#">Blog</a>
+              <a class="nav-link link-top" href="#blog">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link link-top" href="#">Team</a>
+              <a class="nav-link link-top" href="#team">Team</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link link-top" href="#">Contact</a>
+                <a class="nav-link link-top" href="#footer">Contact</a>
             </li>
           </ul>
         </div>
@@ -37,9 +38,10 @@
 
       <!-- First container -->
 
+      <section id="home"></section>
       <div class="container-fluid container-top">
           <div class="row row-top">
-              <div class="col-md-8 offset-md-2 col-top">
+              <div class="col-md-8 col-sm-12 offset-md-2 col-top">
                   <h1 class="headline">
                       Hello, Welcome to my official homepage!
                   </h1>
@@ -52,112 +54,155 @@
       </div>
 
       <!-- About Me container -->
+
       <section class="start-about-me">
-        <div class="container-fluid container-about-me">
-          <h1 class="text-center about-me-headline">About me</h1>
-          <div class="row row-about-me-bottom">
-            <div class="col-md-3 offset-md-2 col-about-me-bottom1">
-              <div class="img-about-me">
-                  <img src="/portfolio_setup/images/face1.jpg" class="rounded-circle profile" alt="about me">
+        <section id="about-me">
+          <div class="container-fluid container-about-me">
+            <h1 class="text-center about-me-headline">About me</h1>
+            <div class="row row-about-me-bottom">
+              <div class="col-md-3 col-sm-12 offset-md-2 col-about-me-bottom1">
+                <div class="img-about-me">
+                    <img src="/portfolio_setup/images/face1.jpg" class="rounded-circle profile" alt="about me">
+                </div>
+                <figcaption class="figure-caption">Jun. developer</figcaption>
               </div>
-              <p class="underline-name">
-                  Jun. web developer
-              </p>
-            </div>
-            <div class="col-md-6 col-about-me-bottom2">
-              <h2 class="about-me-name">Chris P. Bacon</h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita dolorem repellendus, quam quia non eveniet reprehenderit error adipisci sint architecto esse sunt natus obcaecati veritatis in accusamus unde? Provident, modi.</p>
+              <div class="col-md-6 col-sm-12 col-about-me-bottom2">
+                <h2 class="about-me-name">Chris P. Bacon</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita dolorem repellendus, quam quia non eveniet reprehenderit error adipisci sint architecto esse sunt natus obcaecati veritatis in accusamus unde? Provident, modi.</p>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
 
         <!-- Portfolio Container -->
 
-        <div class="container-fluid container-portfolio">
-          <h1 class="text-center">Portfolio</h1>
-          <div class="row row-portfolio-img">
-            <div class="col-md-4 col-portfolio-img">
-              <img class="portfolio-img" src="/DI_Bootcamp/PortfolioProject/images/portfolio/port13.png" alt="logo1">
-            </div>
-            <div class="col-md-4 col-portfolio-img">
-              <img class="portfolio-img" src="/DI_Bootcamp/PortfolioProject/images/portfolio/port1.png" alt="logo1">
-            </div>
-            <div class="col-md-4 col-portfolio-img">
-              <img class="portfolio-img" src="/DI_Bootcamp/PortfolioProject/images/portfolio/port6.png" alt="logo1">
-            </div>
-            <div class="col-md-4 col-portfolio-img">
-              <img class="portfolio-img" src="/DI_Bootcamp/PortfolioProject/images/portfolio/port8.png" alt="logo1">
-            </div>
-            <div class="col-md-4 col-portfolio-img">
-              <img class="portfolio-img" src="/DI_Bootcamp/PortfolioProject/images/portfolio/port3.png" alt="logo1">
-            </div>
-            <div class="col-md-4 col-portfolio-img">
-              <img class="portfolio-img" src="/DI_Bootcamp/PortfolioProject/images/portfolio/port7.png" alt="logo1">
+        <section id="portfolio"></section>
+          <div class="container-fluid container-portfolio">
+            <h1 class="text-center">Portfolio</h1>
+            <div class="row row-portfolio-img">
+              <div class="col-md-4 col-sm-6 col-portfolio-img">
+                <img class="portfolio-img" src="/DI_Bootcamp/PortfolioProject/images/portfolio/port13.png" alt="logo1">
+              </div>
+              <div class="col-md-4 col-sm-6 col-portfolio-img">
+                <img class="portfolio-img" src="/DI_Bootcamp/PortfolioProject/images/portfolio/port1.png" alt="logo1">
+              </div>
+              <div class="col-md-4 col-sm-6 col-portfolio-img">
+                <img class="portfolio-img" src="/DI_Bootcamp/PortfolioProject/images/portfolio/port6.png" alt="logo1">
+              </div>
+              <div class="col-md-4 col-sm-6 col-portfolio-img">
+                <img class="portfolio-img" src="/DI_Bootcamp/PortfolioProject/images/portfolio/port8.png" alt="logo1">
+              </div>
+              <div class="col-md-4 col-sm-6 col-portfolio-img">
+                <img class="portfolio-img" src="/DI_Bootcamp/PortfolioProject/images/portfolio/port3.png" alt="logo1">
+              </div>
+              <div class="col-md-4 col-sm-6 col-portfolio-img">
+                <img class="portfolio-img" src="/DI_Bootcamp/PortfolioProject/images/portfolio/port7.png" alt="logo1">
+              </div>
             </div>
           </div>
-        </div>
 
         <!-- Blog -->
 
-        <div class="container-fluid container-blog">
-          <h1 class="text-center">Blog</h1>
-          <div class="row row-blog">
-            <div class="col-md-4 col-blog">
-              <div class="card" style="width: 21rem;">
-                <img src="images/blog/polit.jpg" class="card-img-top" alt="img-card">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <div class="card-footer">
-                  <a href="#" class="card-link">Read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-blog">
-              <div class="card" style="width: 21rem;">
-                <img src="images/blog/images.jpg" class="card-img-top" alt="img-card">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <div class="card-footer">
-                  <a href="#" class="card-link">Read more</a>
+        <section id="blog"></section>
+          <div class="container-fluid container-blog">
+            <h1 class="text-center">Blog</h1>
+            <div class="row row-blog">
+              <div class="col-md-4 col-sm-12 col-blog">
+                <div class="card" style="width: 21rem;">
+                  <img src="images/blog/polit.jpg" class="card-img-top" alt="img-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#" class="card-link">Read more</a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-4 col-blog">
-              <div class="card" style="width: 21rem;">
-                <img src="images/blog/imag2.jpg" class="card-img-top" alt="img-card">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="col-md-4 col-sm-12 col-blog">
+                <div class="card" style="width: 21rem;">
+                  <img src="images/blog/images.jpg" class="card-img-top" alt="img-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#" class="card-link">Read more</a>
+                  </div>
                 </div>
-                <div class="card-footer">
-                  <a href="#" class="card-link">Read more</a>
+              </div>
+              <div class="col-md-4 col-sm-12 col-blog">
+                <div class="card" style="width: 21rem;">
+                  <img src="images/blog/imag2.jpg" class="card-img-top" alt="img-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#" class="card-link">Read more</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="container-fluid container-team">
-          <h1 class="text-center">Our team</h1>
-          <div class="row row-team">
-            <div class="col-md-3 col-team">
-              <img src="images/face1.jpg" class="img-fluid" alt="team">
-            </div>
-            <div class="col-md-3 col-team">
-              <img src="images/face2.jpg" class="img-fluid" alt="team">
-            </div>
-            <div class="col-md-3 col-team">
-              <img src="images/face3.jpg" class="img-fluid" alt="team">
-            </div>
-            <div class="col-md-3 col-team">
-              <img src="images/face1.jpg" class="img-fluid" alt="team">
+        <!-- Team -->
+
+        <section id="team"></section>
+          <div class="container-fluid container-team">
+            <h1 class="text-center">Our team</h1>
+            <div class="row row-team">
+              <div class="col-md-3 col-sm-6 col-team">
+                <img src="images/face1.jpg" class="img-fluid" alt="team">
+                <div class="name">Chris P. Bacon</div>
+                <span class="text-muted">Manager</span>
+              </div>
+              <div class="col-md-3 col-sm-6 col-team">
+                <img src="images/face2.jpg" class="img-fluid" alt="team">
+                <div class="name">Robyn Banks</div>
+                <span class="text-muted">Engineer</span>
+              </div>
+              <div class="col-md-3 col-sm-6 col-team">
+                <img src="images/face3.jpg" class="img-fluid" alt="team">
+                <div class="name">Earl E. Bird</div>
+                <span class="text-muted">Coffee-maker</span>
+              </div>
+              <div class="col-md-3 col-sm-6 col-team">
+                <img src="images/face1.jpg" class="img-fluid" alt="team">
+                <div class="name">Kevin Bacon</div>
+                <span class="text-muted">Chris twin brother</span>
+              </div>
             </div>
           </div>
-        </div>
+
+        <!-- Footer with email -->
+
+        <hr>
+        <section id="footer"></section>
+          <div class="container-fluid container-footer">
+            <div class="row row-footer">
+              <div class="col-md-4 col-sm-12 col-footer-left">
+                <h1 class="text-center">Get in touch</h1>
+                <div class="icons">
+                  <a href="https://github.com/"><i class="fa fa-github fa-logo"></i></a>
+                  <a href="https://www.linkedin.com/"><i class="fa fa-linkedin-square fa-logo"></i></a>
+                  <a href="https://www.facebook.com/"><i class="fa fa-facebook-square fa-logo"></i></a>
+                </div>
+              </div>
+              <div class="col-md-8 col-sm-12 col-footer-right">
+                <form>
+                  <div class="form-group form-bottom">
+                    <input class="form-control form-control-lg footer-element input-placeholder" type="text" placeholder="Your Name">
+                    <input class="form-control form-control-lg footer-element input-placeholder" type="email" placeholder="Your Email">
+                    <textarea class="form-control form control-lg footer-element" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <div class="d-grid gap-2">
+                      <button class="btn btn-primary btn-footer footer-element" type="submit">Send</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         
       </section>
 
