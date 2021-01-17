@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>We hire</title>
+  </head>
+  <body>
+
+    <!-- Navbar -->
+
+    <section class="top">
+        <section class="navigation">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                <a class="navbar-brand" href="#">We Hire</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Find a job</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Post a job</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+                </div>
+            </nav>
+        </section>
+
+        <!-- Top Part -->
+
+        <section class="search">
+            <div class="container-fluid container-search">
+                <div class="row row-search">
+                    <h1 class="headline-search">
+                        Build your Future
+                    </h1>
+                    <h4>We offer <span class="offer">3297</span> job vacancies right now</h4>
+                </div>
+                <div class="row row-search-bottom">
+                    <div class="col-md-3">
+                      <input type="text" class="form-control search-bar" placeholder="Job title, skills or company" aria-label="Search">
+                    </div>
+                    <div class="col-md-3">
+                      <input class="form-control search-bar" list="datalistOptions" id="exampleDataList" placeholder="City or state">
+                      <datalist id="datalistOptions">
+                        <option value="San Francisco">
+                        <option value="New York">
+                        <option value="Seattle">
+                        <option value="Los Angeles">
+                        <option value="Chicago">
+                      </datalist>
+                    </div>
+                    <div class="col-auto search-bar">
+                      <button type="button" class="btn">Search</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="items-selection">
+        <div class="container-fluid container-items-selection">
+            <div class="row row-items-selection">
+                <div class="col-2 col-items-selection">
+                    <a class="items-link" href="#">
+                        <i class="fa fa-plus-square fa-items"></i>
+                        <p class="items-text">Healthcare</p>
+                    </a>
+                    <hr class="items-underline">
+                </div>
+                <div class="col-2 col-items-selection">
+                    <a class="items-link" href="#">
+                        <i class="	fa fa-area-chart fa-items"></i>
+                        <p class="items-text">Analytics</p>
+                    </a>
+                    <hr class="items-underline">
+                </div>
+                <div class="col-2 col-items-selection">
+                    <a class="items-link" href="#">
+                        <i class="fa fa-bitcoin fa-items"></i>
+                        <p class="items-text">Financial</p>
+                    </a>
+                    <hr class="items-underline">
+                </div>
+                <div class="col-2 col-items-selection">
+                    <a class="items-link" href="#">
+                        <i class="fa fa-ship fa-items"></i>
+                        <p class="items-text">Transportation</p>
+                    </a>
+                    <hr class="items-underline">
+                </div>
+                <div class="col-2 col-items-selection">
+                    <a class="items-link" href="#">
+                        <i class="fa fa-balance-scale fa-items"></i>
+                        <p class="items-text">Jura</p>
+                    </a>
+                    <hr class="items-underline">
+                </div>
+                <div class="col-2 col-items-selection">
+                    <a class="items-link" href="#">
+                        <i class="fa fa-bathtub fa-items"></i>
+                        <p class="items-text">Instalation</p>
+                    </a>
+                    <hr class="items-underline">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job list -->
+
+    <section class="job-list">
+        <div class="container-fluid container-job-list">
+            <div class="row row-job-list">
+                <h2 class="job-list-headline">
+                    Latest jobs
+                </h2>
+                <hr class="underline"><br>
+            </div>
+            <div class="col col-table">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Company</th>
+                        <th scope="col">Job Vacancy</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Salary</th>
+                        <th scope="col">Employment</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>12.01.2021</td>
+                        <td>Daimler [logo]</td>
+                        <td>Mechanical engineer</td>
+                        <td>Boston</td>
+                        <td>$ 5.500</td>
+                        <td>Full-time</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>10.01.2021</td>
+                        <td>Tesla [logo]</td>
+                        <td>Developer</td>
+                        <td>San Jose</td>
+                        <td>$ ---</td>
+                        <td>Freelance</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>09.01.2021</td>
+                        <td>JP Morgan [logo]</td>
+                        <td>Analyst</td>
+                        <td>New York</td>
+                        <td>$ 15.000</td>
+                        <td>Full-time</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col col-btn">
+                <button type="button" class="btn btn-search">Search more</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Card section bottom -->
+
+    <section class="cards-bottom">
+        <div class="container-fluid container-cards-bottom">
+            <div class="row row-cards-headline">
+                <h2 class="job-list-headline">
+                    Why people choose us
+                </h2>
+                <hr class="underline"><br>
+            </div>
+            <div class="row row-cards-bottom">
+                <div class="col-md-4 col-cards-bottom">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h4 class="card-title"><i class="fa fa-check-square-o fa-cards" aria-hidden="true"></i> Verified employees</h4>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-4 col-cards-bottom">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h4 class="card-title"><i class="fa fa-bar-chart fa-cards" aria-hidden="true"></i> Demand Vacancies</h4>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-4 col-cards-bottom">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h4 class="card-title"><i class="fa fa-book fa-cards" aria-hidden="true"></i>  Employment blog</h4>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </body>
+</html>

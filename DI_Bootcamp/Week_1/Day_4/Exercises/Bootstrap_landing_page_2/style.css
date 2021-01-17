@@ -1,0 +1,145 @@
+:root {
+    --main-color: rgb(77, 235, 29);
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display:block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    text-transform: capitalize;
+    text-align: center;
+}
+
+h1,h2 {
+    padding: 3em 0 1em 0;
+}
+
+.btn {
+    transition: 0.1s ease-in-out;
+    border-color: var(--main-color);
+    color: var(--main-color);
+}
+
+.btn:hover {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    color: white;
+}
+
+.top {
+    background-image: url("img/job-4131482_1920.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 65vh;
+}
+
+/* Navbar */
+
+.navbar-brand {
+    margin-left: 5em;
+}
+
+.nav-link {
+    margin: 0 1.5rem;
+    transition: 0.1s ease-in-out;
+}
+
+.nav-link:hover {
+    text-decoration: underline var(--main-color);
+}
+
+/* Search */
+
+.offer {
+    color: var(--main-color);
+}
+
+.row-search-bottom {
+    justify-content: center;
+    margin: 1em 0;
+}
+
+.search-bar {
+    margin: 5px 0;
+}
+
+/* Items */
+
+.col-items-selection {
+    background-color: var(--main-color);
+    border-left: 1px solid grey;
+}
+
+.items-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+}
+
+.fa-items {
+    font-size: 40px;
+    margin: 1em 2em;
+}
+
+.items-underline {
+    margin: 1em auto;
+    width: 50%;
+}
+
+/* Job list */
+
+.underline {
+    width: 40px;
+    color: black;
+    margin: 0 auto;
+}
+
+.table {
+    width: 75vw;
+    margin: 0 auto;
+}
+
+.col-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-search {
+    margin: 5em 0;
+    background-color: var(--main-color);
+}
+
+.btn-search:hover {
+    color:white;
+    background-color: grey;
+    border-color: grey;
+}
+
+.btn-search {
+    color: black;
+}
+
+/* Cards */
+
+.row-cards-bottom {
+margin-bottom: 5em;
+}
+
+.col-cards-bottom {
+    display: flex;
+    justify-content: center;
+    margin: 1em auto;
+}
+
+.fa-cards {
+    font-size: 32px;
+    color: var(--main-color);
+}
