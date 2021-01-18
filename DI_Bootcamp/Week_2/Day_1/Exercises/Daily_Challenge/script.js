@@ -2,6 +2,10 @@ let fruits = ["Banana", "Apples", "Oranges", "Blueberries"];
 
 console.log(fruits);
 
+fruits.shift();
+
+console.log(fruits);
+
 fruits.sort();
 
 console.log(fruits);

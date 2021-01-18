@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 :root {
-    --main-color: rgb(249, 115, 0); 
+    --main-color: #202B9E;
+    --main-side-1: #878DFF;
+    --main-side-2: #5057EB;
+    --complementary-color: #bd990a;
+    --complementary-side: #EBD276;
 }
 
 body {
@@ -10,13 +14,13 @@ body {
     display: block;
 }
 
-html,h1,h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5,h6 {
     font-family: "Raleway";
-    color: var(--main-color);
+    color: var(--complementary-color);
 }
 
 p {
-    color: slategrey;
+    color: darkslategrey;
 }
 
 .text-center {
@@ -27,12 +31,17 @@ p {
 /* Navbar items */
 
 .navbar-home {
+    margin-left: 5em;
     padding-top: .5rem;
     padding-bottom: .5rem;
     text-decoration: none;
-    color: white;
+    color: var(--complementary-side);
     font-weight: 400;
     font-size: 22px;
+}
+
+.navbar-home:hover {
+    color: ivory;
 }
 
 .link-top {
@@ -62,10 +71,10 @@ p {
   
 .container-top::after {
     content: "";
-    background: url('images/headerback.jpg');
+    background: url('images/header.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.28;
+    opacity: 0.6;
     top: 0;
     left: 0;
     bottom: 0;
@@ -82,9 +91,9 @@ p {
 }
 
 .text-top {
-    font-size: 20px;
-    font-weight: 450;
-    color: slategray;
+    font-size: 24px;
+    font-weight: 500;
+    color: darkslategrey;
     padding-right: 20vw;
     text-align: justify;
 }
@@ -92,9 +101,9 @@ p {
 .btn-top {
     color: ivory;
     font-weight: 300;
-    font-size: 22px;
-    width: 120px;
-    height: 50px;
+    font-size: 20px;
+    width: max-content;
+    height: max-content;
 }
 
 .btn-top:hover {
@@ -120,18 +129,17 @@ p {
 }
 
 .about-me-name {
-    color: teal;
+    color: var(--main-side-2);
     margin: 0 0 8px;
 }
 
 .profile {
-    margin: 0 0 8px;
+    margin: 0 0 1em;
 }
 
 .img-about-me {
     display: flex;
     justify-content: center;
-    margin: 2rem 2rem;
 }
 
 .rounded-circle {
@@ -149,12 +157,12 @@ p {
     padding: 32px;
     margin-top: 0;
     margin-bottom: 1rem;
-    border-left: solid 4px teal;
-    text-align: justify;
+    text-align: left;
 }
 
-.col-about-me-bottom2 > p {
-    margin: 0 0 16px;
+.about-me-article {
+    padding: 1em 0;
+    border-bottom: 2px solid var(--main-color);
 }
 
 /* Portfolio */
@@ -178,17 +186,17 @@ p {
     box-shadow: 0 0 20px #ccc;
 }
 
-/* Blog */
+/* Projects */
 
-.container-blog img {
+.container-projects img {
     height: 12rem;
     width: 100%;
 }
-.row-blog {
+.row-projects {
     justify-content: center;
 }
 
-.col-blog {
+.col-projects {
     width: auto;
     margin: 0 1rem;
 }
@@ -204,7 +212,16 @@ p {
 }
 
 .card-footer {
-    color: rgb(190, 190, 190);
+    background-color: var(--main-side-2);
+}
+
+.card-link {
+    color: ivory;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    color: var(--complementary-side);
 }
 
 /* Team */
