@@ -1,0 +1,68 @@
+:root {
+    --main-color: #202B9E;
+    --main-side-1: #878DFF;
+    --main-side-2: #5057EB;
+    --complementary-color: #bd990a;
+    --complementary-side: #EBD276;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.5;
+    box-sizing: border-box;
+    display: block;
+    background-color: rgb(218, 218, 218);
+}
+
+.headline {
+    text-align: left;
+    margin-left: 10vw;
+    margin-top: 8em;
+    font-size: 36px;
+}
+
+.underline {
+    width: 80vw;
+}
+
+/* Navbar */
+
+.navbar-brand {
+    margin-left: 10vw;
+    font-size: 36px;
+}
+
+.head-deco {
+    color: blue;
+}
+
+.nav-link-change {
+    text-decoration: none;
+    color: black;
+    transition: 0.2s ease-in-out;
+}
+
+.nav-link-change:hover {
+    background-color: lightskyblue;
+    color: white;
+}
+
+/* Top section */
+
+.container-top-section {
+    margin-top: 8em;
+}
+
+.figure-img {
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Work section */
+
+.work-img {
+    height: 300px;
+}
+
+/* Reference section */
