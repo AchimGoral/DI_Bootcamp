@@ -15,15 +15,25 @@ let newDog = "Chihuahua";
 
 console.log(newDog.length);
 
+console.log(newDog.toUpperCase());
+
+console.log(newDog.toLowerCase());
+
+if (newDog == "Chihuahua") {
+    console.log('I love Chihuahua, it’s my favorite dog breed');
+} else {
+    console.log('I dont care, I prefer cats')
+}
+
 // Exercise_3
 
-// let z = prompt("Choose your integer");
+let z = prompt("Choose your integer");
 
-// if (z%2 == 0) {
-//     alert(`${z} is an even number`);
-// } else {
-//     alert(`${z} is an odd number`);
-// }
+if (z%2 == 0) {
+    alert(`${z} is an even number`);
+} else {
+    alert(`${z} is an odd number`);
+}
 
 // Exercise_4
 
