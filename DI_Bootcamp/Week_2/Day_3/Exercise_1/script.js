@@ -122,8 +122,8 @@ let names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
 let sortedNames = names.sort();
 let newList = "";
 
-for (const i in names) {
-    newList += names[i][0];
+for (const i in sortedNames) {
+    newList += sortedNames[i][0];
 }
 
 console.log(newList);
