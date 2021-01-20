@@ -1,13 +1,11 @@
 // Daily_Challenge
-let list = "";
 
-let i, j = 0;
+let stars;
 
-for (i = 0; i < 3; i++) {
-    for (j = 0; j < 2; j++) {
-        list += "*";
-        console.log(list);
+for (let i = 0; i <= 6; i++) {
+    for (let j = 0; j <= i; j++) {
+        stars = "*".repeat(j);
+        // console.log(stars);
     }
+    console.log(stars);
 }
-
-// I don't know if that was requested, but it looks similar

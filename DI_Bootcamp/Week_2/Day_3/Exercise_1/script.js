@@ -111,6 +111,8 @@ for (const i in family) {
     console.log(i);
 }
 
+console.log("-----------");
+
 for (const j in family) {
     console.log(family[j]);
 }
