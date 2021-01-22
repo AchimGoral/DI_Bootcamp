@@ -141,7 +141,7 @@ console.log(tips());
 function hotel_cost() {
     let nightsHotel = prompt(`How many nights do you want to stay?`);
 
-    while(nightsHotel == isNaN || nightsHotel.length == 0) {
+    while(isNaN(nightsHotel) == true) {
         nightsHotel = prompt(`How many nights do you want to stay?`);
     }
 
@@ -155,15 +155,24 @@ function hotel_cost() {
 
 function plane_ride_costs() {
     let place = prompt(`Where do you want to go?`);
+
+    while(isNaN(place) == false) {
+        place = prompt(`Where do you want to go?`);
+    }
+
     let costsPlane = 0;
     if (place == "London") {
         costsPlane = 183;
     } else if (place == "Paris") {
         costsPlane = 220;
-    } else if (typeof(place) === "string") {
+    } else if (typeof(place) == "string") {
         costsPlane = 300;
     } else {
         place = prompt(`Where do you want to go?`);
+
+        while(isNaN(place) == false) {
+            place = prompt(`Where do you want to go?`);
+        }
     }
 
     return costsPlane;
@@ -173,6 +182,11 @@ function plane_ride_costs() {
 
 function rental_car_costs() {
     let carDays = prompt(`How many days you want the car?`);
+
+    while(isNaN(carDays) == true) {
+        carDays = prompt(`How many days you want the car?`);
+    }
+
     let carDaysInt = parseInt(carDays);
     let dailyCost = carDaysInt*40;
     if(carDaysInt > 10) {
@@ -188,8 +202,10 @@ function total_vacation_cost () {
     let hotel_cost_final = hotel_cost();
     let plane_cost_final = plane_ride_costs();
     let rental_cost_final = rental_car_costs();
+    let sum_costs = hotel_cost_final + plane_cost_final + rental_cost_final;
 
-    let finalCosts = console.log(`The car cost: ${rental_cost_final}, the hotel cost: ${hotel_cost_final}, the plane tickets cost: ${plane_cost_final}.`);
+    let finalCosts = console.log(`The car cost: ${rental_cost_final}, the hotel cost: ${hotel_cost_final}, the plane tickets cost: ${plane_cost_final}.\nYou're total costs are: ${sum_costs}`);
+    
 
     return finalCosts;
 }
