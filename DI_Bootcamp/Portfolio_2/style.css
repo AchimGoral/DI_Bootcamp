@@ -1,7 +1,7 @@
 :root {
-    --main-color: #202B9E;
-    --main-side-1: #878DFF;
-    --main-side-2: #5057EB;
+    --main-color: #040c5f;
+    --main-side-1: #4d4d4d;
+    --main-side-2: #e2e2e2;
     --complementary-color: #bd990a;
     --complementary-side: #EBD276;
 }
@@ -11,7 +11,8 @@ body {
     line-height: 1.5;
     box-sizing: border-box;
     display: block;
-    background-color: rgb(218, 218, 218);
+    background-color: var(--main-side-1);
+    color: var(--main-side-2);
 }
 
 .headline {
@@ -27,23 +28,24 @@ body {
 
 /* Navbar */
 
-.navbar-brand {
+.logo-text {
     margin-left: 10vw;
     font-size: 36px;
+    color: var(--main-side-2);
 }
 
 .head-deco {
-    color: blue;
+    color: var(--main-color);
 }
 
 .nav-link-change {
+    color: var(--complementary-side);
     text-decoration: none;
-    color: black;
     transition: 0.2s ease-in-out;
 }
 
 .nav-link-change:hover {
-    background-color: lightskyblue;
+    background-color: var(--complementary-color);
     color: white;
 }
 
