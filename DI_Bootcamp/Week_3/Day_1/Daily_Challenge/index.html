@@ -32,15 +32,15 @@
     <script>
         let planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"];
 
-        let colorList = ["brown", "yellow", "blue", "red", "grey", "purple", "darkblue", "orange", "black"]
+        let colorList = ["brown", "yellow", "blue", "red", "grey", "purple", "darkblue", "orange", "black"];
 
         for (let i = 0; i < planets.length; i++) {
             let newDiv = document.createElement("div");
             let newContent = document.createTextNode(planets[i]);
             newDiv.appendChild(newContent);
+            newDiv.classList.add(`planet`, `${planets[i].toLocaleLowerCase()}`);
+            newDiv.style.backgroundColor = colorList[i];
             document.body.appendChild(newDiv);
-            let className = document.getElementsByTagName("div")[i].setAttribute("class", `planet planet${i}`);
-            let backgroundColor = document.getElementsByClassName("planet")[i].style.backgroundColor = colorList[i];
         }
 
     </script>
