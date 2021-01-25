@@ -31,7 +31,6 @@ function paragraph_delete (event) {
 }
 
 let newTable = document.createElement("table");
-
 document.body.firstElementChild.appendChild(newTable);
 
 let input_left = document.body.children[1].children[1];
@@ -39,13 +38,13 @@ let input_left = document.body.children[1].children[1];
 let input_right = document.body.children[1].children[3];
 
 input_left.onchange = function() {
-    let newRow = document.createElement("tr");
-    newTable.appendChild(newRow);
-    newRow.innerHTML = input_left.value;
+    let row = newTable.insertRow(0);
+    let cell1 = row.insertCell(0);
+    cell1.innerHTML = input_left.value;
 };
 
 input_right.onchange = function() {
-    let newRow = document.createElement("tr");
-    newTable.appendChild(newRow);
-    newRow.innerHTML = input_right.value;
+    let row = newTable.insertRow();
+    let cell2 = row.insertCell(0);
+    cell2.innerHTML = input_right.value;
 };
