@@ -27,7 +27,16 @@ function paragraph_delete (event) {
     event.target.style.display = "none";
 }
 
-let input_left = document.body.children[1].children[1];
+let newTable = document.createElement("table");
+let newRow = document.createElement("tr");
+newTable.appendChild(newRow);
 
-let input_right = document.body.children[1].children[3];
+document.body.firstElementChild.appendChild(newTable);
 
+let input_left = document.forms.userName;
+
+let input_right = document.forms.questionToUser;
+
+input_left.oninput = function () {
+    
+}
