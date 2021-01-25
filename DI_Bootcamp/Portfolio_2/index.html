@@ -15,23 +15,23 @@
 
       <!-- Navbar -->
       <section id="home"></section>
-      <nav class="navbar navbar-light">
+      <nav class="navbar sticky-top navbar-settings">
         <div class="container-fluid">
-          <div class="row row-nav">
-            <div class="col col-nav">
-              <ul class="nav nav-list-items">
-                <li class="nav-item">
-                  <a class="nav-link nav-link-change"href="#work-section">My Work</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link nav-link-change" href="#reference-section">CV</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link nav-link-change" href="#connect-section">Connect</a>
-                </li>
-              </ul>
-            </div>
+          <div class="icons">
+            <a href="https://github.com/"><i class="fa fa-github fa-logo"></i></a>
+            <a href="https://www.linkedin.com/"><i class="fa fa-linkedin-square fa-logo"></i></a>
           </div>
+          <ul class="nav nav-list-items">
+            <li class="nav-item">
+              <a class="nav-link nav-link-change"href="#work-section">Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-change" href="#blog-section">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-change" href="#connect-section">Connect</a>
+            </li>
+          </ul>
         </div>
       </nav>
 
@@ -47,7 +47,8 @@
                 </div>
                 <div class="col-sm-12 col-md-5 col-lg-6 offset-md-1 offset-lg-1 col-top-section">          
                   <h1 class="logo-text" href="#"><span class="head-deco">&#60;&#62; Achim</span> Goral <span class="head-deco">&#60;/&#62;</h1>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                  <p class="top-section-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                  <button type="button" class="btn btn-website">Download CV</button>
                 </div>
             </div>
         </div>
@@ -68,9 +69,11 @@
                       </figure>
                 </div>
                 <div class="col-sm-12 col-md-5 col-lg-6 offset-md-1 offset-lg-1 col-work-section">
+                  <h2 class="work-headline-items">Project</h2>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere cupiditate illo pariatur iusto, necessitatibus eaque quidem. Quia distinctio autem sint quo illo qui. Vero harum eaque aperiam, sequi deleniti dolores!
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ullam repellendus consectetur aliquam sunt. Aspernatur quis odio esse quam optio quos accusantium ratione maiores quas! Et aliquid aut consectetur nemo.
                     </p>
+                    <button type="button" class="btn btn-website">Read more</button>
                 </div>
             </div>
         </div>
@@ -82,9 +85,11 @@
                       </figure>
                 </div>
                 <div class="col-sm-12 col-md-5 col-lg-6 offset-md-1 offset-lg-1 order-md-1 col-work-section">
+                  <h2 class="work-headline-items">Project</h2>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere cupiditate illo pariatur iusto, necessitatibus eaque quidem. Quia distinctio autem sint quo illo qui. Vero harum eaque aperiam, sequi deleniti dolores!
                     Loreipsum dolor sit amet consectetur adipisicing elit. Quasi ullam repellendus consectetur aliquam sunt. Aspernatur quis odio esse quam optio quos accusantium ratione maiores quas! Et aliquid aut consectetur nemo.
                     </p>
+                    <button type="button" class="btn btn-website">Read more</button>
                 </div>
             </div>
         </div>
@@ -96,21 +101,63 @@
                       </figure>
                 </div>
                 <div class="col-sm-12 col-md-5 col-lg-6 offset-md-1 offset-lg-1 col-work-section">
+                  <h2 class="work-headline-items">Project</h2>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere cupiditate illo pariatur iusto, necessitatibus eaque quidem. Quia distinctio autem sint quo illo qui. Vero harum eaque aperiam, sequi deleniti dolores!
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ullam repellendus consectetur aliquam sunt. Aspernatur quis odio esse quam optio quos accusantium ratione maiores quas! Et aliquid aut consectetur nemo.
                     </p>
+                    <button type="button" class="btn btn-website">Read more</button>
                 </div>
             </div>
         </div>
       </section>
 
-      <!-- Reference -->
+      <!-- Blog -->
 
-      <section id="reference-section">
+      <section id="blog-section">
         <div class="headline">
-            <h1 class="reference-headline">Reference</h1>
+            <h1 class="blog-headline">Blog</h1>
             <hr class="underline">
         </div>
+          <div class="container-fluid container-projects">
+            <div class="row row-projects">
+              <div class="col-md-4 col-sm-12 col-projects">
+                <div class="card" style="width: 21rem;">
+                  <img src="img/Bewerbung_Foto_Achim_Goral.png" class="card-img-top" alt="img-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#" class="card-link">Read more</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 col-projects">
+                <div class="card" style="width: 21rem;">
+                  <img src="img/Bewerbung_Foto_Achim_Goral.png" class="card-img-top" alt="img-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#" class="card-link">Read more</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 col-projects">
+                <div class="card" style="width: 21rem;">
+                  <img src="img/Bewerbung_Foto_Achim_Goral.png" class="card-img-top" alt="img-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#" class="card-link">Read more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
       </section>
 
 

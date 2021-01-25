@@ -33,9 +33,9 @@ function paragraph_delete (event) {
 let newTable = document.createElement("table");
 document.body.firstElementChild.appendChild(newTable);
 
-let input_left = document.body.children[1].children[1];
+let input_left = document.forms[0].userName;
 
-let input_right = document.body.children[1].children[3];
+let input_right = document.forms[0].questionToUser;
 
 input_left.onchange = function() {
     let row = newTable.insertRow(0);
