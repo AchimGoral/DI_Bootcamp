@@ -15,9 +15,12 @@ h2_delete.addEventListener("click", delete_h2);
 function delete_h2 (event) {
     event.target.remove();
 }
-let h1_randomSize = document.body.firstElementChild.firstElementChild.textContent;
 
-// Font size
+let size = Math.floor(Math.random() * 101).toString();
+let pixel = "px";
+let sizeString = size.concat(pixel);
+
+document.body.firstElementChild.firstElementChild.style.fontSize = sizeString;
 
 let firstParagraph = document.body.firstElementChild.children[2];
 
@@ -37,6 +40,7 @@ let input_left = document.forms.userName;
 
 let input_right = document.forms.questionToUser;
 
-input_left.oninput = function () {
-    
-}
+// input_left.addEventListener("input", addText);
+
+// function addText () {
+// }
