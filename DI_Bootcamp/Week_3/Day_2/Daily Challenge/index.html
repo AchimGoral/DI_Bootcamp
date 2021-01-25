@@ -3,15 +3,51 @@
  <head>
   <meta charset="utf-8" />
   <title>Challenge: Mad Libs</title>
+  <style>
+      body {
+          font-family: Arial, Helvetica, sans-serif;
+      }
+
+      ul {
+          background-color: rgb(184, 184, 184);
+          width: max-content;
+          padding: 10px;
+          border: 1px solid rgb(0, 0, 0);
+      }
+
+      li {
+          margin: 10px;
+          list-style-type: none;
+      }
+      input {
+          display: block;
+          margin: 5px 0;
+          outline: none;
+      }
+
+      #lib-button {
+          width: 150px;
+          height: max-content;
+          font-size: 25px;
+          border: none;
+          background-color: rgb(161, 161, 161);
+          transition: 0.1s ease-in-out;
+      }
+
+      #lib-button:hover {
+          background-color: rgb(82, 82, 82);
+      }
+  </style>
  </head>
  <body>
 
     <h1>Mad Libs</h1>
 
     <ul>
-      <li>Noun: <input type="text" id="noun"></li>
-      <li>Adjective: <input type="text" id="adjective"></li>
-      <li>Someone's Name: <input type="text" id="person"></li>
+        <li>Someone's Name: <input type="text" id="person"></li>
+        <li>Noun: <input type="text" id="noun"></li>
+        <li>Adjective 1: <input type="text" id="adjective_first"></li>
+        <li>Adjective 2: <input type="text" id="adjective_second"></li>
     </ul>
 
     <button id="lib-button">Lib it!</button>
@@ -22,12 +58,13 @@
 
     <script>
         let libButton = document.getElementById('lib-button');
-        let noun = document.getElementById('noun');
-        let adjective = document.getElementById('adjective');
-        let person = document.getElementById('person');
+        let nounValue = document.getElementById('noun');
+        let adjectiveValue_1 = document.getElementById('adjective_first');
+        let adjectiveValue_2 = document.getElementById('adjective_second');
+        let personValue = document.getElementById('person');
         let libIt = function() {
             let storyDiv = document.getElementById("story");
-            storyDiv.innerHTML = "??Your story here";
+            storyDiv.innerHTML = `${personValue.value} left his/her ${nounValue.value} and went to Developers Institute to become a ${adjectiveValue_1.value} programmer. Little did ${personValue.value} know that the course was super ${adjectiveValue_2.value}.`;
         };
         libButton.addEventListener('click', libIt);
     </script>
