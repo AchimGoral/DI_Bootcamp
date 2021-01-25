@@ -31,16 +31,21 @@ function paragraph_delete (event) {
 }
 
 let newTable = document.createElement("table");
-let newRow = document.createElement("tr");
-newTable.appendChild(newRow);
 
 document.body.firstElementChild.appendChild(newTable);
 
-let input_left = document.forms.userName;
+let input_left = document.body.children[1].children[1];
 
-let input_right = document.forms.questionToUser;
+let input_right = document.body.children[1].children[3];
 
-// input_left.addEventListener("input", addText);
+input_left.onchange = function() {
+    let newRow = document.createElement("tr");
+    newTable.appendChild(newRow);
+    newRow.innerHTML = input_left.value;
+};
 
-// function addText () {
-// }
+input_right.onchange = function() {
+    let newRow = document.createElement("tr");
+    newTable.appendChild(newRow);
+    newRow.innerHTML = input_right.value;
+};
