@@ -17,10 +17,8 @@ function delete_h2 (event) {
 }
 
 let size = Math.floor(Math.random() * 101).toString();
-let pixel = "px";
-let sizeString = size.concat(pixel);
 
-document.body.firstElementChild.firstElementChild.style.fontSize = sizeString;
+document.body.firstElementChild.firstElementChild.style.fontSize = size + "px";
 
 let firstParagraph = document.body.firstElementChild.children[2];
 
