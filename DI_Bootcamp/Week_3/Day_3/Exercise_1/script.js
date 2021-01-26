@@ -3,7 +3,7 @@ let animate = document.getElementById('animate');
 
 function myMove() {
     let position = 0;
-    let interval = setInterval(makeItMove,5);
+    let interval = setInterval(makeItMove,10);
     function makeItMove() {
       if (position == 350) {
         clearInterval(interval);
