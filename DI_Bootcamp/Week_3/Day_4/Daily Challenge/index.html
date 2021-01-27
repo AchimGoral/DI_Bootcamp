@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Challenge</title>
+</head>
+<body>
+    <script>
+        let array = [' ', ' ', ' ', ' ', '*', ' ', ' ', ' ', ' ',];
+        let star = '*';
+        let iter = 5;
+        let start = 4;
+        let counter = 1;
+        for (let i = 1; i <= iter; i++) {
+            console.log(array.join(''));
+            for (let j = i; j <= i; j++) {
+                array[start-counter] = star;
+                array[start+counter] = star;
+                counter++;
+            }
+        }
+    </script>
+</body>
+</html>
