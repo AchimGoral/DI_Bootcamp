@@ -8,14 +8,14 @@ let colorList = ['blue', 'red', 'green', 'rgb(131, 131, 248)', 'crimson', 'lawng
 
 for (let j = 0; j < colorList.length; j++) {
     let divContainer = document.createElement('div');
-document.getElementById('sidebar').appendChild(divContainer);
-divContainer.style.backgroundColor = colorList[j];
-}
+    document.getElementById('sidebar').appendChild(divContainer);
+    divContainer.style.backgroundColor = colorList[j];
+} // Adding all the colors from colorList each to the created elements
 
 let colorDiv = null; // Empty variable for color in div
 let mousedown = false; // Boolean for mousedown event
-let sidebar_color; // initialising element for loop
-let grid_fill; // initialising element for loop
+let sidebar_color = 0; // initialising element for loop
+let grid_fill = 0; // initialising element for loop
 let clear = document.getElementById('button-reset');
 let sidebar_colors = document.querySelectorAll('#sidebar > div');
 let grid_fills = document.querySelectorAll('#gridPad > div');
