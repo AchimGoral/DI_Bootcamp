@@ -2,7 +2,7 @@
 for (let i = 0; i < (120*48); i++) {
     let divContainer = document.createElement('div');
     document.getElementById('gridPad').appendChild(divContainer);
-}           // Creating the grid-layout with a field size of 80*48
+}           // Creating the grid-layout with a field size of 120*48
 
 let colorList = ['blue', 'red', 'green', 'rgb(131, 131, 248)', 'crimson', 'lawngreen', 'purple', 'saddlebrown', 'sandybrown', 'springgreen', 'turquoise', 'yellow', 'violet', 'orange', 'indigo', 'khaki', 'lightcoral', 'lightgrey', 'rgb(82, 82, 82)', 'black', 'cornsilk'];
 
