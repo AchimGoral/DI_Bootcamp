@@ -5,17 +5,17 @@ body {
     background-color: grey;
 }
 
-#grid-pad {
+#gridPad {
     display: grid;
     height: 100vh;
     background-color: grey;
     padding: 5px;
     grid-gap: 1px;
-    grid-template-columns: repeat(60, 1fr);
-    grid-template-rows: repeat(24, 1fr);
+    grid-template-columns: repeat(80, 1fr);
+    grid-template-rows: repeat(48, 1fr);
 }
 
-#grid-pad > div {
+#gridPad > div {
     background-color: white;
 }
 
@@ -35,7 +35,7 @@ body {
     border: 1px solid black;
 }
 
-.button-reset {
+#button-reset {
     display: inline-block;
     grid-column: 1/4;
     font-size: 22px;
