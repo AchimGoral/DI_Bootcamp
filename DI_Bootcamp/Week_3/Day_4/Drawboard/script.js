@@ -21,7 +21,10 @@ body.addEventListener("mouseup", function(){
 });
 
 for(sidebar_color of sidebar_color) {
-    sidebar_color.addEventListener("click")
+    sidebar_color.addEventListener("click", function(e){
+        colorDiv = e.target.style.backgroundColor;
+        console.log(colorDiv);
+    });
 }
 
 clear.addEventListener("click", function(){
