@@ -4,6 +4,14 @@ for (let i = 0; i < (120*48); i++) {
     document.getElementById('gridPad').appendChild(divContainer);
 }           // Creating the grid-layout with a field size of 80*48
 
+let colorList = ['blue', 'red', 'green', 'rgb(131, 131, 248)', 'crimson', 'lawngreen', 'purple', 'saddlebrown', 'sandybrown', 'springgreen', 'turquoise', 'yellow', 'violet', 'orange', 'indigo', 'khaki', 'lightcoral', 'lightgrey', 'rgb(82, 82, 82)', 'black', 'cornsilk'];
+
+for (let j = 0; j < colorList.length; j++) {
+    let divContainer = document.createElement('div');
+document.getElementById('sidebar').appendChild(divContainer);
+divContainer.style.backgroundColor = colorList[j];
+}
+
 let colorDiv = null; // Empty variable for color in div
 let mousedown = false; // Boolean for mousedown event
 let sidebar_color; // initialising element for loop
