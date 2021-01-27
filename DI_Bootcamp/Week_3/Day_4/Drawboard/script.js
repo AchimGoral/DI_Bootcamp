@@ -2,7 +2,6 @@
 for (let i = 0; i < (120*48); i++) {
     let divContainer = document.createElement('div');
     document.getElementById('gridPad').appendChild(divContainer);
-    divContainer.style.backgroundColor = "grey";
 }           // Creating the grid-layout with a field size of 80*48
 
 let colorDiv = null; // Empty variable for color in div
