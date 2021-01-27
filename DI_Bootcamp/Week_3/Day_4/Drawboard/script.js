@@ -1,5 +1,5 @@
 
-for (let i = 0; i < (80*48); i++) {
+for (let i = 0; i < (120*48); i++) {
     let divContainer = document.createElement('div');
     document.getElementById('gridPad').appendChild(divContainer);
     divContainer.style.backgroundColor = "grey";
