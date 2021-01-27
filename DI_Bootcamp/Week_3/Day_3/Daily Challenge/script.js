@@ -7,8 +7,7 @@ let letters = /^[A-Za-z]+$/;
 
 function keyLogger(element) {
     if (element.key.match(letters)){
-        container.textContent += ` ${element.key}`;
-        console.log(element);
+        container.textContent += `${element.key}`;
     } else {
         container.textContent += ``;
     }
