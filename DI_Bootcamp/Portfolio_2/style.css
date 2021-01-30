@@ -1,6 +1,6 @@
 :root {
     --main-color: #0816af;
-    --main-side-1: #e4e4e4;
+    --main-side-1: #dadada;
     --main-side-2: #252525;
     --complementary-color: #6b5604;
     --complementary-side: #EBD276;
@@ -18,8 +18,9 @@ body {
 .headline {
     text-align: left;
     margin-left: 10vw;
-    margin-top: 8em;
     font-size: 36px;
+    padding-top: 70px;
+    
 }
 
 .underline {
@@ -45,7 +46,7 @@ body {
     background: url('img/131382-abstract-grey-and-white-polygon-pattern-background-illustration.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.6;
+    opacity: 0.8;
     top: 0;
     left: 0;
     bottom: 0;
@@ -62,7 +63,7 @@ body {
 
 .navbar-settings {
     background-color: var(--main-side-1);
-    opacity: 0.9;
+    opacity: 1;
 }
 
 .nav-link-change {
@@ -81,20 +82,24 @@ body {
     justify-content: center;
 }
 
-.fa-logo {
+.fab {
     margin: 0 0.5em;
     font-size: 32px;
     color: var(--main-side-2);
     transition: 0.1s ease-in-out;
 }
 
-.fa-logo:hover {
+.fab:hover {
     color: var(--complementary-color);
 }
 
 /* Top section */
 
-.logo-text {
+#top-section {
+    margin-bottom: 12em;
+}
+
+.head-text {
     font-weight: 600;
     font-size: 42px;
     color: var(--main-side-2);
@@ -124,6 +129,10 @@ body {
 
 /* Work section */
 
+#work-section {
+    background-color: var(--main-side-1);
+}
+
 .work-img {
     height: 300px;
 }
@@ -132,8 +141,22 @@ body {
     margin: 5em 5vw;
 }
 
+.col-work-section {
+    margin-bottom: 1em;
+}
+
 .work-headline-items {
     color: var(--complementary-color);
+}
+
+.work-text {
+    max-height: 220px;
+    overflow: auto;
+}
+
+.figure-work {
+    outline: 1px solid var(--complementary-color);
+    outline-offset: 5px;
 }
 
 /* Blog section */
@@ -151,9 +174,11 @@ body {
     margin: 5em 3em;
 }
 
-.card {
+
+.card-blog {
     box-shadow: 0 0 20px #ccc;
     margin: 1em 0;
+    width: 21rem;
 }
 
 .card-title {
@@ -173,4 +198,58 @@ body {
 
 .card-link:hover {
     color: var(--complementary-side);
+}
+
+/* Comment section */
+
+#comment-section {
+    margin-bottom: 5em;
+}
+
+.form-group {
+    display: flex;
+    margin: 5px;
+    width: 75vw;
+    margin: 5px auto;
+}
+
+#textarea-comment {
+    max-height: 200px;
+}
+
+.btn-submit, .btn-clear {
+    background-color: var(--main-side-2);
+    color: var(--main-side-1);
+    margin: 0 2px;
+}
+
+.btn-submit:hover,
+.btn-clear:hover {
+    color: var(--main-side-1);
+    background-color: var(--complementary-color);
+}
+
+.comments{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    grid-gap: 10px;
+    margin: 2em;
+}
+
+.card-comment {
+    width: 18rem;
+    max-height: 250px;
+}
+
+/* Footer */
+
+.footer-section {
+    text-align: center;
+    background-color: var(--main-side-2);
+    color: var(--main-side-1);
+    margin: 0;
+    padding: 20px 0;
+    font-size: 20px;
 }
