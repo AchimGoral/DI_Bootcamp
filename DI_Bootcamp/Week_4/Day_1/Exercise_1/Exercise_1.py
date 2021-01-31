@@ -21,7 +21,7 @@ False because of capital letters
 
 # Exercise_4
 
-computer_brand = input("What is your favorite compuer brand? ")
+computer_brand = input("What is your favorite computer brand? ")
 
 # computer_brand = "razer"
 
