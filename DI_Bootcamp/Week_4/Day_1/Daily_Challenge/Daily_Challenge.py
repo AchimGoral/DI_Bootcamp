@@ -1,3 +1,5 @@
+import random
+
 word = input("Put in a word with 10 characters ")
 word_count = int(len(word))
 
@@ -10,3 +12,6 @@ else:
 	for i in range (0, 10):
 		final += word[i]
 		print(final)
+
+random.shuffle(final)
+print(final)
