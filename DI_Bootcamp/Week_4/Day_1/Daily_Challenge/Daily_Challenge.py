@@ -13,5 +13,5 @@ else:
 		final += word[i]
 		print(final)
 
-random.shuffle(final)
-print(final)
+shuffled = ''.join(random.sample(word, len(word)))
+print(shuffled)
