@@ -1,44 +1,44 @@
-# # Exercise_1 + 2
+# Exercise_1 + 2
 
-# birthdays = {input("Give me your name: "): ' '.join(input("Give me your birdthay in DD/MM/YYYY: ").split('/')) for i in range (6)}
+birthdays = {input("Give me your name: "): ' '.join(input("Give me your birdthay in DD/MM/YYYY: ").split('/')) for i in range (6)}
 
-# print("Welcome. You can look up the birthday of the people in the list!\n")
+print("Welcome. You can look up the birthday of the people in the list!\n")
 
-# for key in birthdays:
-#     print(f"{key}")
+for key in birthdays:
+    print(f"{key}")
 
-# print("")
-# search_name = input("Please type in the name you're looking for: ")
+print("")
+search_name = input("Please type in the name you're looking for: ")
 
-# for key in birthdays.keys():
-#     if search_name == key:
-#         print(f"{search_name}s Birthday is at the {birthdays[search_name]}")
-#         break
-# else:
-#     print("Sorry, we don’t have birthday information for")
+for key in birthdays.keys():
+    if search_name == key:
+        print(f"{search_name}s Birthday is at the {birthdays[search_name]}")
+        break
+else:
+    print("Sorry, we don’t have birthday information for")
 
-# # Exercise_3
+# Exercise_3
 
-# birthdays = {input("Give me your name: "): ' '.join(input("Give me your birdthay in DD/MM/YYYY: ").split('/')) for i in range (6)}
+birthdays = {input("Give me your name: "): ' '.join(input("Give me your birdthay in DD/MM/YYYY: ").split('/')) for i in range (6)}
 
-# birthdays_new = {input("Give me another name: "): ' '.join(input("Give me another birdthay in DD/MM/YYYY: ").split('/'))}
+birthdays_new = {input("Give me another name: "): ' '.join(input("Give me another birdthay in DD/MM/YYYY: ").split('/'))}
 
-# birthdays.update(birthdays_new)
+birthdays.update(birthdays_new)
 
-# print("Welcome. You can look up the birthday of the people in the list!\n")
+print("Welcome. You can look up the birthday of the people in the list!\n")
 
-# for key in birthdays:
-#     print(f"{key}")
+for key in birthdays:
+    print(f"{key}")
 
-# print("")
-# search_name = input("Please type in the name you're looking for: ")
+print("")
+search_name = input("Please type in the name you're looking for: ")
 
-# for key in birthdays.keys():
-#     if search_name == key:
-#         print(f"{search_name}s Birthday is at the {birthdays[search_name]}")
-#         break
-# else:
-#     print("Sorry, we don’t have birthday information for")
+for key in birthdays.keys():
+    if search_name == key:
+        print(f"{search_name}s Birthday is at the {birthdays[search_name]}")
+        break
+else:
+    print("Sorry, we don’t have birthday information for")
 
 # # Exercise_4
 
