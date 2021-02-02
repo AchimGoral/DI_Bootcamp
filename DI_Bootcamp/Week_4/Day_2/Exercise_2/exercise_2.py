@@ -42,20 +42,20 @@
 
 # # Exercise_5
 
-# words = []
-# words_string = input("Give me 7 words seperated by comma:\t")
-# words = words_string.split(' ')
-# while len(words) != 7:
-#     words_string = input("Give me 7 words seperated by comma:\t")
-#     words = words_string.split(' ')
-# print(words)
-# letter = input("Give me a single character:\t")
+words = []
+words_string = input("Give me 7 words seperated by comma:\t")
+words = words_string.split(' ')
+while len(words) != 7:
+    words_string = input("Give me 7 words seperated by comma:\t")
+    words = words_string.split(' ')
+print(words)
+letter = input("Give me a single character:\t")
 
-# for i in range(0, len(words)):
-#     if letter in words[i]:
-#         print(f"the letter {letter} is in Index {words[i].find(letter)}")
-#     else:
-#         print("Sorry, no match")
+for i in range(0, len(words)):
+    if letter in words[i]:
+        print(f"the letter {letter} is in Index {words[i].find(letter)}")
+    else:
+        print("Sorry, no match")
 
 # # Exercise_6
 
