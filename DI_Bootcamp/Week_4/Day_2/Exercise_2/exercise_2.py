@@ -84,12 +84,16 @@
 # wins = 0
 # losses = 0
 
-# input_number = int(input("Give me a random number between 0 and 9\nType in '10' if you want to quit:\t"))
+# input_number = 1
 
 # while input_number > 0 or input_number < 11:
+
 #     random_number = random.randint(0, 9)
+
+#     input_number = int(input("Give me a random number between 0 and 9\nType in '10' if you want to quit:\t"))
+
 #     if input_number == 10:
-#         print("Goodbyen")
+#         print("Goodbye")
 #         break
 #     else:
 #         games += 1
@@ -99,8 +103,6 @@
 #         else:
 #             print("Sorry. You were wrong. Try again?\n")
 #             losses += 1
-
-#     input_number = int(input("Give me a random number between 0 and 9\nType in '10' if you want to quit:\t"))
 
 # print(f"You played {games} games and had {wins} wins and {losses} losses!")
 
