@@ -64,4 +64,3 @@
 # print(names)
 
 numbers = [":)" if i%7 == 0 else i for i in range (1, 101)]
-print(numbers)
