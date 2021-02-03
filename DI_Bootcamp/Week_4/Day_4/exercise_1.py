@@ -64,16 +64,12 @@ def show_magicians(list_input):
 show_magicians(magic)
 
 def make_great(list_input):
+    list_output = []
     for name in list_input:
-        name = f"the Great {name}"
-    return list_input
+        list_output.append(f"the Great {name}")
+    return list_output
 
-make_great(magic)
-
-def show_magicians(list_input):
-    for name in list_input:
-        print(name)
-
+magic = make_great(magic)
 show_magicians(magic)
 
 # Exercise_7
@@ -94,6 +90,8 @@ def get_age(year, month, day):
     return age
 
 def can_retire(gender, date_of_birth):
+    year, month, day = date_of_birth.split("/")
+    year, month, day = int(year), int(month), int(day)
     age = get_age(year, month, day)
     if gender == "m":
         if age > 67:
@@ -109,8 +107,12 @@ def can_retire(gender, date_of_birth):
         print("Your gender is unknown")
 
 gender = input("Give me your gender: m or f ")
-birthday = input("Give me your birthday: YYYY/MM/DD ")
-birthday_list = birthday.split('/')
+date_of_birth = input("Give me your birthday: YYYY/MM/DD ")
+
+if can_retire(gender, date_of_birth):
+    print("You can retire")
+else:
+    print("You can't retire")
 
 # Exercise_8
 
