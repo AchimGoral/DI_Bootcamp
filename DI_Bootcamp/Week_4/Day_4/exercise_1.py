@@ -96,13 +96,11 @@ def can_retire(gender, date_of_birth):
     if gender == "m":
         if age > 67:
             return True
-        else:
-            return False
+        return False
     elif gender == "f":
         if age > 62:
             return True
-        else:
-            return False
+        return False
     else:
         print("Your gender is unknown")
 
