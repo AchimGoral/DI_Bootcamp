@@ -30,8 +30,7 @@ print(f"The family has to pay {price}$")
 brand = {
     "name": "Zara", 
     "creation_date": 1975,
-    "creator_name": [
-        "Amancio", "Ortega", "Gaona"],
+    "creator_name": "Amancio", "Ortega", "Gaona",
     "type_of_clothes": [
         "men", "women", "children", "home"],
     "international_competitors": [
@@ -40,8 +39,8 @@ brand = {
     "major_color": {
         "France": "blue",
         "Spain": "red",
-        "US": ["pink", "green"],
-    },
+        "US": ["pink", "green"]
+    }
 }
 
 brand["number_stores"] = 2
@@ -50,19 +49,22 @@ competitors = brand["international_competitors"]
 for competitor in competitors:
     print(f"{competitor} is a competitor")
 
-brand["country_creation "] = "Spain"
 
+print(f"Our customers are:", ', '.join(brand["type_of_clothes"][:2]))
+print("")
+
+brand["country_creation "] = "Spain"
 print(brand)
 print("")
 
 if "international_competitors" in brand:
     brand["international_competitors"].append("Desigual")
-
+else:
+    brand["international_competitors"] = ["Desigual"]
 print(brand)
 print("")
 
 del brand["creation_date"]
-
 print(brand)
 print("")
 
