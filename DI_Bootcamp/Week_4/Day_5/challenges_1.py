@@ -79,5 +79,20 @@
 
 # print(sum_func(my_list))
 
-# Exercise_7
+# # Exercise_7
+
+# list_value = ['a', 'b', 'c', 'a', 'd', 'b', 'b']
+# print(list_value)
+# value = input("Which value to look for? ")
+
+# def count_value(input_list, value):
+#     counter = 0
+#     for item in input_list:
+#         if value == item:
+#             counter += 1
+#     return counter
+
+# print(count_value(list_value, value))
+
+# Exercise_8
 

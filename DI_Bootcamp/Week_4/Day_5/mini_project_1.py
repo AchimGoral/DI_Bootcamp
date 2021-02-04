@@ -22,18 +22,21 @@ def display_board():
     print("*************")
     print("")
 
-def game():
+def play():
 
     global game_counter
+
     # Display the board initialy
     display_board()
     # Player input is checked
     player_input()
     #After player input, game_counter gets a raise
     game_counter += 1
+    display_board()
 
 
 def player_input():
+    global board
     position = input("Where do want to make your input? (1-9): ")
 
 def check_win():
@@ -62,4 +65,4 @@ def check_win():
         win = False
     return win
 
-game()
+play()
