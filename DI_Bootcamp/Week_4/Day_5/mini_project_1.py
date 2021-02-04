@@ -4,6 +4,8 @@ board = [' ', ' ', ' ',
 
 # Flag for win: checks for winning condition
 win = False
+# counts the games with win check after 5 and ends with 9 moves
+game_counter = 0
 
 
 def display_board():
@@ -21,20 +23,22 @@ def display_board():
     print("")
 
 def game():
+
+    global game_counter
     # Display the board initialy
     display_board()
-
-def check_board():
-    pass
+    # Player input is checked
+    player_input()
+    #After player input, game_counter gets a raise
+    game_counter += 1
 
 
 def player_input():
-    pass
+    position = input("Where do want to make your input? (1-9): ")
 
 def check_win():
-    #calling the global variable win
+    #GLobal variable win is called
     global win
-
     # Horizontal
     if board[0] == board[1] and board[1] == board[2] and board[0] != ' ':
         win = True
@@ -57,3 +61,5 @@ def check_win():
     else:
         win = False
     return win
+
+game()
