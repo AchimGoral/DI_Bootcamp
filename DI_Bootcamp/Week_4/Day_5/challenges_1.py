@@ -274,3 +274,14 @@
 
 # Exercise_19
 
+# # Exercise_20
+
+# input_word = input("Give me your password: ")
+
+# def password(input_string):
+#     output = ''
+#     for i in range(len(input_string)):
+#         output += '*'
+#     return output
+
+# print(password(input_word))
