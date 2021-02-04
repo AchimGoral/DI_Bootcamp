@@ -1,7 +1,12 @@
-board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+board = [' ', ' ', ' ', 
+         ' ', ' ', ' ', 
+         ' ', ' ', ' ']
+
+# Flag for win: checks for winning condition
+win = False
 
 
-def display_board(board):
+def display_board():
 
     print("")
     print("Tic Tac Toe")
@@ -15,6 +20,10 @@ def display_board(board):
     print("*************")
     print("")
 
+def game():
+    # Display the board initialy
+    display_board()
+
 def check_board():
     pass
 
@@ -22,33 +31,29 @@ def check_board():
 def player_input():
     pass
 
-    
-
 def check_win():
+    #calling the global variable win
+    global win
+
     # Horizontal
     if board[0] == board[1] and board[1] == board[2] and board[0] != ' ':
-        # condition
-        pass
-    if board[3] == board[4] and board[4] == board[5] and board[3] != ' ':
-        pass
-    if board[6] == board[7] and board[7] == board[8] and board[6] != ' ':
-        pass
+        win = True
+    elif board[3] == board[4] and board[4] == board[5] and board[3] != ' ':
+        win = True
+    elif board[6] == board[7] and board[7] == board[8] and board[6] != ' ':
+        win = True
     # Vertical
-    if board[6] == board[3] and board[3] == board[0] and board[6] != ' ':
-        pass
-    if board[7] == board[4] and board[4] == board[1] and board[7] != ' ':
-        pass
-    if board[8] == board[5] and board[5] == board[2] and board[8] != ' ':
-        pass
+    elif board[6] == board[3] and board[3] == board[0] and board[6] != ' ':
+        win = True
+    elif board[7] == board[4] and board[4] == board[1] and board[7] != ' ':
+        win = True
+    elif board[8] == board[5] and board[5] == board[2] and board[8] != ' ':
+        win = True
     # Diagonal
-    if board[0] == board[4] and board[4] == board[8] and board[0] != ' ':
-        pass
-    if board[2] == board[4] and board[4] == board[6] and board[2] != ' ':
-        pass
-
-
-
-def game():
-    pass
-
-display_board(board)
+    elif board[0] == board[4] and board[4] == board[8] and board[0] != ' ':
+        win = True
+    elif board[2] == board[4] and board[4] == board[6] and board[2] != ' ':
+        win = True
+    else:
+        win = False
+    return win
