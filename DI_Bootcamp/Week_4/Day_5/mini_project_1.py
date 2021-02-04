@@ -25,6 +25,8 @@ def display_board():
 def play():
 
     global game_counter
+    player_1 = 'X'
+    player_2 = 'O'
 
     # Display the board initialy
     display_board()
