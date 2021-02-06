@@ -1,5 +1,5 @@
 
-def display_board(game_board):
+def display_board(board):
 
     print("")
     print("*************")
@@ -15,11 +15,11 @@ def display_board(game_board):
 def player_input():
 
     position = int(input("Where do want to make your input? (1-9): "))
-    position -= 1 # Shift to 0-8 like Board numbers
+    position -= 1 # Shift to 0-8 like board numbers
     return position
 
 
-def check_win():
+def check_win(board):
 
     win = False
 
@@ -51,6 +51,7 @@ def check_win():
 
 def play():
 
+    #Play board gets initialized
     board = [' ', ' ', ' ', 
              ' ', ' ', ' ', 
              ' ', ' ', ' ']
@@ -60,9 +61,9 @@ def play():
 
     # Initialising player
     player = ''
-    
-    # Check for win
-    win_bool = check_win()
+
+    # Display the board initialy
+    display_board(board)
 
     #While loop for counting down the games
     while game_counter > 0:
@@ -73,29 +74,25 @@ def play():
         else:
             player = 'O'
             print("Player 2 plays")
-        # Display the board initialy
-        display_board(game_board)
 
         #Player input is checked
         position = player_input()
 
         while board[position] != ' ':
+            display_board(board)
             print("Can't place over an occupied field\n")
             position = player_input()
 
         else:
             board[position] = player
 
-        display_board(game_board)
+        display_board(board)
 
-        if game_counter <= 5:
-            win_bool
-            print(win_bool)
-            if win_bool:
-                print("Congratulations")
-                return
-            else:
-                pass
+        # Check for win
+        win_bool = check_win(board)
+
+        if game_counter <= 5 and win_bool:
+            return print("Congratulations. You won this game")
         #After player input, game_counter gets a count down
         game_counter -= 1
     else:
