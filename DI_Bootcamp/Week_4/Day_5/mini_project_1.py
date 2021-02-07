@@ -48,7 +48,6 @@ def check_win(board):
         win = False
     return win
 
-
 def play():
 
     #Play board gets initialized
