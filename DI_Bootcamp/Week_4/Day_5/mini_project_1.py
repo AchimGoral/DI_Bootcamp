@@ -93,7 +93,9 @@ def play():
 
         if game_counter <= 5 and win_bool:
             if game_counter%2 == 0:
-                return print("Congratulations. You won this game")
+                return print("Congratulations. Player 2 won this game")
+            else:
+                return print("Congratulations. Player 1 won this game")
 
         #After player input, game_counter gets a count down
         game_counter -= 1
