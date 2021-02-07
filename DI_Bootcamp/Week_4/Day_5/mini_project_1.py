@@ -77,6 +77,11 @@ def play():
 
         #Player input is checked
         position = player_input()
+        
+        while position < 0 or position > 8:
+            display_board(board)
+            print("Must be between 1 and 9")
+            position = player_input()
 
         while board[position] != ' ':
             display_board(board)
