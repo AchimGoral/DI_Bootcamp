@@ -26,7 +26,7 @@ class Farm:
 
     def get_short_info(self):
         list_items = self.get_animal_types()
-        animal_string = ', '.join(list_items)
+        animal_string = ', '.join(list_items) + '.'
         print(f"McDonald’s farm has {animal_string}")
 
 
