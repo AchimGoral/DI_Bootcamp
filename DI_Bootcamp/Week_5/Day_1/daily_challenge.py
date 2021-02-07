@@ -22,9 +22,12 @@ class Farm:
         for key in self.new_dict.keys():
             new_list.append(key)
         new_list.sort()
-        print(new_list)
+        return new_list
 
-    def
+    def get_short_info(self):
+        list_items = self.get_animal_types()
+        animal_string = ', '.join(list_items)
+        print(f"McDonald’s farm has {animal_string}")
 
 
 
@@ -38,3 +41,5 @@ macdonald.add_animal('goat', 12)
 print(macdonald.get_info())
 
 macdonald.get_animal_types()
+
+macdonald.get_short_info()
