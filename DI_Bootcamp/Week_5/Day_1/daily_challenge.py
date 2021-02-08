@@ -11,9 +11,9 @@ class Farm:
             self.new_dict[animal] += amount
 
     def get_info(self): 
-        print("Macdonald's farm\n")
-        for dic_item in self.new_dict.items():
-            print(f'{dic_item[0]}: {dic_item[1]}')
+        print(f"{self.name}'s farm\n")
+        for key, value in self.new_dict.items():
+            print(f'{key}: {value}')
         print("\n\tE-I-E-I-O!")
 
     def get_animal_types(self):
