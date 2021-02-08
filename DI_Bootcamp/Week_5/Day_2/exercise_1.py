@@ -54,7 +54,7 @@ class Family:
         for key, value in kwargs.items():
             born_dict[key] = value
         self.members.append(born_dict)
-        print(f"Hello {self.members[-1]['name']} to the Family")
+        print(f"Hello {self.members[-1]['name']}, welcome to the Family")
 
     def is_18(self):
         value = int(input("Choose your family member: "))
@@ -66,9 +66,10 @@ class Family:
             return True
 
     def present_family(self):
-        print(f"In our little family there is {self.members[2]['name']}, the Baby. He is {self.members[2]['age']} years old. There are also {self.members[0]['name']} and {self.members[1]['name']} {self.last_name}, his parents.")
+        for item in self.members:
+            for key, value in item.items():
+                print(f"{key}:\t {value}")
             
-
 # family_1 = Family([ {'name':'Michael','age':35,'gender':'Male','is_child':False}, {'name':'Sarah','age':32,'gender':'Female','is_child':False}], "Rogers")
 
 # family_1.born(name="Mike", age=0, gender="Male", is_child=True)
@@ -82,7 +83,7 @@ class Family:
 class Incredibles(Family):
 
     def __init__(self, members, last_name, power, incredible_name):
-        super().__init__(self, members, last_name)
+        super().__init__(members, last_name)
         self.power = power
         self.incredible_name = incredible_name
 
@@ -94,5 +95,15 @@ class Incredibles(Family):
             print(f"{self.members['name']} isn't over 18")
 
     def incredible_presentation(self):
-        pass
+        for item in self.members:
+            print(item)
         
+incredible_family = Incredibles([ {'name':'Bob','age':35,'gender':'Male','is_child':False}, {'name':'Helen','age':32,'gender':'Female','is_child':False}, {'name':'Helen','age':32,'gender':'Female','is_child':False}, {'name':'Violet','age':12,'gender':'Female','is_child':True}, {'name':'Dashiell','age':8,'gender':'Male','is_child':True}], "Parr", [{'power': 'super-strength'}, {'power': 'invisible'}, {'power': 'force-shield'}, {'power': 'super-speed'}], [{'incredible_name': 'Mr. Incredible'}, {'incredible_name': 'Elastigirl'}, {'incredible_name': 'Vi'}, {'incredible_name': 'Dash'}])
+
+incredible_family.present_family()
+
+incredible_family.incredible_presentation()
+
+incredible_family.born(name="Jack", age=3, gender="Male", is_child=True, incredible_name='Jack-Jack', power='Unknown power')
+
+incredible_family.incredible_presentation()
