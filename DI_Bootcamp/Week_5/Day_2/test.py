@@ -53,13 +53,13 @@ from cprint import cprint
 #     def deposit(self, amount):
 #         if amount > 0 and amount <= 10000:
 #             self.__balance += amount
-
-#         self.__transaction_history.append(f"Deposit: {amount}")
+#             self.__transaction_history.append(f"Deposit: {amount}")
     
 
 #     def withdraw(self, amount):
 #         if amount <= self.__balance:
 #             self.__balance -= amount
+#             self.__transaction_history.append(f"Withdraw: {amount}")
 #             return amount
 #         else:
 #             print("Insufficient amount")
@@ -68,13 +68,54 @@ from cprint import cprint
 #     def info(self):
 #         print(f"Account {self.acc_number} has balance of ${self.__balance}")
 
+
+#     def transaction_history(self):
+#         for transaction in self.__transaction_history:
+#             print(transaction)
+
+
 # leumi1 = Account("12345")
 # leumi1.deposit(1000)
-# leumi1.info()
+# leumi1.deposit(2000)
 # leumi1.withdraw(300)
+
+# leumi1.withdraw(500)
+# leumi1.withdraw(600)
 # leumi1.info()
+# leumi1.transaction_history()
 
 
 
-# # __shows other prgrammers, that this is protected, although it is not in reality
+# __shows other prgrammers, that this is protected, although it is not in reality
 
+# Exeptions
+
+# my_list = [2,3,1,2,"four",None,42,1,5,3,"imanumber"]
+
+# def summ(my_list):
+#     final_sum = 0
+#     for number in my_list:
+#         try:
+#             final_sum += number
+#         except TypeError:
+#             continue
+#     print(f"Sum is: {final_sum}")
+#     return final_sum
+
+# summ(my_list)
+
+# def get_age():
+#     try:
+#         age = int(input("Enter your age: "))
+#     except:
+#         print("Invalid input. Please try again")
+#         get_age()
+#     finally:
+#         print("You're old")
+
+# get_age()
+
+import random as r
+
+number = r.randint(0, 11)
+print(number)
