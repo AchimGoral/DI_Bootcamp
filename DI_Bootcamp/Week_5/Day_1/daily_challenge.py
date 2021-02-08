@@ -14,8 +14,7 @@ class Farm:
         print("Macdonald's farm\n")
         for dic_item in self.new_dict.items():
             print(f'{dic_item[0]}: {dic_item[1]}')
-        print("")
-        print("\tE-I-E-I-O!")
+        print("\n\tE-I-E-I-O!")
 
     def get_animal_types(self):
         new_list = []
@@ -36,7 +35,9 @@ macdonald = Farm("McDonald")
 macdonald.add_animal('cow',5)
 macdonald.add_animal('sheep')
 macdonald.add_animal('sheep')
+macdonald.add_animal('ox')
 macdonald.add_animal('goat', 12)
+macdonald.add_animal('goat', 5)
 
 print(macdonald.get_info())
 
