@@ -2,39 +2,41 @@ import random as rd
 
 class Gene:
 
-    def __init__(self, gene):
-        self.gene = gene
+    def __init__(self):
+        self.gene = rd.randint(0, 1)
+
 
     def mutate(self):
-        self.gene = rd.randint(0, 1)
-        return self.gene
+        self.gene = 1 if self.gene == 0 else 0
+        # self.gene = int(not bool(self.gene)) same like up
 
-class Chromsome(Gene):
+    def __repr__(self):
+        return f"{self.gene}"
+        # Shows a string representation of the class
+        
 
-    def __init__(self, gene):
-        super().__init__(gene)
-        self.chromsome_list = []
+class Chromsome:
 
-    def chromsome_series(self):
-        for i in range(10):
-            self.mutate()
-            self.chromsome_list.append(self.gene)
-        return self.chromsome_list
+    def __init__(self):
+        self.gene = [Gene() for _ in range(10)]
 
-class DNA(Chromsome):
+    def mutate(self):
+        for gene in self.gene:
+            if rd.random() > 0.5:
+                gene.mutate()
 
-    def __init__(self, gene):
-        super().__init__(gene)
-        self.dna_list = []
+    def __repr__(self):
+        return f"{self.gene}"
 
-    def dna_series(self):
-        for i in range(10):
-            self.chromsome_series()
-            self.dna_list.append(self.chromsome_list)
-    
-            
-        print(self.dna_list)
+class DNA:
 
-gene_1 = DNA(0)
+    def __init__(self):
+        self.gene = [Chromsome() for _ in range(10)]
 
-gene_1.dna_series()
+    def __repr__(self):
+        return f"{self.gene}"
+
+
+
+c = DNA()
+print(c.gene)
