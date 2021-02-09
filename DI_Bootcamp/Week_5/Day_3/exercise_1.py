@@ -102,6 +102,20 @@ def next_holiday():
 
 next_holiday()
 
+# Exercise_5
+
+from datetime import datetime
+
+birdthay_input = input("Give my your Birthday in YYYY/MM/DD ")
+
+def birthday(input_value):
+    birth = datetime.strptime(input_value, "%Y/%m/%d")
+    actual_date = datetime.now()
+    minutes_lived = actual_date-birth
+    print(f"You're living since {minutes_lived}")
+
+birthday(birdthay_input)
+
 # Exercise_6
 
 def calc_age(seconds):
