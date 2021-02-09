@@ -4,7 +4,7 @@ import random as rd
 class PetDog(ex.Dog):
 
     def __init__(self, name, age, weight):
-        super().__init__(self, name, age, weight)
+        super().__init__(name, age, weight)
         self.trained = False
 
 

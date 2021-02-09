@@ -1,47 +1,47 @@
-# # Exercise_1
+# Exercise_1
 
-# class Pets():
-#     animals = []
-#     def __init__(self, animals):
-#         self.animals = animals
+class Pets():
+    animals = []
+    def __init__(self, animals):
+        self.animals = animals
 
-#     def walk(self):
-#         for animal in self.animals:
-#             print(animal.walk())
+    def walk(self):
+        for animal in self.animals:
+            print(animal.walk())
 
-# class Cat():
-#     is_lazy = True
+class Cat():
+    is_lazy = True
 
-#     def __init__(self, name, age):
-#         self.name = name
-#         self.age = age
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-#     def walk(self):
-#         return f"{self.name} is just walking around"
+    def walk(self):
+        return f"{self.name} is just walking around"
 
-# class Bengal(Cat):
-#     def sing(self, sounds):
-#         return f"{sounds}"
+class Bengal(Cat):
+    def sing(self, sounds):
+        return f"{sounds}"
 
-# class Chartreux(Cat):
-#     def sing(self, sounds):
-#         return f"{sounds}"
+class Chartreux(Cat):
+    def sing(self, sounds):
+        return f"{sounds}"
 
-# class Kitty(Cat):
-#     def sing(self, sounds):
-#         return f"{sounds}"
+class Kitty(Cat):
+    def sing(self, sounds):
+        return f"{sounds}"
 
-# bengal = Bengal("Marry", 12)
-# chartreux = Chartreux("Louis", 10)
-# kitty = Kitty("Henry", 8)
+bengal = Bengal("Marry", 12)
+chartreux = Chartreux("Louis", 10)
+kitty = Kitty("Henry", 8)
 
-# my_cats = [bengal, chartreux, kitty]
+my_cats = [bengal, chartreux, kitty]
 
-# my_pets = Pets(my_cats)
+my_pets = Pets(my_cats)
 
-# my_pets.walk()
+my_pets.walk()
 
-# # Exercise_4
+# Exercise_4
 
 class Family:
 
@@ -70,13 +70,13 @@ class Family:
             for key, value in item.items():
                 print(f"{key}:\t {value}")
             
-# family_1 = Family([ {'name':'Michael','age':35,'gender':'Male','is_child':False}, {'name':'Sarah','age':32,'gender':'Female','is_child':False}], "Rogers")
+family_1 = Family([ {'name':'Michael','age':35,'gender':'Male','is_child':False}, {'name':'Sarah','age':32,'gender':'Female','is_child':False}], "Rogers")
 
-# family_1.born(name="Mike", age=0, gender="Male", is_child=True)
+family_1.born(name="Mike", age=0, gender="Male", is_child=True)
 
-# family_1.is_18()
+family_1.is_18()
 
-# family_1.present_family()
+family_1.present_family()
 
 # Exercise_5
 
