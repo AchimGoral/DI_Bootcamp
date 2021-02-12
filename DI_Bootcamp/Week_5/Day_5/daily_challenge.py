@@ -1,15 +1,28 @@
 # response timer
+import time
+import requests
 
-import requests 
-  
-response_get = requests.get('https://api.github.com') 
-print(response_get) 
-print(response_get.elapsed)
+start = time.perf_counter()
+requests.get('https://api.github.com') 
+finish = time.perf_counter()
+end_time = finish - start
+print(f"Response time: {round(end_time, 6)} sec")
 
-response_get = requests.get('https://google.com') 
-print(response_get) 
-print(response_get.elapsed)
 
-response_get = requests.get('https://jpost.com') 
-print(response_get) 
-print(response_get.elapsed)
+start = time.perf_counter()
+requests.get('https://google.com') 
+finish = time.perf_counter()
+end_time = finish - start
+print(f"Response time: {round(end_time, 6)} sec")
+
+start = time.perf_counter()
+requests.get('https://jpost.com') 
+finish = time.perf_counter()
+end_time = finish - start
+print(f"Response time: {round(end_time, 6)} sec")
+
+start = time.perf_counter()
+requests.get('https://facebook.com') 
+finish = time.perf_counter()
+end_time = finish - start
+print(f"Response time: {round(end_time, 6)} sec")
