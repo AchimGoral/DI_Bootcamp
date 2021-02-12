@@ -4,13 +4,17 @@ import random
 class Game:
 
     def __init__(self):
-        self.result_dict = dict()
+        self.result_dict = {
+            "win": 0,
+            "loss": 0,
+            "draw": 0
+        }
 
     
     def get_user_item(self):
-        user_item = input("Choose (r) for rock, (p), for paper or (s) for scissors")
+        user_item = input("Choose (r) for rock, (p), for paper or (s) for scissors: ")
         while user_item not in ("r", "p", "s"):
-            user_item = input("Choose (r) for rock, (p), for paper or (s) for scissors")
+            user_item = input("Choose (r) for rock, (p), for paper or (s) for scissors: ")
         return user_item
 
 
@@ -30,23 +34,23 @@ class Game:
                 print(f"You picked {user_item} and the computer picked {computer_item}. You lost")
                 return "loss"
             else:
-                print(f"You picked {user_item}")
+                print(f"You picked {user_item} and the computer picked {computer_item}. You won")
                 return "win"
         
         elif user_item == "p":
             if computer_item == "s":
-                print("You lost to scissors with paper")
+                print(f"You picked {user_item} and the computer picked {computer_item}. You lost")
                 return "loss"
             else:
-                print("You won with paper against scissors")
+                print(f"You picked {user_item} and the computer picked {computer_item}. You won")
                 return "win"
 
         else:
             if computer_item == "r":
-                print("You lost to rock with scissors")
+                print(f"You picked {user_item} and the computer picked {computer_item}. You lost")
                 return "loss"
             else:
-                print("You won with scissors against paper")
+                print(f"You picked {user_item} and the computer picked {computer_item}. You won")
                 return "win"
 
 
@@ -57,19 +61,10 @@ class Game:
         result = self.get_game_result(user_item, computer_item)
 
         if result == "win":
-            if "win" not in self.result_dict:
-                self.result_dict["win"] = 1
-            else:
-                self.result_dict["win"] += 1
+            self.result_dict["win"] += 1
         elif result == "loss":
-            if "loss" not in self.result_dict:
-                self.result_dict["loss"] = 1
-            else:
-                self.result_dict["loss"] += 1
+            self.result_dict["loss"] += 1
         else:
-            if "draw" not in self.result_dict:
-                self.result_dict["draw"] = 1
-            else:
-                self.result_dict["draw"] += 1
+            self.result_dict["draw"] += 1
 
         return self.result_dict    

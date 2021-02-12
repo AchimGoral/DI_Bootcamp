@@ -10,21 +10,19 @@ def get_user_menu_choice():
 
 
 def print_results(results):
+    print("\nHere are your results:")
     for key, value in results.items():
         print(key,value)
 
 def main():
-    menu = get_user_menu_choice()
-    
-    while menu not in ("g", "x"):
+    while True:
         menu = get_user_menu_choice()
-    
-    if menu == 'g':
-
-        game.play()
-        
-    else:
-        results = game.play()
-        print_results(results)
+        while menu not in ("g", "x"):
+            menu = get_user_menu_choice()
+        if menu == 'g':
+            results = game.play() 
+        else:
+            print_results(results)
+            return False
 
 main()
