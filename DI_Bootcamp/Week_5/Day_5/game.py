@@ -66,5 +66,4 @@ class Game:
             self.result_dict["loss"] += 1
         else:
             self.result_dict["draw"] += 1
-
         return self.result_dict    

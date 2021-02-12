@@ -2,7 +2,7 @@ from game import Game
 game = Game()
 
 def get_user_menu_choice():
-    print("Menu:")
+    print("\nMenu:")
     print("(g) Play a new game")
     print("(x) Show scores and exit")
     choice = str(input(": "))
@@ -13,6 +13,7 @@ def print_results(results):
     print("\nHere are your results:")
     for key, value in results.items():
         print(key,value)
+    print("")
 
 def main():
     while True:
