@@ -58,4 +58,4 @@ print(data['company']['employee']['payable']['salary'])
 data['company']['employee']['birth_date'] = '03/12/1991'
 
 with open('exercise.json', 'w') as f:
-    json.dump(data, f, indent=2)
+    json.dump(data, f, indent=2, sort_keys=True)
