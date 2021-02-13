@@ -12,9 +12,9 @@ class Game:
 
     
     def get_user_item(self):
-        user_item = input("Choose (r) for rock, (p), for paper or (s) for scissors: ")
+        user_item = input("Choose (r) for rock, (p) for paper or (s) for scissors: ")
         while user_item not in ("r", "p", "s"):
-            user_item = input("Choose (r) for rock, (p), for paper or (s) for scissors: ")
+            user_item = input("Choose (r) for rock, (p) for paper or (s) for scissors: ")
         return user_item
 
 

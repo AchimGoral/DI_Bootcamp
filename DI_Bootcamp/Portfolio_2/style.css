@@ -115,6 +115,7 @@ body {
 
 .figure-img {
     height: 350px;
+    width: auto;
     background-position: center;
     background-size: cover;
 }
@@ -133,10 +134,6 @@ body {
     background-color: var(--main-side-1);
 }
 
-.work-img {
-    height: 300px;
-}
-
 .row-work-section {
     margin: 5em 5vw;
 }
@@ -150,13 +147,24 @@ body {
 }
 
 .work-text {
-    max-height: 220px;
-    overflow: auto;
+    margin: 0 10px;
+}
+
+.work-img {
+    height: 300px;
+    width: 300px;
 }
 
 .figure-work {
     outline: 1px solid var(--complementary-color);
     outline-offset: 5px;
+    transition: 0.2s ease-in-out;
+    margin: auto;
+}
+
+
+.figure-work:hover {
+    transform: scale(1.03);
 }
 
 /* Blog section */
