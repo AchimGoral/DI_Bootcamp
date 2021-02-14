@@ -1,0 +1,16 @@
+1. SELECT first_name, last_name, birth_date FROM students 
+WHERE id <= 4 ORDER BY last_name ASC
+"Marc"	"Benichou"	"1998-11-02"
+"Leah"	"Benichou"	"1987-07-27"
+"Yoan"	"Cohen"		"2010-12-03"
+"Amelia""Dux"		"1996-04-07"
+
+2. SELECT first_name, last_name, birth_date FROM students
+ORDER BY birth_date DESC LIMIT 1
+"Yoan"	"Cohen"		"2010-12-03"
+
+3. SELECT first_name, last_name, birth_date FROM students
+OFFSET 2 LIMIT 3
+"Amelia""Dux"		"1996-04-07"
+"David"	"Grez"		"2003-06-14"
+"Omer"	"Simpson"	"1980-10-03"
