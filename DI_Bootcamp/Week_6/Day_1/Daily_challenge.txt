@@ -1,0 +1,35 @@
+1. SELECT id from actors
+
+1
+2
+3
+4
+5
+
+2. Insert into actors
+(first_name, last_name, age, number_oscars)
+values
+('Jack', 'Black', 45)
+
+ERROR: FEHLER:  INSERT hat mehr Zielspalten als Ausdrücke
+LINE 2: (first_name, last_name, age, number_oscars)
+                                     ^
+
+
+SQL state: 42601
+Character: 49
+
+-> It shows me, that there is an argument missing at number_oscars because we defined,
+that this field can't be NULL
+
+Insert into actors
+(first_name, last_name, age, number_oscars)
+values
+('Jack', 'Black', 45, 0)
+
+1	"Scarlet"	"Johanson"	35	4
+2	"Leonardo"	"Di Caprio"	45	2
+3	"Willem"	"Dafoe"		65	1
+4	"Angelina"	"Jolie"		58	3
+5	"Mathew"	"Damon"		62	2
+6	"Jack"		"Black"		45	0
