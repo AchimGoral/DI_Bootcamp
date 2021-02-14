@@ -1,0 +1,61 @@
+1. SELECT * FROM students
+1	"Marc"	"Benichou"	"1998-11-02"
+2	"Yoan"	"Cohen"		"2010-12-03"
+3	"Leah"	"Benichou"	"1987-07-27"
+4	"Amelia""Dux"		"1996-04-07"
+5	"David"	"Grez"		"2003-06-14"
+6	"Omer"	"Simpson"	"1980-10-03"
+
+2.SELECT first_name, last_name FROM students
+"Marc"	"Benichou"
+"Yoan"	"Cohen"
+"Leah"	"Benichou"
+"Amelia""Dux"
+"David"	"Grez"
+"Omer"	"Simpson"
+
+3.1 SELECT first_name, last_name FROM students WHERE id = 2
+"Yoan"	"Cohen"
+
+3.2 SELECT first_name, last_name FROM students 
+WHERE first_name = 'Marc' AND last_name = 'Benichou'
+"Marc"	"Benichou"
+
+3.3 SELECT first_name, last_name FROM students 
+WHERE first_name = 'Marc' OR last_name = 'Benichou'
+"Marc"	"Benichou"
+"Leah"	"Benichou"
+
+3.4 OR lets us choose between two different options, while AND has fullfill both requests
+
+3.5 SELECT first_name, last_name FROM students 
+WHERE first_name LIKE '%a%'
+"Marc"	"Benichou"
+"Yoan"	"Cohen"
+"Leah"	"Benichou"
+"Amelia""Dux"
+"David"	"Grez"
+
+3.6 SELECT first_name, last_name FROM students 
+WHERE first_name LIKE 'A%'
+"Amelia""Dux"
+
+3.7 SELECT first_name, last_name FROM students 
+WHERE first_name LIKE '%a'
+"Leah"	"Benichou"
+"Amelia""Dux"
+
+3.8 SELECT first_name, last_name FROM students 
+WHERE first_name LIKE '%a_'
+"Yoan"	"Cohen"
+"Leah"	"Benichou"
+
+3.9 SELECT first_name, last_name FROM students 
+WHERE id = 1 OR id = 3
+"Marc"	"Benichou"
+"Leah"	"Benichou"
+
+4. SELECT first_name, last_name, birth_date FROM students 
+WHERE birth_date >= '01/01/2000'
+"Yoan"	"Cohen"	"2010-12-03"
+"David"	"Grez"	"2003-06-14"
