@@ -1,0 +1,10 @@
+UPDATE:
+1. update students
+set birth_date = '02/11/1998'
+where last_name = 'Benichou'
+
+2. update students
+set last_name = 'Guez'
+where last_name = 'Grez'
+
+DELETE:

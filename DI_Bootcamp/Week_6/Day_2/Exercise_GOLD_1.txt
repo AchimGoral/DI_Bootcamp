@@ -1,0 +1,52 @@
+1. select count(rating) as g_rating
+from film
+WHERE rating = 'G'
+
+select count(rating) as pg_rating
+from film
+WHERE rating = 'PG'
+
+select count(rating) as pg13_rating
+from film
+WHERE rating = 'PG-13'
+
+select count(rating) as r_rating
+from film
+WHERE rating = 'R'
+
+select count(rating) as nc17_rating
+from film
+WHERE rating = 'NC-17'
+
+-- Each row can be selected independantely to count the movies per rating
+
+2. SELECT title, rating
+FROM film
+WHERE rating IN ('G', 'PG-13')
+
+2.1 SELECT title, rating
+FROM film
+WHERE rating IN ('G', 'PG-13') 
+AND length < 120
+AND rental_rate < 3
+order by title asc
+
+3. update customer
+set first_name = 'Achim',
+last_name = 'Goral',
+email = 'achimgoral.il@gmail.com'
+where customer_id = 1
+
+4. select *
+from customer
+join address
+on customer.address_id = address.address_id
+order by customer_id
+
+
+update address
+set address = '53 Hankin',
+district = 'Holon',
+postal_code = '581337',
+city_id = '123'
+where address_id = 5
