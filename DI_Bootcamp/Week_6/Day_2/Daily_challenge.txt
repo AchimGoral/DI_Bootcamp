@@ -1,0 +1,16 @@
+Q1:
+
+Output will be 3. id = NULL in the second tab is out and so is id = NULL in the first tab.
+There will be the id's = 5,6,7 left
+
+Q2:
+
+Output will be 3 again but with id's = 6,7,NULL
+
+Q3:
+
+Output will be 2, because it will take out the id's 5 and NULL from the second tab
+
+Q4:
+
+Same output like in Q2
