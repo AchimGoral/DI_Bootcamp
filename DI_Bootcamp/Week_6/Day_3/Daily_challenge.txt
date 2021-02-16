@@ -17,7 +17,7 @@ CREATE TABLE lib_store (
 CREATE TABLE lib_rents (
 	lib_store_user_id SERIAL,
 	FOREIGN KEY (lib_store_user_id) REFERENCES lib_store(user_id) ON DELETE CASCADE,
-	lib_user_id SERIAL PRIMARY KEY,
+	lib_user_id SERIAL,
 	FOREIGN KEY (lib_user_id) REFERENCES lib_user(user_id) ON DELETE CASCADE,
 	rental_date DATE
 )
