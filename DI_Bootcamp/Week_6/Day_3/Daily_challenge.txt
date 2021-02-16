@@ -34,3 +34,12 @@ VALUES
 ('Harry Potter', 'Wizard uses magiv to defend his parents killer', 325, 548),
 ('The Hobbit', 'Bilbo on a journey to kill the dragon', 1250, 789),
 ('Developers', 'People sit hours daily to learn databases and stuff', 1045, 411)
+
+INSERT INTO lib_rents (lib_store_user_id, lib_user_id, rental_date)
+VALUES
+(1, 1, '13/01/2021'),
+(1, 2, '10/02/2021'),
+(2, 3, '01/02/2021'),
+(3, 1, '08/02/2021'),
+(3, 3, '07/02/2021'),
+(3, 4, '02/02/2021')
