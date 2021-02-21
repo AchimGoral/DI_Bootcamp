@@ -1,13 +1,21 @@
-import sqlite3 as sl
+# import sqlite3 as sl
+import psycopg2
+
+HOSTNAME = 'localhost'
+USERNAME = 'postgres'
+PASSWORD = 'Achim031291!'
+DATABASE = 'restaurant_items'
 
 class MenuItem:
 
 	def __init__(self, item, price):
 		self.item = item
 		self.price = price
+		
 
 	def run_query(self, query):
-		connection = sl.connect("menu_database.db")
+		# connection = sl.connect("menu_database.db")
+		connection = psycopg2.connect(host=HOSTNAME, user=USERNAME, password=PASSWORD, dbname=DATABASE)
 		cursor = connection.cursor()
 		cursor.execute(query)
 		connection.commit()
@@ -33,7 +41,8 @@ class MenuItem:
 	@classmethod
 	def all(cls):
 		query = f"SELECT item, price FROM restaurant_items"
-		connection = sl.connect("menu_database.db")
+		# connection = sl.connect("menu_database.db")
+		connection = psycopg2.connect(host=HOSTNAME, user=USERNAME, password=PASSWORD, dbname=DATABASE)
 		cursor = connection.cursor()
 		cursor.execute(query)
 		results = cursor.fetchall()
@@ -45,7 +54,8 @@ class MenuItem:
 	@classmethod
 	def get_by_name(cls, get_item):
 		query = f"SELECT item, price FROM restaurant_items WHERE item = '{get_item}'"
-		connection = sl.connect("menu_database.db")
+		# connection = sl.connect("menu_database.db")
+		connection = psycopg2.connect(host=HOSTNAME, user=USERNAME, password=PASSWORD, dbname=DATABASE)
 		cursor = connection.cursor()
 		cursor.execute(query)
 		results = cursor.fetchall()
