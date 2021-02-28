@@ -12,9 +12,9 @@ def accept_client():
 
 def receive_data(cli_sock, cli_add):
     while True:
-        data = cli_sock.recv(16384)
+        data = cli_sock.recv(64)
         new = data.decode(FORMAT).split(">")
-        print(new)
+        # print(new)
         if new[0] == 'sup':
             insert_user = dbc.signup_server_db(new[1],cli_add[0])
             if not insert_user:

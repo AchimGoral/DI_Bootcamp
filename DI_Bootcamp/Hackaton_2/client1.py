@@ -8,15 +8,15 @@ def send_sig_sup(action):
     cli_sock.send(action.encode(FORMAT))
 
 def send_msg(action):
-        message = input()
-        action = f"msg>{username}: {message}"
-        cli_sock.send(action.encode(FORMAT))
+    message = input()
+    action = f"msg>{username}: {message}"
+    cli_sock.send(action.encode(FORMAT))
 
 def receive():
     while True:
         sleep(1)
-        thread_receive = threading.Thread(target = receive)
-        thread_receive.start()
+        # thread_receive = threading.Thread(target = receive)
+        # thread_receive.start()
         data = cli_sock.recv(64)
         data = data.decode("utf-8")
         print(data)
@@ -29,10 +29,6 @@ def receive():
         elif data == '500':
             print('Welcome')
         else:
-            # message = input("\nMe: ")
-            # action = f"msg>{username}: {message}"
-            # thread_send = threading.Thread(target=send_msg, args = [action])
-            # thread_send.start()
             send_msg(data)
 
 
@@ -45,7 +41,7 @@ if __name__ == "__main__":
     PORT = 5023
     cli_sock.connect((HOST, PORT))     
     print('Connected to remote host...')
-    cli_sock.setblocking(0)
+    # cli_sock.setblocking(0)
     
     option = input('Enter what you want to do : Signup (sup) / Signin (sig) : ')
     username = input('Enter your username : ')
