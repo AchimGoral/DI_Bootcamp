@@ -21,18 +21,18 @@ def signup_server_db(username, ip_address):
         run_query(query)
         # welcome_msg = f"Welcome {username}"
         # print(welcome_msg)
+        return True
     except:
-        error = 'This username already exists'
-        print(error)
+        return False
 
 def signin_server_db(username):
     query = f"SELECT username FROM user WHERE username == '{username}'"
     results = fetch_query(query)
     if results == []:
-        error = "This username doesn't exist"
-        print(error)
         return False
-    return results
+    else:
+        user = results[0][0]
+        return user
 
 def message_server_db(sender, receiver, message):
     pass
