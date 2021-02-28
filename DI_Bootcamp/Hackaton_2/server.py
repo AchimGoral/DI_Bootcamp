@@ -12,9 +12,9 @@ def accept_client():
 
 def receive_data(cli_sock, cli_add):
     while True:
-        data = cli_sock.recv(64)
+        data = cli_sock.recv(128)
         new = data.decode(FORMAT).split(">")
-        # print(new)
+        print(new)
         if new[0] == 'sup':
             insert_user = dbc.signup_server_db(new[1],cli_add[0])
             if not insert_user:
@@ -32,7 +32,7 @@ def receive_data(cli_sock, cli_add):
                 msg = '300'
                 cli_sock.send(msg.encode(FORMAT))
         elif new[0] == 'msg':
-            # cli_sock.send(new[1].encode(FORMAT))
+            dbc.message_server_db(new[1])
             send_to_usr(cli_sock, new[1])
 
 def send_to_usr(cli_sock, data):
@@ -43,12 +43,15 @@ def send_to_usr(cli_sock, data):
 if __name__ == "__main__":
     CONNECTION_LIST = []
 
+    # socket
     ser_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
+    # bind
     HOST = 'localhost'
     PORT = 5023
     ser_sock.bind((HOST, PORT))
 
+    # listen    
     ser_sock.listen(3)
     print('Chat server started on port : ' + str(PORT))
 

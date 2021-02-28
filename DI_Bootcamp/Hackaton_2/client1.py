@@ -3,11 +3,10 @@ from time import sleep
 
 FORMAT = 'utf-8'
 
-
 def send_sig_sup(action):
     cli_sock.send(action.encode(FORMAT))
 
-def send_msg(action):
+def send_msg():
     message = input()
     action = f"msg>{username}: {message}"
     cli_sock.send(action.encode(FORMAT))
@@ -15,11 +14,8 @@ def send_msg(action):
 def receive():
     while True:
         sleep(1)
-        # thread_receive = threading.Thread(target = receive)
-        # thread_receive.start()
-        data = cli_sock.recv(64)
+        data = cli_sock.recv(128)
         data = data.decode("utf-8")
-        print(data)
         if data == '300':
             print("This username doesn't exist")
             break
@@ -29,19 +25,17 @@ def receive():
         elif data == '500':
             print('Welcome')
         else:
-            send_msg(data)
-
+            print(data)
+            send_msg()
 
 if __name__ == "__main__":   
-    # socket
-    cli_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
+    cli_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     HOST = 'localhost'
     PORT = 5023
     cli_sock.connect((HOST, PORT))     
     print('Connected to remote host...')
-    # cli_sock.setblocking(0)
     
     option = input('Enter what you want to do : Signup (sup) / Signin (sig) : ')
     username = input('Enter your username : ')
@@ -56,6 +50,3 @@ if __name__ == "__main__":
     elif option == 'sig':
         sup_send = threading.Thread(target=send_sig_sup, args = [action])
         sup_send.start()
-
-    thread_send = threading.Thread(target=send_msg, args = [action])
-    thread_send.start()

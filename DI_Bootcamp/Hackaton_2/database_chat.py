@@ -19,8 +19,6 @@ def signup_server_db(username, ip_address):
     try:
         query = f"INSERT INTO user (username, ip_add) VALUES ('{username}', '{ip_address}')"
         run_query(query)
-        # welcome_msg = f"Welcome {username}"
-        # print(welcome_msg)
         return True
     except:
         return False
@@ -34,5 +32,6 @@ def signin_server_db(username):
         user = results[0][0]
         return user
 
-def message_server_db(sender, receiver, message):
-    pass
+def message_server_db(message):
+    query = f"INSERT INTO messages (message) VALUES ('{message}')"
+    run_query(query)

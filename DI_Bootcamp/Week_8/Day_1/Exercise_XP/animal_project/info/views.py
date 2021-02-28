@@ -6,20 +6,29 @@ with open('animal.json') as f:
     data = json.load(f)
 
 def family(request, families_id):
-    pass
-
-def animal(request, animals_id):
     family_list = data['animals']
     context = {}
 
-    for list_item in family_list:
+    context['animals'] = []
+    for my_animal in family_list:
+        if my_animal['id'] == families_id:
+            context['animals'].append(my_animal)
+
+    html = render(request, 'family.html', context)
+    return html
+
+def animal(request, animals_id):
+    animal_list = data['animals']
+    context = {}
+
+    for list_item in animal_list:
         if animals_id == list_item['id']:
             context['name'] = list_item['name']
 
     context['animals'] = []
-    for fam_animal in data['animals']:
-        if fam_animal['family'] == animals_id:
-            context['animals'].append(fam_animal)
+    for animals in data['animals']:
+        if animals['family'] == animals_id:
+            context['animals'].append(animals)
 
     html = render(request, 'animal.html', context)
     return html
