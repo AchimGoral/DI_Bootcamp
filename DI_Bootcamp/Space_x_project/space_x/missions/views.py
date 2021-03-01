@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Mission
 
 def home(request):
+
+    # From db
+    # missions = Mission.objects.all()
 
     # Pretend the data came from the db
     missions = [

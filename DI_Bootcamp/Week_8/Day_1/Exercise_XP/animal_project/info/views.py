@@ -2,10 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import json
 
-with open('animal.json') as f:
-    data = json.load(f)
+def get_animals_data():
+    with open('animal.json') as f:
+        data = json.load(f)
+    return data
 
 def family(request, families_id):
+    data = get_animals_data()
     family_list = data['animals']
     context = {}
 
@@ -18,6 +21,7 @@ def family(request, families_id):
     return html
 
 def animal(request, animals_id):
+    data = get_animals_data()
     animal_list = data['animals']
     context = {}
 

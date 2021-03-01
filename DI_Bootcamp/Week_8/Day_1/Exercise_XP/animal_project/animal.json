@@ -12,7 +12,7 @@
         {
             "id": 2,
             "name": "Domestic Cat",
-            "legs": 2,
+            "legs": 4,
             "weight": 5.67,
             "height": 0.25,
             "speed": 30,
@@ -21,7 +21,7 @@
         {
             "id": 3,
             "name": "Panther",
-            "legs": 2,
+            "legs": 4,
             "weight": 5.67,
             "height": 0.5,
             "speed": 70,
@@ -32,7 +32,7 @@
             "name": "Spider",
             "legs": 8,
             "weight": 0.02,
-            "height":4.2,
+            "height":0.04,
             "speed": 2,
             "family": 6 
         }
