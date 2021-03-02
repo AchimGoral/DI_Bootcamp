@@ -6,6 +6,9 @@
 
 {% block content %}
 
+<h1>Welcome to the Gif page</h1>
+<h3>Click the Gifs to get more information</h3>
+
     {% for gif in gifs %}
         <div class="div_img">
             <a href="{% url 'gif_show' gif.id %}"><img src="{{gif.url}}" alt="{{gif.title}}"></a>
