@@ -1,14 +1,9 @@
 from django.shortcuts import render
 from .models import Family, Animal
 
-# Create your views here.
 def family(request, family_id):
     fam = Family.objects.get(id=family_id)
-    animals = Animal.objects.filter(family=family_id)
-    context = {
-        'family': fam,
-        'animals': animals
-        }
+    context = {'family': fam,}
     return render(request, 'family.html', context)
 
 def animal(request, animal_id):
