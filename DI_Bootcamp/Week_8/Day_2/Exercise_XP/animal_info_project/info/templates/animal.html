@@ -14,6 +14,9 @@
     <h3>Weight: {{animal.weight}}</h3>
     <h3>Height: {{animal.height}}</h3>
     <h3>Speed: {{animal.speed}}</h3>
-    <h3>Family: {{animal.family}}</h3>
+    <h3>Family: {{animal.family.name}}</h3>
+    <br>
+
+    <h3><a href="{% url 'animals'%}">Go back to animals</a></h3>
 
 {% endblock %}

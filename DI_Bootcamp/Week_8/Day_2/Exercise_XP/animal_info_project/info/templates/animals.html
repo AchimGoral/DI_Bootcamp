@@ -10,7 +10,7 @@
 
     {% for animal in animals_all %}
 
-        <h3>Name: {{animal.name}}</h3>
+        <h3>Family: <a href="{% url 'family' animal.id %}">{{animal.name}}</a></h3>
 
     {% endfor %}
 
