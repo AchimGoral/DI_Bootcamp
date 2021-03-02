@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+    {% for gif in gifs %}
+        <div class="div_img">
+            <a href="{% url 'gif_show' gif.id %}"><img src="{{gif.url}}" alt="{{gif.title}}"></a>
+        </div>
+    {% endfor %}
+
+{% endblock %}
