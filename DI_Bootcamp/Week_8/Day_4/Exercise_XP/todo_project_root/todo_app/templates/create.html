@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Create Todo{% endblock %}
+
+{% block content %}
+
+<h1>New Todo entry</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{myform.as_table}}
+        </table>
+        <input type="submit">
+    </form>
+
+{% endblock %}

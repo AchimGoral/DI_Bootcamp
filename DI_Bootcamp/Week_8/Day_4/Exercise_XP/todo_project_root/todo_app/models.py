@@ -20,6 +20,9 @@ class Category(models.Model):
     name = models.CharField(max_length=100, default='no category')
     image = models.URLField(max_length=200)
 
+    class Meta:
+        verbose_name_plural = "categories"
+
     def __repr__(self):
         return f"ID: {self.id} Category: {self.name}"
 
