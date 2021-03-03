@@ -2,12 +2,13 @@
 
 {% load static %}
 
-{% block title %}{% endblock %}
+{% block title %}Mainpage{% endblock %}
 
 {% block content %}
 
 <h1>Welcome to the Gif page</h1>
 <h3>Click the Gifs to get more information</h3>
+<a href="{% url 'categories' %}"><h3>Click here to go to all categories</h3></a>
 
     {% for gif in gifs %}
         <div class="div_img">

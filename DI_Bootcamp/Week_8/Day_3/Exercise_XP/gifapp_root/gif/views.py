@@ -13,6 +13,6 @@ def gif_show(request, gif_id):
     return render(request, 'gif_show.html', context)
 
 def categories(request):
-    category = Categories.objects.all()
+    category = Category.objects.all()
     context = {'category': category}
     return render(request, 'categories.html', context)

@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %}{% endblock %}
+{% block title %} Gif: {{gif.id}} {% endblock %}
 
 {% block content %}
 <div class="div_img">
@@ -11,6 +11,9 @@
 <ul>
     <li>Title: {{gif.title}}</li>
     <li>Uploader: {{gif.uploader_name}}</li>
+    {% for category_name in gif.all_gifs.all %}
+    <li>Category: {{category_name.id}}: {{category_name.name}}</li>
+    {% endfor %}
 </ul>
 
 <h3><a href="{% url 'main'%}">Go back to main</a></h3>
