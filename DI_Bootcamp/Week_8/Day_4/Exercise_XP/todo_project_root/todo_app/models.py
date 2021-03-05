@@ -16,7 +16,7 @@ class Todo(models.Model):
         return f"ID: {self.id} Title: {self.title}"
 
 class Category(models.Model):
-    todos = models.ManyToManyField(Todo, related_name='all_todo')
+    todos = models.ManyToManyField(Todo, null=True, related_name='all_todo')
     name = models.CharField(max_length=100, default='no category')
     image = models.URLField(max_length=200)
 

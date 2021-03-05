@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import *
 from .forms import *
+from django.http import Http404
 
 # Create your views here.
 def home(request):
@@ -11,8 +12,11 @@ def home(request):
 def create(request):
 
     if request.method == "GET":
-        myform = Todoform()
-        return render(request, 'create.html', {'myform':myform})
+        try:
+            myform = Todoform()
+            return render(request, 'create.html', {'myform':myform})
+        except:
+            return render(request, '404.html')
 
     if request.method == "POST":
 
