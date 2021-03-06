@@ -6,25 +6,69 @@
 
 {% block content %}
 <div class="container-fluid">
+
+    {% if my_vehicle %}
+
     <h1>All vehicles</h1>
+
+    <a href="{% url 'customer' %}" class="btn btn-secondary" role="button">To customers</a>
+    <a href="{% url 'rental' %}" class="btn btn-secondary" role="button">To rentals</a>
+    <a href="{% url 'vehicle_add' %}" class="btn btn-secondary" role="button">Add a vehicle</a>
+
     <div class="row">
         {% for vehicle in my_vehicle %}
         <div class="col-md-3">
             <table class="table table-hover">
                 <tr>
+                    <th>Link</th>
                     <th>{{vehicle.name}}</th>
                 </tr>
                 {% for v in vehicle.vehicle_set.all %}
                 <tr>
-                    <td>
-                        {{v.size}}
-                    </td> 
+                    <td><a href="{% url 'vehicle_int' v.id %}" class="btn btn-secondary" role="button">Link</a></td>
+                    <td>{{v.size}}</td>
                 </tr>
                 {% endfor %}
             </table>
         </div>
         {% endfor %}
     </div>
+
+    {% else %}
+
+    <h3>Vehicle ID: {{one_vehicle.id}}</h3>
+
+    <a href="{% url 'vehicle' %}" class="btn btn-secondary" role="button">Back to vehicles</a>
+
+    <table class="table table-hover">
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Rental date</th>
+            <th>Return date</th>
+            <th>Vehicle type</th>
+            <th>Vehicle size</th>
+            <th>Real cost</th>
+        </tr>
+        <tr>
+            {% for vehicle in one_vehicle.rental_set.all %}
+                <td>{{vehicle.customer.first_name}}</td>
+                <td>{{vehicle.customer.last_name}}</td>
+                <td>{{vehicle.rental_date}}</td>
+                <td>{{vehicle.return_date}}</td>
+            {% empty %}
+                <td>Not rented</td>
+                <td>Not rented</td>
+                <td>Not rented</td>
+                <td>Not rented</td>
+            {% endfor %}
+            <td>{{one_vehicle.vehicle_type}}</td>
+            <td>{{one_vehicle.size}}</td>
+            <td>{{one_vehicle.real_cost}}</td>
+        </tr>
+    </table>
+    
+    {% endif %}
 </div>
 
 {% endblock %}

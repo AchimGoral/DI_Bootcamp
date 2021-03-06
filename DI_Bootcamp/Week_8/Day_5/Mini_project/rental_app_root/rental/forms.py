@@ -45,5 +45,6 @@ class Rental_add(forms.Form):
 
 
 class Vehicle_add(forms.Form):
-    vehicle_type = forms.IntegerField(widget=forms.Select())
-    size = forms.IntegerField(widget=forms.Select())
+    vehicle_type = forms.CharField()
+    size = forms.CharField()
+    real_cost = forms.FloatField(required=False, widget=forms.NumberInput())
