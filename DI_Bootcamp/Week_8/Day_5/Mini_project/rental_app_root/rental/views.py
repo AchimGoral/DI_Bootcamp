@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
 
-# Create your views here.
+
 def customer(request):
     my_customer = Customer.objects.all().order_by('last_name')
     context = {
@@ -10,11 +10,41 @@ def customer(request):
     }
     return render(request, 'customer.html', context)
 
+
 def customer_add(request):
-    pass
+
+    if request.method == "GET":
+        cust_add = Customer_add()
+        return render(request, 'add.html', {'cust_add':cust_add})
+
+    if request.method == 'POST':
+
+        cust_add = Customer_add(request.POST)
+
+        if cust_add.is_valid():
+            first_name = cust_add.cleaned_data['first_name']
+            last_name = cust_add.cleaned_data['last_name']
+            email = cust_add.cleaned_data['email']
+            phone_number = cust_add.cleaned_data['phone_number']
+            address = cust_add.cleaned_data['address']
+            city = cust_add.cleaned_data['city']
+            country = cust_add.cleaned_data['country']
+            
+            f =  Customer(first_name=first_name, last_name=last_name, email=email, phone_number=phone_number, address=address, city=city, country=country)
+            f.save()
+            return redirect('../')
+
+        else:
+            return render(request, 'add.html', {'cust_add':cust_add})
+
 
 def customer_int(request, pk):
-    pass
+    one_customer = Customer.objects.get(id=pk)
+    context = {
+        'one_customer':one_customer
+    }
+    return render(request, 'customer.html', context)
+
 
 def vehicle(request):
     my_vehicle = Vehicle_type.objects.all()
@@ -27,8 +57,10 @@ def vehicle(request):
 def vehicle_add(request):
     pass
 
+
 def vehicle_int(request, pk):
     pass
+
 
 def rental(request):
     my_rental = Rental.objects.all()
@@ -37,8 +69,10 @@ def rental(request):
     }
     return render(request, 'rental.html', context)
 
+
 def rental_add(request):
     pass
+
 
 def rental_int(request, pk):
     pass

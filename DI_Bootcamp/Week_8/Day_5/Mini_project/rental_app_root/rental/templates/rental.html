@@ -8,10 +8,11 @@
 
 <h1>All rentals</h1>
 
+<button class="btn btn-primary"><a href="{% url 'customer' %}">To Customers</a></button>
+
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>Link</th>
             <th>Customer</th>
             <th>Vehicle</th>
             <th>Rental Date</th>
@@ -21,7 +22,6 @@
     <tbody>
         {% for rental in my_rental %}
         <tr>
-            <td><a href="{% url 'customer' %}">To Customer</a></td>
             <td>{{rental.customer}}</td>
             <td>{{rental.vehicle}}</td>
             <td>{{rental.rental_date}}</td>

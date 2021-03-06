@@ -39,6 +39,7 @@ class Customer(models.Model):
 class Vehicle(models.Model):
     vehicle_type = models.ForeignKey(Vehicle_type, on_delete=models.SET_NULL, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
+    real_cost = models.FloatField(default=0)
     size = models.ForeignKey(Vehicle_size, on_delete=models.SET_NULL, null=True)
 
     def __repr__(self):

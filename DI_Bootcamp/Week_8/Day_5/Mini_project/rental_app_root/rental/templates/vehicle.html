@@ -5,24 +5,26 @@
 {% block title %}Vehicles{% endblock %}
 
 {% block content %}
-
-<h1>All vehicles</h1>
-
-{% for vehicle in my_vehicle %}
-<div style="display: inline-flex; width:18%;">
-    <table class="table table-hover">
-        <tr>
-            <th>{{vehicle.name}}</th>
-        </tr>
-        {% for v in vehicle.vehicle_set.all %}
-        <tr>
-            <td>
-                {{v.size}}
-            </td> 
-        </tr>
+<div class="container-fluid">
+    <h1>All vehicles</h1>
+    <div class="row">
+        {% for vehicle in my_vehicle %}
+        <div class="col-md-3">
+            <table class="table table-hover">
+                <tr>
+                    <th>{{vehicle.name}}</th>
+                </tr>
+                {% for v in vehicle.vehicle_set.all %}
+                <tr>
+                    <td>
+                        {{v.size}}
+                    </td> 
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
         {% endfor %}
-    </table>
+    </div>
 </div>
-{% endfor %}
 
 {% endblock %}

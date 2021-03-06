@@ -2,10 +2,26 @@
 
 {% load static %}
 
-{% block title %} Home Todo{% endblock %}
+{% block title %}Add{% endblock %}
 
 {% block content %}
 
-
+<div class="container-fluid">
+    {% if cust_add %}
+    <h3>Add new Customer</h3>
+    <a href="{% url 'customer' %}" class="btn btn-secondary" role="button">Back to Customers</a>
+    <div class="row">
+        <div class="col-md-4">
+            <form method="POST">
+                {% csrf_token %}
+                <table class="table table-hover">
+                    {{cust_add.as_table}}
+                </table>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    {% endif %}
+</div>
 
 {% endblock %}
