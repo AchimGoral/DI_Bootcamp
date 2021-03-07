@@ -14,24 +14,14 @@ def customer(request):
 def customer_add(request):
 
     if request.method == "GET":
-        cust_add = Customer_add()
-        return render(request, 'add.html', {'cust_add':cust_add})
+        return render(request, 'add.html', {'cust_add':Customer_add()})
 
     if request.method == 'POST':
 
         cust_add = Customer_add(request.POST)
 
         if cust_add.is_valid():
-            first_name = cust_add.cleaned_data['first_name']
-            last_name = cust_add.cleaned_data['last_name']
-            email = cust_add.cleaned_data['email']
-            phone_number = cust_add.cleaned_data['phone_number']
-            address = cust_add.cleaned_data['address']
-            city = cust_add.cleaned_data['city']
-            country = cust_add.cleaned_data['country']
-            
-            f = Customer(first_name=first_name, last_name=last_name, email=email, phone_number=phone_number, address=address, city=city, country=country)
-            f.save()
+            cust_add.save()
             return redirect('customer')
 
         else:
