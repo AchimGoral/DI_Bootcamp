@@ -1,0 +1,23 @@
+{% extends 'partials/base.html' %}
+
+{% load static %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+
+{% include 'partials/navbar.html' %}
+
+<div class="container-fluid">
+    <h3>Add Film</h3>
+
+    <form method="POST">
+        {% csrf_token %}
+        <table class="table table-hover">
+            {{add_film.as_table}}
+        </table>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock %}

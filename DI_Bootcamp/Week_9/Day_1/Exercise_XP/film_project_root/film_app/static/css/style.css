@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:rgba(220, 248, 231, 0.5);
+}
+
+h3 {
+    margin: 10px 0;
+    color: rgb(27, 27, 27);
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,26 @@
+{% extends 'partials/base.html' %}
+
+{% load static %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+
+{% include 'partials/navbar.html' %}
+
+<div class="container-fluid">
+    <h3>All new movies</h3>
+
+    {% for film in films %}
+    <div class="card" style="width: 25rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{film.title}} BY {% for name in film.director.all %} {{name.first_name}} {{name.last_name}} {% endfor %}</h5>
+          <p class="card-text">Release Date: {{film.release_date}}</p>
+          <p class="card-text">Category: {% for cat in film.category.all %} {{cat}} {% endfor %}</p>
+          <p class="card-text"> Available in: {% for cnt in film.film_country.all %} {{cnt}} {% endfor %}</p>
+        </div>
+      </div>
+      {% endfor %}
+</div>
+
+{% endblock %}
