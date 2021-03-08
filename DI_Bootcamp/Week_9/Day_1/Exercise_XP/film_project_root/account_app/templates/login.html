@@ -4,20 +4,20 @@
 
 {% load crispy_forms_tags %}
 
-{% block title %}Homepage{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block content %}
 
 {% include 'partials/navbar.html' %}
 
 <div class="container-fluid">
-    <h3>Add Film</h3>
+    <br>
+    <h5>Please log yourself in</h5>
+    <br>
     <form method="POST">
         {% csrf_token %}
-        <table class="table table-hover">
-            {{add_film | crispy}}
-        </table>
-        <button type="submit" class="btn btn-primary add_form" style="margin: 10px 0;">Submit</button>
+        {{ my_form|crispy }}
+        <button type="submit" class="btn btn-primary">Login</button>
     </form>
 </div>
 

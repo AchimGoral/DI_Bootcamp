@@ -35,6 +35,7 @@ class Director(models.Model):
 class Film(models.Model):
     title = models.CharField(max_length=50)
     release_date = models.DateTimeField(default=now, editable=True)
+    picture = models.URLField(max_length=200)
     created_in_country = models.ForeignKey(Country, on_delete=models.SET_NULL, null=True)
     available_in_country = models.ManyToManyField(Country, related_name='film_country')
     category = models.ManyToManyField(Category, related_name='film_category')
