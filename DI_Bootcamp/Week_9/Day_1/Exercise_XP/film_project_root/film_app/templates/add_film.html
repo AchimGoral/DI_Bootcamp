@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% load crispy_forms_tags %}
+
 {% block title %}Homepage{% endblock %}
 
 {% block content %}
@@ -14,7 +16,7 @@
     <form method="POST">
         {% csrf_token %}
         <table class="table table-hover">
-            {{add_film.as_table}}
+            {{add_film}}
         </table>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
