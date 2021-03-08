@@ -17,7 +17,7 @@
           <h5 class="card-title">{{film.title}} BY {% for name in film.director.all %} {{name.first_name}} {{name.last_name}} {% endfor %}</h5>
           <p class="card-text">Release Date: {{film.release_date}}</p>
           <p class="card-text">Category: {% for cat in film.category.all %} {{cat}} {% endfor %}</p>
-          <p class="card-text"> Available in: {% for cnt in film.film_country.all %} {{cnt}} {% endfor %}</p>
+          <p class="card-text"> Available in: {% for cnt in film.available_in_country.all %} {{cnt}} {% endfor %}</p>
         </div>
       </div>
       {% endfor %}
