@@ -13,11 +13,25 @@
 <div class="container-fluid">
     <h3>Add Film</h3>
     {% if messages %}
-    <ul class="messages">
         {% for message in messages %}
-        <li class="{{ message.tags }}">{{ message }}</li>
+            <div id="message" class="container">
+                {% if message.tags == 'error' %}
+                <div class="alert alert-danger alert-dismissible text-center" role="alert">
+                {% else %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible text-center" role="alert"></div>
+                {% endif %}
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    <strong>
+                        Error:
+                    </strong>
+                    {% else %}
+                        {{ message.tags|title }}
+                    {% endif %}
+                    {{ message }}
+                </div>
+            </div>
         {% endfor %}
-    </ul>
     {% endif %}
     <form method="POST">
         {% csrf_token %}

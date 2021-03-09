@@ -27,10 +27,10 @@ def addFilm(request):
         if add_film.is_valid():
             add_film.save()
             messages.success(request, 'The film with was succesfully added')
-            return redirect('homepage')
+            return redirect('add_film')
 
         else:
-            messages.warning(request, 'There was an error. Please try again')
+            messages.error(request, 'Something went wrong. Please try again')
             return render(request, 'add_film.html', {'add_film':add_film})
 
 
