@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'film_app',
     'account_app',
     'crispy_forms',
+    'star_ratings',
 ]
 
 

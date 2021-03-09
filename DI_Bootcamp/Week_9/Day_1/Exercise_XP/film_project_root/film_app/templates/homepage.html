@@ -19,7 +19,11 @@
       <div class="card" style="margin: 10px 0;">
         <img class="card-img-top" src="{{film.picture}}" alt="">
         <div class="card-body">
-          <h5 class="card-title">{{film.title}} BY {% for name in film.director.all %} {{name.first_name}} {{name.last_name}} {% endfor %}</h5>
+          <h5 class="card-title">{{film.title}} BY 
+            <ul>
+              {% for name in film.director.all %} {{name.first_name}} {{name.last_name}} {% endfor %}
+            </ul>
+          </h5>
           <p class="card-text">Release Date: {{film.release_date}}</p>
           <p class="card-text">Category: {% for cat in film.category.all %} {{cat}} {% endfor %}</p>
           <p class="card-text"> Available in:

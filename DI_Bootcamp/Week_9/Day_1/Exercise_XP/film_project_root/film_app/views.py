@@ -3,6 +3,7 @@ from .models import *
 from .forms import *
 from django.views import generic
 from django.urls import reverse_lazy
+from django.contrib import messages
 
 # Create your views here.
 def homepage(request):
@@ -11,6 +12,9 @@ def homepage(request):
         'films':films,
     }
     return render(request, 'homepage.html', context)
+
+def homepage_detail(request):
+    pass
 
 def addFilm(request):
     if request.method == "GET":
@@ -22,9 +26,11 @@ def addFilm(request):
 
         if add_film.is_valid():
             add_film.save()
+            messages.success(request, 'The film with was succesfully added')
             return redirect('homepage')
 
         else:
+            messages.warning(request, 'There was an error. Please try again')
             return render(request, 'add_film.html', {'add_film':add_film})
 
 

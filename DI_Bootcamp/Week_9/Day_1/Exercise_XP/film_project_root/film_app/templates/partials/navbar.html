@@ -8,11 +8,18 @@
       <li class="nav-item">
         <a class="nav-link" href="{% url 'AddDirector' %}">New director</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+      </li>
       {% endif %}
     </ul>
     <ul class="navbar-nav navbar-right">
       {% if user.is_authenticated %}
-      <li style="margin: auto;">Welcome {{user.get_full_name}}</li>
+      {% if user.get_full_name %}
+        <li style="margin: auto;">Welcome {{user.get_full_name}}</li>
+      {% else %}
+        <li style="margin: auto;">Welcome {{user.username}}</li>
+      {% endif %}
       <li><a class="nav-link" href="{% url 'profile' user.id %}">Profile</a></li>
       <li><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
       {% else %}
