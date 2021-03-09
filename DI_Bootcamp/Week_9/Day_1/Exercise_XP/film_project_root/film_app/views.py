@@ -16,25 +16,37 @@ def homepage(request):
 def homepage_detail(request):
     pass
 
-def addFilm(request):
+def add_film(request):
     if request.method == "GET":
-        return render(request, 'add_film.html', {'add_film':AddFilmForm()})
+        return render(request, 'add_film.html', {'film':AddFilmForm()})
 
     if request.method == 'POST':
 
-        add_film = AddFilmForm(request.POST)
+        film = AddFilmForm(request.POST)
 
-        if add_film.is_valid():
-            add_film.save()
-            messages.success(request, 'The film with was succesfully added')
-            return redirect('add_film')
+        if film.is_valid():
+            film.save()
+            messages.success(request, 'The film was succesfully added')
+            return redirect('addfilm')
 
         else:
             messages.error(request, 'Something went wrong. Please try again')
-            return render(request, 'add_film.html', {'add_film':add_film})
+            return render(request, 'add_film.html', {'film':film})
 
 
-class AddDirector(generic.CreateView):
-    form_class = AddDirectorForm
-    template_name = 'add_director.html'
-    success_url = reverse_lazy('homepage.html')
+def add_director(request):
+    if request.method == "GET":
+        return render(request, 'add_director.html', {'director':AddDirectorForm()})
+
+    if request.method == 'POST':
+
+        director = AddDirectorForm(request.POST)
+
+        if director.is_valid():
+            director.save()
+            messages.success(request, 'The director was succesfully added')
+            return redirect('adddirector')
+
+        else:
+            messages.error(request, 'Something went wrong. Please try again')
+            return render(request, 'add_director.html', {'director':director})

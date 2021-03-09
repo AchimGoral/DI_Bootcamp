@@ -3,10 +3,10 @@
     <ul class="navbar-nav mr-auto">
       {% if user.is_superuser %}
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'addFilm' %}">New movie</a>
+        <a class="nav-link" href="{% url 'addfilm' %}">New movie</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'AddDirector' %}">New director</a>
+        <a class="nav-link" href="{% url 'adddirector' %}">New director</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
