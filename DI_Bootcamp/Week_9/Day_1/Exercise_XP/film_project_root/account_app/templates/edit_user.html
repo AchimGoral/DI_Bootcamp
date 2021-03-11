@@ -4,19 +4,20 @@
 
 {% load crispy_forms_tags %}
 
-{% block title %}Homepage{% endblock %}
+{% block title %}Edit User{% endblock %}
 
 {% block content %}
 
 {% include 'partials/navbar.html' %}
 
 <div class="container-fluid">
-    <h3>Add Director</h3>
-    {% include 'partials/message.html' %}
+    <br>
+    <h5>Change your profile</h5>
+    <br>
     <form method="POST">
         {% csrf_token %}
-            {{director | crispy}}
-            <button type="submit" class="btn btn-primary add_form" style="margin: 10px 0;">Submit</button>
+        {{ user_form|crispy }}
+        <button type="submit" class="btn btn-primary">Save changes</button>
     </form>
 </div>
 

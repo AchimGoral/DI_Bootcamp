@@ -21,6 +21,9 @@
             <p class="card-text">First name: {{my_profile.first_name}}</p>
             <p class="card-text">Last name: {{my_profile.last_name}}</p>
             <p class="card-text">Email: {{my_profile.email}}</p>
+            <a href="{% url 'profile_edit' %}">
+              <button class="btn btn-primary">Edit profile</button>
+           </a>
           </div>
         </div>
       </div>

@@ -11,29 +11,23 @@
 {% include 'partials/navbar.html' %}
 
 <div class="container-fluid">
-  <h3>All new movies</h3>
-    
   <div class="row">
     {% for film in films %}
-    <div class="col-md-4">
-      <div class="card" style="margin: 10px 0;">
-        <img class="card-img-top" src="{{film.picture}}" alt="">
+    <div class="col-sm-6 col-md-3 col-lg-2">
+      <br>
+      <div class="card" style="margin: 20px 10%; width: 200px;">
+        <img class="card-img-top" src="{{film.picture}}" alt="" style="height: 20rem;">
         <div class="card-body">
           <h5 class="card-title">{{film.title}} BY 
             <ul>
               {% for name in film.director.all %} {{name.first_name}} {{name.last_name}} {% endfor %}
             </ul>
           </h5>
-          <p class="card-text">Release Date: {{film.release_date}}</p>
-          <p class="card-text">Category: {% for cat in film.category.all %} {{cat}} {% endfor %}</p>
-          <p class="card-text"> Available in:
-            <ul>
-              {% for cnt in film.available_in_country.all %}
-              <li style="list-style-type: none;">
-                {{cnt}}
-              </li>
-              {% endfor %}
-            </ul>
+          <p class="card-text"><b>Release Date:</b> {{film.release_date}}</p>
+          <p class="card-text"><b>Category:</b> {% for cat in film.category.all %} {{cat}} {% endfor %}</p>
+          <p class="card-text"><b>Available in:</b>{% for cnt in film.available_in_country.all %}
+            {{cnt}}
+            {% endfor %}
           </p>
         </div>
       </div>

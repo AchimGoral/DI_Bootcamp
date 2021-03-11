@@ -24,13 +24,12 @@ class RegistrationForm(UserCreationForm):
             'password2'
             ]
 
-    def save(self, commit=True):
-        user = super(RegistrationForm, self).save(commit=False)
-        user.first_name = cleaned_data['first_name']
-        user.last_name = cleaned_data['last_name']
-        user.email = cleaned_data['email']
-
-        if commit:
-            user.save()
-        
-        return user
+class UserChange(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = [
+            'username',
+            'first_name',
+            'last_name',
+            'email',
+        ]

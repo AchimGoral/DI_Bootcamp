@@ -16,9 +16,9 @@
     <ul class="navbar-nav navbar-right">
       {% if user.is_authenticated %}
       {% if user.get_full_name %}
-        <li style="margin: auto;">Welcome {{user.get_full_name}}</li>
+        <li style="margin: auto;"><b>Welcome {{user.get_full_name}}</b></li>
       {% else %}
-        <li style="margin: auto;">Welcome {{user.username}}</li>
+        <li style="margin: auto;"><b>Welcome {{user.username}}</b></li>
       {% endif %}
       <li><a class="nav-link" href="{% url 'profile' user.id %}">Profile</a></li>
       <li><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
