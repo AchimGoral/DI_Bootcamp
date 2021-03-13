@@ -15,11 +15,11 @@ def sign_up_view(request):
             # Stay logged in after signing up
             user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password1'],)
             login(request, user)
-            return redirect('homepage')
+            return redirect('home')
 
     else:
         form = RegistrationForm()
-        return render(request, 'sign_up.html', {'form': form})
+        return render(request, 'signup.html', {'form': form})
 
 
 def login_view(request):

@@ -1,0 +1,22 @@
+<div class="container">
+    <nav class="navbar fixed-top navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">Travel Me</a>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Country, City or Postcode" aria-label="Search">
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+            </form>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Log In</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Profile</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+  </div>
