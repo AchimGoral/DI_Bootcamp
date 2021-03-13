@@ -40,3 +40,4 @@ class Film(models.Model):
     available_in_country = models.ManyToManyField(Country, related_name='film_country')
     category = models.ManyToManyField(Category, related_name='film_category')
     director = models.ManyToManyField(Director, related_name='film_director')
+    like = models.IntegerField(default=0)

@@ -50,3 +50,7 @@ def add_director(request):
         else:
             messages.error(request, 'Something went wrong. Please try again')
             return render(request, 'add_director.html', {'director':director})
+
+def like(request):
+    pass
+    
