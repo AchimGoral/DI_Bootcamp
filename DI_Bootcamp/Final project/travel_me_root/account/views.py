@@ -5,7 +5,8 @@ from django.contrib import messages
 from .models import *
 from .forms import *
 
-def sign_up(request):
+def sign_up_view(request):
+
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
 
@@ -15,9 +16,11 @@ def sign_up(request):
             user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password1'],)
             login(request, user)
             return redirect('homepage')
+
     else:
         form = RegistrationForm()
         return render(request, 'sign_up.html', {'form': form})
+
 
 def login_view(request):
 
@@ -39,25 +42,8 @@ def login_view(request):
             messages.error(request, 'Username and/or password incorrect. Please try again')
             return redirect('login')
 
+
 def logout_view(request):
+
     logout(request)
     return redirect ('homepage')
-
-def profile(request, pk):
-    my_profile = User.objects.get(id=pk)
-    return render(request, 'profile.html', {'my_profile': my_profile})
-
-def profile_edit(request):
-    if request.method == "GET":
-        user_form = UserChange()
-        return render(request, 'edit_user.html', {'user_form': user_form})
-
-    if request.method == "POST":
-        user_form = UserChange(request.POST, instance = request.user)
-        if user_form.is_valid():
-            user_form.save()
-            return redirect('homepage')
-    
-    else:
-        user_form = UserChange()
-        return render(request, 'edit_user.html', {'user_form': user_form})
