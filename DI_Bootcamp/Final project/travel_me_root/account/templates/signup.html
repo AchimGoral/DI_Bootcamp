@@ -8,19 +8,25 @@
 
 {% block content %}
 
-<div class="container-fluid">
+{% include 'navbar.html' %}
+
+<div class="container-fluid cnt-content">
     <div class="row" style="display: flex; justify-content: center;">
         <h3 style="display: flex; justify-content: center;">Sign up</h3>
-        <a href="{% url 'home' %}" style="display: flex; margin: 10px 0;"><button class="btn btn-primary">Back to home</button></a>
     </div>
     <form method="post">
         <table>
             {% csrf_token %}
             {{form | crispy}}
+            {{profile_form | crispy}}
         </table>
         <button type="submit" class="btn btn-primary">Sign Up</button>
     </form>
+    <div>
+        <small class="text-muted">
+            Already got an account? <a href="{% url 'login' %}">Log In</a>
+        </small>
+    </div>
 </div>
-
 
 {% endblock %}

@@ -7,15 +7,21 @@
                 <button class="btn btn-outline-secondary" type="submit">Search</button>
             </form>
             <ul class="nav justify-content-end">
+                {% if user.is_authenticated %}
                 <li class="nav-item">
-                <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                    <a class="nav-link" href="{% url 'profile' %}">Profile</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Log In</a>
+                    <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Profile</a>
+                    <a class="nav-link" href="{% url 'login' %}">Log In</a>
                 </li>
+                {% endif %}
             </ul>
         </div>
     </nav>
