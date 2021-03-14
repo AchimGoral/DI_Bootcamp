@@ -1,14 +1,7 @@
+from django import forms
+from .models import *
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from django import forms
-
-class LoginForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ['username', 'password']
-        widgets = {
-        'password': forms.PasswordInput(),
-        }
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -24,13 +17,27 @@ class RegistrationForm(UserCreationForm):
             'password2'
             ]
 
-class UserChange(forms.ModelForm):
+
+class LoginForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username', 'password']
+        widgets = {
+        'password': forms.PasswordInput(),
+        }
+
+
+class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = User
         fields = [
             'username',
-            'first_name',
-            'last_name',
-            'email',
+            'email'
+        ]
+
+class ProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = [
             'image',
         ]
