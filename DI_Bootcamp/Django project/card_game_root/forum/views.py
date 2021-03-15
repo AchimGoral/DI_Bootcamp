@@ -1,33 +1,56 @@
 from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
+from .urls import *
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
-def index_view(request):
-    return render(request, 'index.html', {'indexes': Index.objects.all()})
+def thread(request):
 
-def index_view_pk(request):
-    pass
+    if request.method == 'GET':
+        my_form = ThreadInputForm()
+        return render(request,'thread.html',{'my_form':my_form})
 
-def thread_view(request, pk):
+    if request.method == 'POST':
+        my_form = ThreadInputForm(request.POST)
 
-    if request.method == "GET":
-        form = CommentForm()
+        if my_form.is_valid():
+            headline = my_form.cleaned_data['headline']
+            subject = my_form.cleaned_data['subject']
+            user = request.user
+            Thread.objects.create(creator=user,headline=headline,subject=subject)
+            return redirect('thread')  
+        else:
+            my_form = ThreadInputForm()
+            return render(request,'thread.html',{'my_form':my_form})
+
+
+def forum(request,pk):
+
+    if request.method=='GET':
+        threads = Thread.objects.all()
         context = {
-            'form': form,
+            'threads':threads,
         }
-        return render(request, 'thread.html', context)
+        return render (request,'forum.html',context)
 
-    if request.method == "POST":
-        form = CommentForm(request.POST)
 
-        if form.is_valid():
-            form.save()
-            return redirect('index')
-    
-    else:
-        form = CommentForm()
-        context = {
-            'form': form,
+def single_thread(request,pk):
+
+    if request.method=='GET':
+        thread=Thread.objects.get(pk=pk)
+        comment_form = CommentForm()
+        context={
+            'thread':thread,
+            'comment_form':comment_form
         }
-        return render(request, 'thread.html', context)
+        return render(request,'single_thread.html',context)
+    if request.method=='POST':
+        comment_form=CommentForm(request.POST)
+        print(comment_form)
+        if comment_form.is_valid():
+            comment=comment_form.save(commit=False)
+            comment.user_id=request.user
+            comment.thread_id=Thread.objects.get(pk=pk)
+            comment.save()       
+        return redirect('single-thread',pk) 

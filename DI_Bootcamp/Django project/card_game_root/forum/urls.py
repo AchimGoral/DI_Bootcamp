@@ -1,8 +1,8 @@
 from django.urls import path, include
 from . import views
 
-urlpatterns = [
-    path('index', views.index_view, name='index'),
-    path('index/<int:pk>', views.index_view_pk, name='index_pk'),
-    path('thread/<int:pk>', views.thread_view, name='thread'),
+urlpatterns=[ 
+    path('thread/',views.thread,name='thread'),
+    path('forum/<int:pk>',views.forum,name='forum'),
+    path('single_thread/<int:pk>',views.single_thread,name='single-thread')
 ]

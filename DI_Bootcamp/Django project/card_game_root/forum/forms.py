@@ -2,17 +2,17 @@ from django import forms
 from .models import *
 from django.contrib.auth.models import User
 
-class IndexForm(forms.ModelForm):
+class ThreadInputForm(forms.ModelForm):
     class Meta:
-        model = Index
+        model = Thread
         fields = [
-            'title',
-            'comment',
+            'headline',
+            'subject',
         ]
 
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = [
-            'comment',
+            'text',
         ]

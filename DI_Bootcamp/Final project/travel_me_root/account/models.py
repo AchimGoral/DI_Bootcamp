@@ -5,7 +5,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     city = models.CharField(max_length=200)
     country = models.CharField(max_length=200)
-    image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    image = models.ImageField(default='default.png')
 
     def __str__(self):
         if self.user:
