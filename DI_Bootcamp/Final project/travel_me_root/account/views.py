@@ -5,6 +5,7 @@ from django.contrib import messages
 from .models import *
 from .forms import *
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 
 def sign_up_view(request):
@@ -21,6 +22,7 @@ def sign_up_view(request):
             profile.user = user
             profile.save()
             login(request, user)
+            messages.success(request, f'{user.username} signed up sucessfully')
             return redirect('profile')
 
     else:

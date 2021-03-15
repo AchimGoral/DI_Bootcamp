@@ -11,9 +11,7 @@
 {% include 'navbar.html' %}
 
 <div class="container-fluid cnt-content">
-    <br>
     <h5>Change your profile</h5>
-    <br>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form1 | crispy }}

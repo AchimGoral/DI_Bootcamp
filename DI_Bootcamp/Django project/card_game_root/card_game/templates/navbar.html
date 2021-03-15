@@ -7,6 +7,9 @@
                 <button class="btn btn-outline-secondary" type="submit">Search</button>
             </form>           
             <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">Comments</a>
+                </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'profile' %}">Profile</a>

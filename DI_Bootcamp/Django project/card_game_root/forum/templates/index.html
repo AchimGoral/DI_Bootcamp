@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+<br><br><br>
+<div class="container-fluid">
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+        {% for index in indexes %}
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{index.title}}</h5>
+            <p class="card-text">{{index.comment}}</p>
+            <small class="card-text">Created : {{index.date | timesince}} ago</small>
+            <div>
+              <a href="{% url 'thread' index.id %}">
+                <button class="btn btn-primary">Comment</button>
+             </a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
