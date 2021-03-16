@@ -16,14 +16,18 @@
       <div class="col-md-6">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">User profile of {{user.get_full_name}}</h5>
+            {% if user.get_full_name %}
+              <h5 class="card-title">User profile of {{user.get_full_name}}</h5>
+            {% else %}
+              <h5 class="card-title">User profile of {{user.username}}</h5>
+            {% endif %}
             <img src="{{user.profile.image}}" alt="" style="width: 150px; height: 150px; border-radius: 50%; margin: 10px 0;">
             <p class="card-text">Username: {{user.username}}</p>
             <p class="card-text">First name: {{user.first_name}}</p>
             <p class="card-text">Last name: {{user.last_name}}</p>
             <p class="card-text">Email: {{user.email}}</p>
             <a href="{% url 'profile_edit' %}">
-              <button class="btn btn-primary">Edit profile</button>
+              <button class="btn btn-outline-secondary">Edit profile</button>
            </a>
           </div>
         </div>
