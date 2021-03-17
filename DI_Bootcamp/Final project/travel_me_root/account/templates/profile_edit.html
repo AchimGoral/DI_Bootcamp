@@ -14,8 +14,8 @@
     <h5>Change your profile</h5>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form1 | crispy }}
-        {{ form2 | crispy }}
+        {{ user_form | crispy }}
+        {{ profile_form | crispy }}
         <button type="submit" class="btn btn-outline-secondary">Save changes</button>
     </form>
 </div>

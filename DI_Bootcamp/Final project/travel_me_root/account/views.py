@@ -11,13 +11,13 @@ from django.contrib import messages
 def sign_up_view(request):
 
     if request.method == 'POST':
-        form = RegistrationForm(request.POST)
+        user_form = RegistrationForm(request.POST)
         profile_form = ProfileUpdateForm(request.POST)
 
-        if form.is_valid() and profile_form.is_valid():
-            form.save()
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
             # Stay logged in after signing up
-            user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password1'],)
+            user = authenticate(username=user_form.cleaned_data['username'], password=user_form.cleaned_data['password1'],)
             profile = profile_form.save(commit=False)
             profile.user = user
             profile.save()
@@ -26,10 +26,10 @@ def sign_up_view(request):
             return redirect('profile')
 
     else:
-        form = RegistrationForm()
+        user_form = RegistrationForm()
         profile_form = ProfileUpdateForm()
         context = {
-            'form': form,
+            'user_form': user_form,
             'profile_form': profile_form
         }
         return render(request, 'signup.html', context)
@@ -70,29 +70,29 @@ def profile_view(request):
 def profile_edit(request):
 
     if request.method == "GET":
-        form1 = UserUpdateForm(instance=request.user)
-        form2 = ProfileUpdateForm(instance=request.user.profile)
+        user_form = UserUpdateForm(instance=request.user)
+        profile_form = ProfileUpdateForm(instance=request.user.profile)
         context = {
-            'form1': form1,
-            'form2': form2,
+            'user_form': user_form,
+            'profile_form': profile_form,
         }
 
         return render(request, 'profile_edit.html', context)
 
     if request.method == "POST":
-        form1 = UserUpdateForm(request.POST, instance=request.user)
-        form2 = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+        user_form = UserUpdateForm(request.POST, instance=request.user)
+        profile_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
 
-        if form1.is_valid() and form2.is_valid():
-            form1.save()
-            form2.save()
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
             return redirect('profile')
     
     else:
-        form1 = UserUpdateForm()
-        form2 = ProfileUpdateForm()
+        user_form = UserUpdateForm()
+        profile_form = ProfileUpdateForm()
         context = {
-            'form1': form1,
-            'form2': form2,
+            'user_form': user_form,
+            'profile_form': profile_form,
         }
         return render(request, 'profile_edit.html', context)
