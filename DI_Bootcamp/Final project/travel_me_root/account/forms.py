@@ -16,6 +16,12 @@ class RegistrationForm(UserCreationForm):
             'password1',
             'password2'
             ]
+    
+    def __init__(self, *args, **kwargs):
+        super(RegistrationForm, self).__init__(*args, **kwargs)
+
+        for fieldname in ['username', 'password1', 'password2']:
+            self.fields[fieldname].help_text = None
 
 
 class LoginForm(forms.ModelForm):
@@ -25,6 +31,11 @@ class LoginForm(forms.ModelForm):
         widgets = {
         'password': forms.PasswordInput(),
         }
+
+    def __init__(self, *args, **kwargs):
+        super(LoginForm, self).__init__(*args, **kwargs)
+
+        self.fields['username'].help_text = None
 
 
 class UserUpdateForm(forms.ModelForm):
@@ -38,6 +49,7 @@ class UserUpdateForm(forms.ModelForm):
         ]
 
 class ProfileUpdateForm(forms.ModelForm):
+    image = forms.ImageField(help_text='Please upload a profile picture', label = '')
     class Meta:
         model = Profile
         fields = [

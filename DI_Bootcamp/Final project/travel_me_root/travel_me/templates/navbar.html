@@ -1,8 +1,8 @@
 <nav>
-    <div class="nav-wrapper">
-        <a href="{% url 'home' %}" class="brand-logo">Travel Me</a>
+    <div class="nav-wrapper blue lighten-1">
+        <a href="{% url 'home' %}" class="brand-logo center" >Travel Me</a>
         <a href="#" data-target="mobile-links" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
+        <ul class="left hide-on-med-and-down">
         {% if user.is_authenticated %}
             <li><a href="{% url 'profile' %}">Profile</a></li>
             <li><a href="{% url 'logout' %}">Log Out</a></li>

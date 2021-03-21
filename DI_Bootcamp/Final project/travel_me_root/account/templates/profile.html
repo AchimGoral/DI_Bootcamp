@@ -10,29 +10,30 @@
 
 {% include 'navbar.html' %}
 
-<div class="container-fluid cnt-content">
-    <br>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            {% if user.get_full_name %}
-              <h5 class="card-title">User profile of {{user.get_full_name}}</h5>
-            {% else %}
-              <h5 class="card-title">User profile of {{user.username}}</h5>
-            {% endif %}
-            <img src="{{user.profile.image}}" alt="" style="width: 150px; height: 150px; border-radius: 50%; margin: 10px 0;">
-            <p class="card-text">Username: {{user.username}}</p>
-            <p class="card-text">First name: {{user.first_name}}</p>
-            <p class="card-text">Last name: {{user.last_name}}</p>
-            <p class="card-text">Email: {{user.email}}</p>
-            <a href="{% url 'profile_edit' %}">
-              <button class="btn btn-outline-secondary">Edit profile</button>
-           </a>
+<div class="container">
+  <div class="row">
+    <div class="col s12 m8">
+      <div class="card center">
+          {% if user.get_full_name %}
+            <span class="card-title">User profile of {{user.get_full_name}}</span>
+          {% else %}
+            <span class="card-title">User profile of {{user.username}}</span>
+          {% endif %}
+          <div class="card-image">
+            <img src="{{user.profile.image}}" alt="" style="width: 180px; height: 180px; border-radius: 50%; margin: 10px auto;">
           </div>
-        </div>
+          <p class="card-content">Username: {{user.username}}</p>
+          <p class="card-content">First name: {{user.first_name}}</p>
+          <p class="card-content">Last name: {{user.last_name}}</p>
+          <p class="card-content">Email: {{user.email}}</p>
+          <div class="card-content">
+            <a href="{% url 'profile_edit' %}">
+              <button type="submit" class="waves-effect waves-light btn blue lighten-1">Edit profile</button></a>
+          </div>
       </div>
     </div>
   </div>
+</div>
+
 
 {% endblock %}

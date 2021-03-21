@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'mainpage',
     'account',
     'add_flight',
+    'materialize',
     'crispy_forms',
+    'crispy_forms_materialize',
 ]
 
 MIDDLEWARE = [
@@ -130,4 +132,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'travel_me/static')]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'materialize_css_forms'
+
+LOGIN_URL = '/account/login'
+LOGIN_REDIRECT_URL = '/account/login'

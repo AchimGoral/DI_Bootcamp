@@ -10,14 +10,15 @@
 
 {% include 'navbar.html' %}
 
-<div class="container-fluid cnt-content">
-    <h5>Change your profile</h5>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ user_form | crispy }}
-        {{ profile_form | crispy }}
-        <button type="submit" class="btn btn-outline-secondary">Save changes</button>
-    </form>
+<div class = "container cnt-content">   
+    <div class = "row">
+        <form class="col s12" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ user_form | crispy }}
+            {{ profile_form | crispy }}
+            <button type="submit" class="waves-effect waves-light btn blue lighten-1">Log In</button>
+        </form>
+    </div>
 </div>
 
 {% endblock %}
