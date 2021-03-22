@@ -1,0 +1,25 @@
+<nav>
+    <div class="nav-wrapper blue lighten-1">
+        <a href="#" class="brand-logo center" >Inco</a>
+        <a href="#" data-target="mobile-links" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="left hide-on-med-and-down">
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+        {% else %}
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            <li><a href="{% url 'login' %}">Log In</a></li>
+        {% endif %}
+      </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-links">
+    {% if user.is_authenticated %}
+    <li><a href="{% url 'profile' %}">Profile</a></li>
+    <li><a href="{% url 'logout' %}">Log Out</a></li>
+    {% else %}
+    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+    <li><a href="{% url 'login' %}">Log In</a></li>
+    {% endif %}
+</ul>

@@ -9,6 +9,4 @@ class Profile(models.Model):
     image = models.ImageField(upload_to='../media/photos/%Y/%m/%d/')
 
     def __str__(self):
-        if self.user:
-            return self.user.username 
-        return self.city
+        return f'User: {self.user.username}'

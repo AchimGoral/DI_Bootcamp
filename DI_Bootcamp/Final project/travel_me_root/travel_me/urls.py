@@ -7,5 +7,5 @@ urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('account/', include('account.urls')),
     path('', include('mainpage.urls')),
-    path('', include('add_flight.urls')),
+    # path('', include('add_flight.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

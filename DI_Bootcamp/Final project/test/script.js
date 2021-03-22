@@ -18,11 +18,12 @@ const searchFlights = async searchText => {
 
     if (searchText.length === 0) {
         matches = []; // Empty array if no result
-        matchList.innerHTML = ''; // Shows nothing when serachbar is empty
+        matchList.innerHTML = ''; // Shows nothing when searchbar is empty
     }
 
     else {
         outputHtml(results);
+        console.log(results);
     }
 };
 
@@ -30,7 +31,7 @@ const outputHtml = results => {
     if(results.length > 0) {
         const html = results.map(match =>
             `<div class="card card-body mb-1">
-                <a href="#" class="data-input"><h6>${match.iata} | ${match.name}</h6></a>
+                <a class="data-input"><h6>${match.iata} | ${match.name}</h6></a>
             </div>`).join('');
 
         matchList.innerHTML = html;
@@ -38,4 +39,15 @@ const outputHtml = results => {
 };
 
 // Event listern on any event, can also be key up, down or whatever
-search.addEventListener('input', () => searchFlights(search.value));
+let timer;
+search.addEventListener('input', () => {
+  if(timer) clearTimeout(timer);
+  timer = setTimeout(searchFlights, 100, search.value);
+});
+
+document.addEventListener('click', (e) => {
+  if(e.target.classList.contains('.data-input')){
+    search.value = e.target.textContent;
+    document.querySelector('#match-list').innerHTML = "";
+  }
+});
