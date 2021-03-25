@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -10,9 +10,18 @@ from django.contrib import messages
 
 def sign_up_view(request):
 
+    if request.method == 'GET':
+        user_form = RegistrationForm()
+        profile_form = ProfileUpdateForm()
+        context = {
+            'user_form': user_form,
+            'profile_form': profile_form
+        }
+        return render(request, 'signup.html', context)
+
     if request.method == 'POST':
         user_form = RegistrationForm(request.POST)
-        profile_form = ProfileUpdateForm(request.POST)
+        profile_form = ProfileUpdateForm(request.POST, request.FILES)
 
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
@@ -22,17 +31,17 @@ def sign_up_view(request):
             profile.user = user
             profile.save()
             login(request, user)
-            messages.success(request, f'{user.username} signed up sucessfully')
+            # messages.success(request, f'{user.username} signed up sucessfully')
             return redirect('profile')
 
-    else:
-        user_form = RegistrationForm()
-        profile_form = ProfileUpdateForm()
-        context = {
-            'user_form': user_form,
-            'profile_form': profile_form
-        }
-        return render(request, 'signup.html', context)
+        else:
+            user_form = RegistrationForm()
+            profile_form = ProfileUpdateForm()
+            context = {
+                'user_form': user_form,
+                'profile_form': profile_form
+            }
+            return render(request, 'signup.html', context)
 
 
 def login_view(request):

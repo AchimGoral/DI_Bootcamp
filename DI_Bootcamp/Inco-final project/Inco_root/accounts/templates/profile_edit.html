@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% load materializecss %}
+
 {% load crispy_forms_tags %}
 
 {% block title %}Edit User{% endblock %}
@@ -12,11 +14,11 @@
 
 <div class = "container cnt-content">   
     <div class = "row">
-        <form class="col s12" method="POST" enctype="multipart/form-data">
+        <form class="signup_change" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ user_form | crispy }}
-            {{ profile_form | crispy }}
-            <button type="submit" class="waves-effect waves-light btn blue lighten-1">Log In</button>
+            {{ user_form|materializecss }}
+            {{ profile_form|materializecss }}
+            <button type="submit" class="waves-effect waves-light btn blue lighten-1">Submit changes</button>
         </form>
     </div>
 </div>

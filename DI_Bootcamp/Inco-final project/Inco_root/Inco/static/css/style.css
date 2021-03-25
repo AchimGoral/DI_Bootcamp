@@ -4,34 +4,97 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  
-  .card-content {
-    font-size: 18px;
-  }
-  
-  nav {
-    margin: 0 0 5rem;
-  }
-  
-  .btn {
-    margin: 10px 0;
-  }
-  
-  
-  /* Messages */
-  
-  .alert {
-    border-radius: 4px;
-    padding: 7px;
-    width: max-content;
-    color: rgba(0, 0, 0, 0.7);
-  }
-  
-  .alert-error {
-    background-color: rgba(255, 54, 54, 0.2);
-  }
-  
-  .alert-success {
-    background-color: rgba(88, 255, 54, 0.2);;
-  }
+}
+
+.draft-count {
+  margin-left: 1em;
+  color: rgba(255, 0, 0, 0.6);
+}
+
+.card-content {
+  font-size: 18px;
+}
+
+nav {
+  margin: 0 0 5rem;
+}
+
+.btn {
+  margin: 10px 0;
+}
+
+.small_text {
+  font-size: 12px;
+  color: rgba(37, 37, 37, 0.65);
+}
+
+.cmt_counter {
+  font-size: 12px;
+  padding-bottom: 10px;
+}
+
+.card-log-a {
+  color: black;
+}
+
+.blog-title {
+  font-weight: 500!important;
+}
+
+.card-content {
+  width: 75vw;
+  margin: auto;
+}
+
+/* Sign up */
+
+.signup {
+  width: 50vw;
+  margin: auto;
+}
+
+.signup_change {
+  width: 70vw;
+  margin: auto;
+}
+
+.file-field {
+  width: 25vw;
+}
+
+.file-field > .btn::before {
+  content: "Profile picture";
+}
+
+.file-field > .btn::after {
+  content: "Profile picture";
+}
+
+.file-path-wrapper {
+  width: 0;
+}
+
+/* Log In */
+
+.login {
+  width: 50vw;
+  margin: auto;
+}
+
+/* Messages */
+
+.alert {
+  border-radius: 4px;
+  padding: 7px;
+  margin: auto;
+  width: 50vw;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.alert-error {
+  background-color: rgba(255, 54, 54, 0.2);
+}
+
+.alert-success {
+  background-color: rgba(88, 255, 54, 0.2);;
+}

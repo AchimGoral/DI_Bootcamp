@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Blog drafts{% endblock %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+<div class="container">
+    <div class="row">
+      <div class="col">
+        {% for post in user.profile.drafts %}
+          <div class="card">
+            <div class="card-content">
+              <h5 class="card-title">Title: {{post.headline}}</h5>
+              <p class="card-text">{{post.content}}</p>
+              <small class="small_text">Created: {{post.created | timesince}} ago by {{post.profile.user}}</small>
+              <div>
+                <a class="waves-effect waves-light btn-small blue lighten-1" href="#">Post</a>
+                <a class="waves-effect waves-light btn-small green lighten-2" href="#">Edit</a>
+                <a class="waves-effect waves-light btn-small red lighten-2" href="#">Delete</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

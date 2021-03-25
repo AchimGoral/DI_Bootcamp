@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load materializecss %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Entry {{blog.id}}{% endblock %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-content">
+            <h5 class="card-title">{{post.headline}}</h5>
+            <p>{{post.content}}</p>
+            <p><small class="small_text">Created: {{post.created | timesince}} ago by {{post.profile.user}}</small></p>
+            <h6 style="text-decoration: underline;">Comments:</h6>
+            <ul>
+            {% for cmt in post.comment_set.all %}
+              <li>
+                <p>{{cmt.answer}}</p>
+                <p><small class="small_text">Posted by: {{cmt.profile.user}}</small></p>
+              </li>
+            {% endfor %}
+            </ul>
+            {% if request.user.is_authenticated %}
+            <form action="" method="POST">
+              {% csrf_token %}
+              {{comment_form|materializecss}}
+              <button type="submit" class="waves-effect waves-light btn blue lighten-1">Comment</button>
+            </form>
+            {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

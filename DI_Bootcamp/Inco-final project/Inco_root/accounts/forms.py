@@ -60,5 +60,5 @@ class ProfileUpdateForm(forms.ModelForm):
         fields = [
             'city',
             'country',
-            'image',
+            'image'
         ]

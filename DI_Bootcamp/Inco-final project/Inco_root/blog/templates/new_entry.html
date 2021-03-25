@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load materializecss %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}New Post{% endblock %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form method="post">
+                <table>
+                    {% csrf_token %}
+                    {{my_form|materializecss }}
+                </table>
+                <button type="submit" class="waves-effect waves-light btn blue lighten-1">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

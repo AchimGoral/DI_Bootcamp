@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
+    'blog',
+    'materializecssform',
     'materialize',
     'crispy_forms',
     'crispy_forms_materialize',
