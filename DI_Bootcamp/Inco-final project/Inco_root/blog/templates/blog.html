@@ -22,11 +22,15 @@
           <div class="card-content">
             <h5 class="card-title blog-title">{{post.headline}}</h5>
             <p class="card-text">{{post.content}}</p>
-            <small class="small_text">Created: {{post.created | timesince}} ago by {{post.profile.user}}</small>
+            <small class="small_text">Created: {{post.updated | timesince}} ago by {{post.profile.user}}</small>
           <p class="cmt_counter"><i class="far fa-comment"></i> {{post.comment_set.all.count}}</p>
           {% if request.user.profile == post.profile %}
-          <a class="waves-effect waves-light btn-small  green lighten-2" href="#">Edit</a>
-          <a class="waves-effect waves-light btn-small red lighten-2" href="{% url 'blog-delete' post.id %}">Delete</a>
+            <a class="waves-effect waves-light btn-small  green lighten-2" href="{% url 'blog-edit' post.pk %}">Edit</a>
+            <a class="waves-effect waves-light btn-small red lighten-2" href="{% url 'blog-delete' post.pk %}">Delete</a>
+            <form action="{% url 'blog-like' post.pk %}" method="POST">
+              {% csrf_token %}
+              <button type="submit" class="waves-effect waves-light btn blue lighten-1" name="post_id" value="{{post.id}}">Like</button>
+            </form>
           {% endif %}
           </div>
         </div>

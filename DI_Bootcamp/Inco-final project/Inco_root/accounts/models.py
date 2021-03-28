@@ -8,8 +8,8 @@ class Profile(models.Model):
     country = models.CharField(max_length=200)
     image = models.ImageField(upload_to='../media/photos/%Y/%m/%d/', default='default.jpg', blank=True, null=True)
 
-    def __str__(self):
-        return f'User: {self.user.username}'
-
     def drafts(self):
         return self.post_set.filter(status=0).order_by('-created')
+
+    def __str__(self):
+        return f'User: {self.user.username}'

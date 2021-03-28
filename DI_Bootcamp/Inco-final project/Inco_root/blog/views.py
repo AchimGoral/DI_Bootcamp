@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Post, Comment
 from .forms import PostForm, CommentForm
 from . import urls
@@ -35,12 +35,6 @@ def blog_entry_view(request, pk):
             return redirect('blog-entry', pk)
 
 @login_required
-def blog_delete_view(request, pk):
-    post = Post.objects.get(id=pk)
-    post.delete()
-    return redirect('blog')
-
-@login_required
 def new_entry_view(request):
 
     if request.method == 'GET':
@@ -56,3 +50,36 @@ def new_entry_view(request):
             return redirect('blog')
         else:
             return render(request,'new_entry.html',{'my_form': my_form})
+
+@login_required
+def blog_edit_view(request, pk):
+
+    if request.method == 'GET':
+        edit_post = Post.objects.get(id=pk)
+        return render(request,'new_entry.html',{'my_form':PostForm(instance=edit_post)})
+
+    if request.method == 'POST':
+        edit_post = Post.objects.get(id=pk)
+        my_form = PostForm(request.POST, instance=edit_post)
+
+        if my_form.is_valid():
+            post = my_form.save(commit=False)
+            post.profile = request.user.profile
+            post.save()
+            return redirect('blog-drafts')
+        else:
+            return render(request,'new_entry.html',{'my_form': my_form})
+
+@login_required
+def blog_delete_view(request, pk):
+
+    post = Post.objects.get(id=pk)
+    post.delete()
+    return redirect('blog')
+
+@login_required
+def blog_like_view(request, pk):
+
+    post = get_object_or_404(Post, id=request.POST.get('post_id'))
+    post.like.add(request.user.profile)
+    return redirect('blog')

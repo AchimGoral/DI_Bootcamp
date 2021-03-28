@@ -12,16 +12,22 @@
 <div class="container">
     <div class="row">
       <div class="col">
+        <div class="card">
+          <div class="card-content">
+            <h5 class="card-title blog-title">
+              Blog drafts:
+            </h5>
+          </div>
+        </div>
         {% for post in user.profile.drafts %}
           <div class="card">
             <div class="card-content">
-              <h5 class="card-title">Title: {{post.headline}}</h5>
+              <h5 class="card-title blog-title">Title: {{post.headline}}</h5>
               <p class="card-text">{{post.content}}</p>
-              <small class="small_text">Created: {{post.created | timesince}} ago by {{post.profile.user}}</small>
+              <small class="small_text">Created: {{post.updated | timesince}} ago by {{post.profile.user}}</small>
               <div>
-                <a class="waves-effect waves-light btn-small blue lighten-1" href="#">Post</a>
-                <a class="waves-effect waves-light btn-small green lighten-2" href="#">Edit</a>
-                <a class="waves-effect waves-light btn-small red lighten-2" href="#">Delete</a>
+                <a class="waves-effect waves-light btn-small green lighten-2" href="{% url 'blog-edit' post.pk %}">Edit</a>
+                <a class="waves-effect waves-light btn-small red lighten-2" href="{% url 'blog-delete' post.pk %}">Delete</a>
               </div>
             </div>
           </div>

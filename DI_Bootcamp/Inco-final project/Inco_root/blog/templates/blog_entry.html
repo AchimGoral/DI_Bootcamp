@@ -24,9 +24,10 @@
             <ul>
             {% for cmt in post.comment_set.all %}
               <li>
-                <p>{{cmt.answer}}</p>
+                <p class="blog-entry-answer">{{cmt.answer}}</p>
                 <p><small class="small_text">Posted by: {{cmt.profile.user}}</small></p>
               </li>
+              <li class="divider"></li>
             {% endfor %}
             </ul>
             {% if request.user.is_authenticated %}

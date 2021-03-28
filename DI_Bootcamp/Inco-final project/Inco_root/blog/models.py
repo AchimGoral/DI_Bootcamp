@@ -9,7 +9,7 @@ class Post(models.Model):
     # topic = models.IntegerField(default=5)
     headline = models.CharField(max_length=50)
     content = models.TextField()
-    likes = models.IntegerField(default=0)
+    likes = models.ManyToManyField(Profile, related_name="blog_like", default=None, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.BooleanField(default=False)
@@ -17,7 +17,10 @@ class Post(models.Model):
     objects = PostManager()
 
     class Meta:
-        ordering = ['-created']
+        ordering = ['-updated']
+
+    def sum_likes(self):
+        return self.likes.count()
 
     def __str__(self):
         return self.headline
@@ -30,7 +33,7 @@ class Comment(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-            ordering = ['-created']
+            ordering = ['created']
 
     def __str__(self):
-        return f"{self.profile} | Post ID: {self.post.id}"
+        return f"{self.profile} | Post ID: str{self.post.id}"
