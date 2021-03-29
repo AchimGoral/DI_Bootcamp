@@ -27,11 +27,9 @@
           {% if request.user.profile == post.profile %}
             <a class="waves-effect waves-light btn-small  green lighten-2" href="{% url 'blog-edit' post.pk %}">Edit</a>
             <a class="waves-effect waves-light btn-small red lighten-2" href="{% url 'blog-delete' post.pk %}">Delete</a>
-            <form action="{% url 'blog-like' post.pk %}" method="POST">
-              {% csrf_token %}
-              <button type="submit" class="waves-effect waves-light btn blue lighten-1" name="post_id" value="{{post.id}}">Like</button>
-            </form>
           {% endif %}
+          <button type="submit" class="waves-effect waves-light btn-small right blue lighten-1 button-like" value="{{post.id}}"><i class="far fa-heart"></i></button>
+          <span class="likes right" id="like_count_{{post.id}}">{{post.sum_likes}}</span>
           </div>
         </div>
       </a>
@@ -39,5 +37,43 @@
     </div>
   </div>
 </div>
+
+<script>
+    $(document).on('click', '.button-like', function (e) {
+    e.preventDefault();
+    const csrftoken = getCookie('csrftoken');
+    $.ajax({
+      headers: {'X-CSRFToken': csrftoken},
+      type: 'POST',
+      url: '{% url "blog-like" %}',
+      data: {
+        postid: e.currentTarget.value,
+        action: 'post',
+      },
+      success: function (json) {
+        document.getElementById("like_count_" + json['id']).innerHTML = json['result']
+      },
+      // error: function (xhr, errmsg, err) {
+
+      // }
+    });
+  })
+
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+  }
+</script>
 
 {% endblock %}

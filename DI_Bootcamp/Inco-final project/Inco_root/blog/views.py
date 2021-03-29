@@ -5,6 +5,7 @@ from . import urls
 from accounts.models import Profile
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 
 
 def blog_view(request):
@@ -78,8 +79,19 @@ def blog_delete_view(request, pk):
     return redirect('blog')
 
 @login_required
-def blog_like_view(request, pk):
+def blog_like_view(request):
+    
+    if request.POST.get('action') == 'post':
+        result = ''
+        id = int(request.POST.get('postid'))
+        post = get_object_or_404(Post, id=id)
 
-    post = get_object_or_404(Post, id=request.POST.get('post_id'))
-    post.like.add(request.user.profile)
-    return redirect('blog')
+        # Check if user has already liked the post
+        if post.likes.filter(id=request.user.profile.id).exists():
+            post.likes.remove(request.user.profile)
+        else:
+            post.likes.add(request.user.profile)
+        result = post.sum_likes()
+        post.save()
+
+        return JsonResponse({'result': result, 'id':id})
