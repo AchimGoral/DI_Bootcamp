@@ -50,7 +50,7 @@ def new_entry_view(request):
             post.save()
             return redirect('blog')
         else:
-            return render(request,'new_entry.html',{'my_form': my_form})
+            return render(request,'new_entry.html',{'my_form':PostForm()})
 
 @login_required
 def blog_edit_view(request, pk):
@@ -89,9 +89,16 @@ def blog_like_view(request):
         # Check if user has already liked the post
         if post.likes.filter(id=request.user.profile.id).exists():
             post.likes.remove(request.user.profile)
+            flag = False
         else:
             post.likes.add(request.user.profile)
+            flag = True
         result = post.sum_likes()
         post.save()
 
-        return JsonResponse({'result': result, 'id':id})
+        return JsonResponse({'result': result, 'id':id, 'flag': flag})
+
+# @login_required
+# def blog_likes_view(request):
+#     liked = User.profile.prefetch_related('blog_like').get(pk=1).blog_like.all()
+#     return render(request, 'blog_likes.html', {'liked': liked})

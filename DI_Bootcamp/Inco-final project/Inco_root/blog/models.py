@@ -4,12 +4,10 @@ from .managers import PostManager
 
 
 class Post(models.Model):
-    
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    # topic = models.IntegerField(default=5)
     headline = models.CharField(max_length=50)
     content = models.TextField()
-    likes = models.ManyToManyField(Profile, related_name="blog_like", default=None, blank=True)
+    likes = models.ManyToManyField(Profile, related_name="blog_like", default=None, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.BooleanField(default=False)
@@ -33,7 +31,7 @@ class Comment(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-            ordering = ['created']
+        ordering = ['created']
 
     def __str__(self):
         return f"{self.profile} | Post ID: str{self.post.id}"
