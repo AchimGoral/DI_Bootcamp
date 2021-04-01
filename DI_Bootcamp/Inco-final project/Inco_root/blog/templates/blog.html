@@ -21,20 +21,25 @@
         <div class="card">
           <div class="card-content">
             <div class="card-image" style="display: inline-flex; justify-content: center;">
-              <img src="{{user.profile.image}}" alt="" style="width: 50px; height: 50px; border-radius: 50%;">
-              <span style="margin: auto 10px;">{{user.username}}</span>
+              <img src="{{post.profile.image}}" alt="" style="width: 50px; height: 50px; border-radius: 50%;">
+              <span style="margin: auto 10px;">{{post.profile.user.username}}</span>
             </div>
             <div class="divider"></div>
             <h5 class="card-title blog-title">{{post.headline}}</h5>
             <p class="card-text">{{post.content}}</p>
-            <small class="small_text">Created: {{post.updated | timesince}} ago</small>
-          <p class="cmt_counter"><i class="far fa-comment"></i> {{post.comment_set.all.count}}</p>
-          {% if request.user.profile == post.profile %}
-            <a class="waves-effect waves-light btn-small  green lighten-2" href="{% url 'blog-edit' post.pk %}">Edit</a>
-            <a class="waves-effect waves-light btn-small red lighten-2" href="{% url 'blog-delete' post.pk %}">Delete</a>
-          {% endif %}
-          <button type="submit" class="waves-effect waves-light btn-small right blue lighten-1 button-like" value="{{post.id}}" id="like_btn_{{post.id}}"><i class="far fa-heart"></i></button>
-          <span class="likes right" id="like_count_{{post.id}}">{{post.sum_likes}}</span>
+            <div class="divider" style="margin: 1em 0;"></div>
+            <p class="small_text">Created: {{post.created | timesince}} ago</p>
+            <p class="small_text">Updated: {{post.updated | timesince}} ago</p>
+            <p class="cmt_counter"><i class="far fa-comment"></i> {{post.comment_set.all.count}}</p>
+            {% if request.user.profile == post.profile %}
+              <a class="waves-effect waves-light btn-small green lighten-2" href="{% url 'blog-edit' post.pk %}">Edit</a>
+              <a class="waves-effect waves-light btn-small red lighten-2" href="{% url 'blog-delete' post.pk %}">Delete</a>
+            {% endif %}
+            {% if not request.user.is_authenticated %}
+            <a class="waves-effect waves-light btn-small blue lighten-" href="{% url 'login' %}">Log In</a>
+            {% endif %}
+            <button type="submit" class="waves-effect waves-light btn-small blue lighten-1 button-like right" value="{{post.id}}"><i id="like_tag_{{post.id}}" class="far fa-heart"></i></button>
+            <span class="likes right" id="like_count_{{post.id}}">{{post.sum_likes}}</span>
           </div>
         </div>
       </a>
@@ -57,11 +62,11 @@
       },
       success: function (json) {
         document.getElementById("like_count_" + json['id']).innerHTML = json['result']
-        console.log(json['flag'])
+        document.getElementById("like_tag_" + json['id']).setAttribute("class", json['text'])
       },
-      // error: function (xhr, errmsg, err) {
-
-      // }
+      error: function (xhr, errmsg, err) {
+        alert('An error occured')
+      }
     });
   })
 

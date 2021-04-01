@@ -58,7 +58,7 @@ def login_view(request):
 
         if user is not None:
             login(request, user)
-            return redirect('profile')
+            return redirect('blog')
 
         else:
             messages.error(request, 'Username and/or password incorrect. Please try again')

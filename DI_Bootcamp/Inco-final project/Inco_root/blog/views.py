@@ -89,16 +89,16 @@ def blog_like_view(request):
         # Check if user has already liked the post
         if post.likes.filter(id=request.user.profile.id).exists():
             post.likes.remove(request.user.profile)
-            flag = False
+            text = 'far fa-heart'
         else:
             post.likes.add(request.user.profile)
-            flag = True
+            text = 'fas fa-heart' 
         result = post.sum_likes()
         post.save()
 
-        return JsonResponse({'result': result, 'id':id, 'flag': flag})
+        return JsonResponse({'result': result, 'id':id, 'text': text})
 
 # @login_required
 # def blog_likes_view(request):
-#     liked = User.profile.prefetch_related('blog_like').get(pk=1).blog_like.all()
+#     liked = Post.blog_like.all()
 #     return render(request, 'blog_likes.html', {'liked': liked})
