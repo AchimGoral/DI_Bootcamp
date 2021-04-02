@@ -99,6 +99,6 @@ def blog_like_view(request):
         return JsonResponse({'result': result, 'id':id, 'text': text})
 
 # @login_required
-# def blog_likes_view(request):
-#     liked = Post.blog_like.all()
-#     return render(request, 'blog_likes.html', {'liked': liked})
+# def blog_likes_view(request, pk):
+#     liked = Post.objects.filter(pk=request.user.profile.id).likes()
+#     return render(request,'new_entry.html',{'liked': liked})

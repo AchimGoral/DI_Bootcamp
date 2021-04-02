@@ -8,6 +8,6 @@ urlpatterns = [
     path('delete/<int:pk>', views.blog_delete_view, name='blog-delete'),
     path('edit/<int:pk>', views.blog_edit_view, name='blog-edit'),
     path('blog_entry/<int:pk>', views.blog_entry_view, name='blog-entry'),
-    path('blog_like/', views.blog_like_view, name='blog-like'),
-    # path('blog_likes/', views.blog_likes_view, name='blog-likes'),
+    path('', views.blog_like_view, name='blog-like'),
+    # path('blog_likes/<int:pk>', views.blog_likes_view, name='blog-likes'),
 ]
