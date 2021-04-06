@@ -3,7 +3,7 @@
     {% if user.is_authenticated %}
     <li><a href="{% url 'blog-drafts' %}">Blog drafts<span class="draft-count">{{user.profile.drafts.count}}</span></a></li>
     {% endif %}
-  </ul>
+</ul>
 
 <nav>
     <div class="nav-wrapper blue lighten-1">

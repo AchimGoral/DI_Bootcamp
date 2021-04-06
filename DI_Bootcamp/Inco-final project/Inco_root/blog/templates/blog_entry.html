@@ -25,7 +25,7 @@
             <p><small class="small_text">Created: {{post.created | timesince}} ago by {{post.profile.user}}</small></p>
             <h6 style="text-decoration: underline;">Comments:</h6>
             <ul>
-            {% for cmt in post.comment_set.all %}
+            {% for cmt in post.comment_post.all %}
               <li>
                 <p class="blog-entry-answer">{{cmt.answer}}</p>
                 <p><small class="small_text">Posted by: {{cmt.profile.user}}</small></p>

@@ -4,8 +4,8 @@ class PostManager(Manager):
     def published(self):
         return self.get_queryset().filter(status=1)
 
-    # def liked_post(self):
-    #     return self.get_queryset().filter(likes=likes)
+    def category(self, pk):
+        return self.get_queryset().filter(category__id=pk)
 
     def get_queryset(self):
         return super().get_queryset().order_by('-created')

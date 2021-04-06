@@ -1,15 +1,39 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Post, Comment
+from .models import Post, Comment, Category
 from .forms import PostForm, CommentForm
 from . import urls
 from accounts.models import Profile
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+from django.core.paginator import Paginator
 
 
 def blog_view(request):
-    return render(request, 'blog.html', {'posts': Post.objects.published()})
+    categories = Category.objects.all()
+    posts = Post.objects.published()
+    paginator = Paginator(posts, 5)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    context = {
+        'categories': categories,
+        'page_obj': page_obj
+    }
+    return render(request, 'blog.html', context)
+
+def category_view(request, pk):
+    categories = Category.objects.all()
+    posts = Post.objects.category(pk=pk)
+    paginator = Paginator(posts, 5)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    context = {
+        'categories': categories,
+        'page_obj': page_obj
+    }
+    return render(request, 'blog.html', context)
 
 def blog_draft_view(request):
     return render(request, 'blog_drafts.html', {})
@@ -82,23 +106,17 @@ def blog_delete_view(request, pk):
 def blog_like_view(request):
     
     if request.POST.get('action') == 'post':
-        result = ''
-        id = int(request.POST.get('postid'))
+        result = 0
+        id = int(request.POST.get('post_id'))
         post = get_object_or_404(Post, id=id)
 
-        # Check if user has already liked the post
         if post.likes.filter(id=request.user.profile.id).exists():
             post.likes.remove(request.user.profile)
             text = 'far fa-heart'
         else:
             post.likes.add(request.user.profile)
-            text = 'fas fa-heart' 
+            text = 'fas fa-heart'
         result = post.sum_likes()
         post.save()
 
-        return JsonResponse({'result': result, 'id':id, 'text': text})
-
-# @login_required
-# def blog_likes_view(request, pk):
-#     liked = Post.objects.filter(pk=request.user.profile.id).likes()
-#     return render(request,'new_entry.html',{'liked': liked})
+        return JsonResponse({'result': result, 'id': id, 'text': text})

@@ -3,11 +3,22 @@ from accounts.models import Profile
 from .managers import PostManager
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=255)
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+
+    def __str__(self):
+        return self.name
+    
+
 class Post(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="post_category")
+    likes = models.ManyToManyField(Profile, default=0, related_name="blog_like")
     headline = models.CharField(max_length=50)
     content = models.TextField()
-    likes = models.ManyToManyField(Profile, related_name="blog_like", default=None, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.BooleanField(default=False)
@@ -23,10 +34,11 @@ class Post(models.Model):
     def __str__(self):
         return self.headline
 
+
 class Comment(models.Model):
 
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name="comment_profile")
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comment_post")
     answer = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
 

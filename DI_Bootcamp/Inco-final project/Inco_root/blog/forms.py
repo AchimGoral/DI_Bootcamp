@@ -1,17 +1,18 @@
 from django import forms
 from django.db import models
-from blog.models import Post, Comment
+from blog.models import Post, Comment, Category
 from django.contrib.auth.models import User
 
 
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = [
+        fields = (
             'headline',
             'content',
-            'status'
-        ]
+            'category',
+            'status',
+        )
         labels = {
             'status': 'Please check to post. Empty for draft'
         }
@@ -20,6 +21,6 @@ class PostForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = [
-            'answer'
-        ]
+        fields = (
+            'answer',
+        )
