@@ -74,7 +74,7 @@ def logout_view(request):
 def profile_view(request):
 
     return render(request, 'profile.html')
-    
+
 @login_required
 def profile_edit(request):
 
