@@ -140,5 +140,3 @@ CRISPY_TEMPLATE_PACK = 'materialize_css_forms'
 
 LOGIN_URL = '/accounts/login'
 LOGIN_REDIRECT_URL = '/accounts/login'
-
-# USER_DIRECTORY_PATH

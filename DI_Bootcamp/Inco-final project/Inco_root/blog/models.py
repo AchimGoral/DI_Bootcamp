@@ -17,7 +17,7 @@ class Post(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="post_category")
     likes = models.ManyToManyField(Profile, default=0, related_name="blog_like")
-    headline = models.CharField(max_length=50)
+    headline = models.CharField(max_length=100)
     content = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

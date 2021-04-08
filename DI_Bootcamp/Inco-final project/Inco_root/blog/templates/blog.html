@@ -8,8 +8,6 @@
 
 {% block content %}
 
-{% include 'navbar.html' %}
-
 <ul id="dropdown2" class="dropdown-content">
   <li><a href="{% url 'blog' %}">All</a></li>
   <div class="divider"></div>
@@ -32,16 +30,16 @@
             <img src="{{post.profile.image}}" alt="" style="width: 50px; height: 50px; border-radius: 50%;">
             <span style="margin: auto 10px;">{{post.profile.user.username}}</span>
           </div>
-          <div class="divider"></div>
+          <div class="divider" style="margin: 0.3em 0;"></div>
           <div class="card-text">Category: {{post.category}}</div>
-          <a class="card-log-a" href="{% url 'blog-entry' post.id %}">
-            <h5 class="card-title blog-title">{{post.headline}}</h5>
-            <p class="card-text">{{post.content}}</p>
-          </a>
-          <div class="divider" style="margin: 1em 0;"></div>
+          <div class="divider" style="margin: 0.3em 0;"></div>
+          <h5 class="card-title blog-title"><a class="card-log-a" href="{% url 'blog-entry' post.id %}">{{post.headline}}</a></h5>
+          <p class="card-text">{{post.content|truncatechars_html:100|safe}}</p>
+          <div class="divider" style="margin: 0.5em 0;"></div>
           <p class="small_text">Created: {{post.created | timesince}} ago</p>
           <p class="small_text">Updated: {{post.updated | timesince}} ago</p>
-          <p class="cmt_counter"><i class="material-icons message">message</i>{{post.comment_post.all.count}}</p>
+          <p class="cmt_counter"><i class="far fa-comments"></i>{{post.comment_post.all.count}}
+          {% if post.comment_post.all.count == 1 %} comment {% else %} comments {% endif %}</p>
           {% if request.user.profile == post.profile %}
           <a class="waves-effect waves-light btn-small green lighten-2" href="{% url 'blog-edit' post.pk %}">Edit</a>
           <a class="waves-effect waves-light btn-small red lighten-2 confirm-delete" href="{% url 'blog-delete' post.pk %}">Delete</a>
