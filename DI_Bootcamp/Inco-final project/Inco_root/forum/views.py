@@ -30,8 +30,8 @@ def forum_entry_view(request):
 @login_required
 def forum_file_view(request, pk):
     obj = File.objects.get(pk=pk)
-    filename = obj.document.path
-    filename_cut = filename.split("\\")[-1]
-    response = FileResponse(open(filename, 'rb'), content_type='application/force-download')
-    response['Content-Disposition'] = f'inline; filename={filename_cut}'
+    file_path = obj.document.path
+    file_name = file_path.split("\\")[-1]
+    response = FileResponse(open(file_path, 'rb'), content_type='application/force-download')
+    response['Content-Disposition'] = f'inline; filename={file_name}'
     return response
