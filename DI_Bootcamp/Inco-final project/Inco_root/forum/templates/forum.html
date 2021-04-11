@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load materializecss %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Forum{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                {% for form in forms %}
+                    <div class="card-content file-content">
+                        <p class="card-title blog-title">Description: <span style="font-weight: 600;">{{form.description}}</span></p>
+                        <p class="card-title blog-title">Filepath: {{form.document}}</p>
+                        <span class="card-upload-text">Uploaded by: {{form.profile.user.username}} at {{form.uploaded}}<a class="right" style="margin-right: 20px;" href="{% url 'forum-file' form.id %}"><i class="fas fa-download fa-2x"></i></a></span>
+                    </div>
+                    <li class="divider"></li>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

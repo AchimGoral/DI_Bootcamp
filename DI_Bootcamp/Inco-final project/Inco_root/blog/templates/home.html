@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-image">
+              <img src="../media/main_couple.jpg" style="height: max-content; width: 100%;">
+            </div>
+            <div class="card-content">
+              <p style="overflow-wrap: break-word;">Welcome to the international couples blog. Here you can ask questions, get answers and stream files for any kind of process.</p>
+              <p>We're trying to help each other out, so be kind to each other.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

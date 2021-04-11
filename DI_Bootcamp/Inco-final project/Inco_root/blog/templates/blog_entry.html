@@ -6,7 +6,7 @@
 
 {% load crispy_forms_tags %}
 
-{% block title %}Entry {{blog.id}}{% endblock %}
+{% block title %}Blog entry {{blog.id}}{% endblock %}
 
 {% block content %}
 
@@ -18,9 +18,13 @@
       <div class="col">
         <div class="card">
           <div class="card-content">
+            <div class="card-image" style="display: inline-flex; justify-content: center;">
+              <img src="{{post.profile.image}}" alt="" style="width: 30px; height: 30px; border-radius: 50%;">
+              <span style="margin: auto 5px;">Posted by {{post.profile.user.username}}</span>
+            </div>
             <h5 class="card-title">{{post.headline}}</h5>
             <p>{{post.content}}</p>
-            <p><small class="small_text">Created: {{post.created | timesince}} ago by {{post.profile.user}}</small></p>
+            <p><small class="small_text">Created: {{post.created | timesince}}</small></p>
             <h6 style="text-decoration: underline;">Comments:</h6>
             <ul>
             {% for cmt in post.comment_post.all %}

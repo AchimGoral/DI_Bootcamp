@@ -3,4 +3,4 @@ from .models import Profile
 
 admin.site.register(Profile)
 
-admin.site.site_url = '/blog'
+admin.site.site_url = '/home'

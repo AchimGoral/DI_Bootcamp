@@ -32,6 +32,14 @@ nav {
   margin-right: 8em;
 }
 
+.profile-logo {
+  margin-left: 10px;
+}
+
+.blog-logo {
+  min-width: 140px;
+}
+
 .btn {
   margin: 10px 0;
 }
@@ -63,6 +71,10 @@ nav {
 .card-content {
   width: 75vw;
   margin: auto;
+}
+
+.card .card-content p {
+  word-break: break-all;
 }
 
 .blog-entry-answer {
@@ -124,14 +136,6 @@ nav {
   width: 25vw;
 }
 
-.file-field > .btn::before {
-  content: "Profile picture";
-}
-
-.file-field > .btn::after {
-  content: "Profile picture";
-}
-
 .file-path-wrapper {
   width: 0;
 }
@@ -159,4 +163,23 @@ nav {
 
 .alert-success {
   background-color: rgba(88, 255, 54, 0.2);;
+}
+
+/* File */
+
+.card .card-content .card-title {
+  margin-bottom: 0!important;
+}
+
+.file-content {
+  padding: 10px!important;
+}
+
+.file-content p {
+  font-size: 20px!important;
+}
+
+.card-upload-text {
+  font-size: 12px;
+  color: grey;
 }

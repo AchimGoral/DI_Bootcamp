@@ -8,6 +8,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.core.paginator import Paginator
 
+def home_view(request):
+    return render(request, 'home.html')
 
 def blog_view(request):
     categories = Category.objects.all()
