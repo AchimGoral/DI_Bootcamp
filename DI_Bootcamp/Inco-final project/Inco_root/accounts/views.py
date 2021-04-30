@@ -31,7 +31,6 @@ def sign_up_view(request):
             profile.user = user
             profile.save()
             login(request, user)
-            # messages.success(request, f'{user.username} signed up sucessfully')
             return redirect('profile')
 
         else:
