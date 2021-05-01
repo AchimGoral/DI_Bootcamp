@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load materializecss %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Chat{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <a href="{% url 'room_chat' 'corona' %}" class="waves-effect waves-light btn blue lighten-1">Corona</a>
+            <a href="{% url 'room_chat' 'travel' %}" class="waves-effect waves-light btn blue lighten-1">Travel</a>
+            <a href="{% url 'room_chat' 'healthcare' %}" class="waves-effect waves-light btn blue lighten-1">Healthcare</a>
+            <a href="{% url 'room_chat' 'Visa' %}" class="waves-effect waves-light btn blue lighten-1">Visa</a>
+            <a href="{% url 'room_chat' 'Sports' %}" class="waves-effect waves-light btn blue lighten-1">Sports</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

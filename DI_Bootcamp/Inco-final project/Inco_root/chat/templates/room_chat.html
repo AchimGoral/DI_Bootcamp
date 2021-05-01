@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load materializecss %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Chat{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <a href="{% url 'room_base' %}" class="waves-effect waves-light btn blue lighten-1">Back</a>
+            <textarea id="chat_text" cols="80" rows="80"></textarea>
+            <input type="text" id="input">
+            <button id="submit" class="waves-effect waves-light btn blue lighten-1">Send</button>
+        </div>
+    </div>
+</div>
+
+{{ room_name|json_script:"room_name" }}
+{{ request.user.username|json_script:"user_username" }}
+{{ time|json_script:"time" }}
+
+<!-- Websocket connection -->
+<script>
+
+    const roomName = JSON.parse(document.querySelector("#room_name").textContent);
+    const user_username = JSON.parse(document.querySelector("#user_username").textContent);
+
+    document.querySelector('#submit').onclick = (e) => {
+        const messageInputDom = document.querySelector('#input');
+        const message = messageInputDom.value;
+        chatSocket.send(JSON.stringify({
+            'message': message,
+            'username': user_username,
+        }));
+        messageInputDom.value = '';
+    };
+
+    const chatSocket = new WebSocket(
+        'ws://' + window.location.host + '/ws/chat/' + roomName + '/'
+    );
+
+    chatSocket.onmessage = (e) => {
+        const data = JSON.parse(e.data);
+        document.querySelector('#chat_text').value += (data.username + ': ' + data.message + '\n');
+    }
+
+</script>
+
+{% endblock %}

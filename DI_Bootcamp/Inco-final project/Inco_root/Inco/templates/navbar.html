@@ -31,6 +31,7 @@
         {% endif %}
         <li><a class="dropdown-trigger blog-logo" href="#!" data-target="navbar_dropdown-1">Blog<i class="material-icons right">arrow_drop_down</i></a></li>
         <li><a class="dropdown-trigger blog-logo" href="#!" data-target="navbar_dropdown-2">Files<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a href="{% url 'room_base' %}">Chat</a></li>
       </ul>
     </div>
 </nav>
@@ -55,4 +56,5 @@
     {% if user.is_authenticated %}
     <li><a href="{% url 'forum-entry' %}">File upload</a></li>
     {% endif %}
+    <li><a href="{% url 'room_base' %}">Chat</a></li>
 </ul>

@@ -64,6 +64,13 @@ WSGI_APPLICATION = 'Inco.wsgi.application'
 ASGI_APPLICATION = 'Inco.routing.application'
 
 
+# DJANGO_REDIS necesary for online config (unix only)
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
+
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
